@@ -1,0 +1,38 @@
+Dentro del contexto actual, la alta densidad poblacional y el crecimiento significativo de la tasa de criminalidad son desafíos constantes que se presentan en ciudades grandes, como Quito. Esta realidad impacta directamente en la calidad de vida e impide el desarrollo normal de las actividades, poniendo en cuestión este tema.Uno de los factores más afectados por la inseguridad es la movilidad. 
+Esta problemática genera un ambiente de incertidumbre sobre para la seguridad vial y personal, en donde la planificación de rutas seguras no solo se basa en la distancia sino también en la variable crítica de seguridad durante el trayecto. En este ámbito, el surgimiento de herramientas tecnológicas accesibles e innovadoras es fundamental para que se permita a la ciudadanía tomar decisiones informadas y cautelares durante sus desplazamientos cotidianos.
+\\
+Como respuesta a esta necesidad, se asumió el desarrollo de un aplicativo móvil el cual brinde una herramienta de seguridad preventiva, en donde su enfoque principal son usuarios jóvenes y adultos, mediante la cual se facilite la forma en la que se desplazan por la ciudad; estos mismos brindan la información en tiempo real sobre zonas con un alto potencial de ser peligrosas.
+\\
+De esta manera, la aplicación ha sido concebida con una estructura autónoma y modular, que se divide en tres componentes principales: Gestión de Identidad y Autenticación, Gestión de Reportes y Alertas y Ruteo Seguro; a primera instancia este documento se centra en la implementación del Módulo de Ruteo Seguro el cual tiene como propósito fundamental la generación de rutas óptimas para el usuario.
+\\
+Este componente maneja la operatividad de la aplicación basándose en el análisis de incidentes previamente reportados y validados por la comunidad, para brindar mayor fiabilidad en la sugerencia de rutas; con la ayuda de principios de algoritmos y optimización de grafos. De modo que este módulo está diseñado para brindar un camino seguro evaluando el factor de seguridad como el valor dominante para el peso en la selección de la ruta, este mismo garantiza la independencia del servicio al hacer uso de una API robusta la cual puede calcular y devolver una ruta adecuada, asegurando la comunicación eficiente y manteniendo una disponibilidad continua en la aplicación.
+
+En cuánto, al Módulo de Gestión de Identidad y Autenticación es el aquel que constituye la entrada al sistema y es el pilar fundamental de la seguridad. Dentro de sus funciones principales incluye el inicio de sesión y la gestión de la sesión activa para mantener al usuario dentro del aplicativo. Es un módulo el cual se maneja por Json Web Tokens, el funcionamiento de este módulo es crítico para mantener una sinergia con el Módulo de Gestión de Reportes y Alertas, en donde este tercer y último módulo juega un papel vital para la funcionalidad de seguridad preventiva; su rol principal consiste en validar y procesar los reportes de los incidentes ingresados, en donde no solo almacena la información del módulo sino también las coordenadas de los incidentes validando su veracidad de manera que este sirva para generar un mapa de riesgo fiable. Además es el responsable de emisión de notificaciones a los usuarios que se encuentren dentro de una zona de riesgo.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%--------------- Section 1 ---------------%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Objetivo general}
+\label{chapter01-section01:Objetivo General}
+\input{../04Sections/03ContentOfDocument/01Chapter/01-01-Section}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%--------------- Section 2 ---------------%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Objetivos específicos}
+\label{chapter01-section02:Objetivos Específicos}
+\input{../04Sections/03ContentOfDocument/01Chapter/01-02-Section}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%--------------- Section 3 ---------------%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Alcance}
+\label{chapter01-section03:Alcance}
+\input{../04Sections/03ContentOfDocument/01Chapter/01-03-Section}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%--------------- Section 4 ---------------%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Marco teórico}
+\label{chapter01-section03:Marco teórico}
+\input{../04Sections/03ContentOfDocument/01Chapter/01-04-Section}

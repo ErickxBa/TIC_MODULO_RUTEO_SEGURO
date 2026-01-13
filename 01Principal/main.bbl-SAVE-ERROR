@@ -1,0 +1,2034 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{bravo2024seguridad}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=348f4fff304b5351211e16824ba73e7e}{%
+           family={Bravo-Galarraga},
+           familyi={B\bibinithyphendelim G\bibinitperiod},
+           given={Gabriela\bibnamedelima Nicole},
+           giveni={G\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=7c0d80e2350b6b0f8b066ca7e29575d1}{%
+           family={Samaniego-Macas},
+           familyi={S\bibinithyphendelim M\bibinitperiod},
+           given={Kevin\bibnamedelima Alexander},
+           giveni={K\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=0d78556f7ef82a4863723c937379c17f}{%
+           family={Yanéz-Usca},
+           familyi={Y\bibinithyphendelim U\bibinitperiod},
+           given={Maria\bibnamedelima Fernanda},
+           giveni={M\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=fe3a1a26fa891723c1f263c8288825f9}{%
+           family={Zuñiga-Ortega},
+           familyi={Z\bibinithyphendelim O\bibinitperiod},
+           given={Liseth\bibnamedelima Eliana},
+           giveni={L\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{7accc7718e854a93ba95346d77d3d1d4}
+      \strng{fullhash}{0381a8665384c0bc88f5e546e142e550}
+      \strng{fullhashraw}{0381a8665384c0bc88f5e546e142e550}
+      \strng{bibnamehash}{0381a8665384c0bc88f5e546e142e550}
+      \strng{authorbibnamehash}{0381a8665384c0bc88f5e546e142e550}
+      \strng{authornamehash}{7accc7718e854a93ba95346d77d3d1d4}
+      \strng{authorfullhash}{0381a8665384c0bc88f5e546e142e550}
+      \strng{authorfullhashraw}{0381a8665384c0bc88f5e546e142e550}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Verdad y Derecho. Revista Arbitrada de Ciencias Jurídicas y Sociales}
+      \field{number}{especial4}
+      \field{title}{Seguridad ciudadana en Ecuador: Factores sociales, económicos, confianza institucional y políticas públicas [Citizen security in Ecuador: Social and economic factors, institutional trust and public policies]}
+      \field{volume}{3}
+      \field{year}{2024}
+      \field{pages}{113\bibrangedash 120}
+      \range{pages}{8}
+    \endentry
+    \entry{freire2024analisis}{thesis}{}{}
+      \name{author}{2}{}{%
+        {{hash=dfce6de740f3444ab0e9cf940ba5b7ee}{%
+           family={Freire\bibnamedelima Urresta},
+           familyi={F\bibinitperiod\bibinitdelim U\bibinitperiod},
+           given={Rebeca\bibnamedelima Judith},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=a791546efe5d92e4bf6305345eb1a48c}{%
+           family={Villegas\bibnamedelima Mendieta},
+           familyi={V\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={Ricardo\bibnamedelima Javier},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{25e7a37f072fcce87d6c171ac02e3d96}
+      \strng{fullhash}{25e7a37f072fcce87d6c171ac02e3d96}
+      \strng{fullhashraw}{25e7a37f072fcce87d6c171ac02e3d96}
+      \strng{bibnamehash}{25e7a37f072fcce87d6c171ac02e3d96}
+      \strng{authorbibnamehash}{25e7a37f072fcce87d6c171ac02e3d96}
+      \strng{authornamehash}{25e7a37f072fcce87d6c171ac02e3d96}
+      \strng{authorfullhash}{25e7a37f072fcce87d6c171ac02e3d96}
+      \strng{authorfullhashraw}{25e7a37f072fcce87d6c171ac02e3d96}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Análisis multidimensional sobre la victimización y percepción de inseguridad en 2011 en el Ecuador}
+      \field{type}{{B.S.} thesis}
+      \field{year}{2024}
+    \endentry
+    \entry{munizaga2010aspectos}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=38a97944961636fa07b89efb47cb093d}{%
+           family={Munizaga},
+           familyi={M\bibinitperiod},
+           given={Ana\bibnamedelima María},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{38a97944961636fa07b89efb47cb093d}
+      \strng{fullhash}{38a97944961636fa07b89efb47cb093d}
+      \strng{fullhashraw}{38a97944961636fa07b89efb47cb093d}
+      \strng{bibnamehash}{38a97944961636fa07b89efb47cb093d}
+      \strng{authorbibnamehash}{38a97944961636fa07b89efb47cb093d}
+      \strng{authornamehash}{38a97944961636fa07b89efb47cb093d}
+      \strng{authorfullhash}{38a97944961636fa07b89efb47cb093d}
+      \strng{authorfullhashraw}{38a97944961636fa07b89efb47cb093d}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Conceptos (Fundación Paz Ciudadana)}
+      \field{title}{Aspectos claves acerca del rol de los gobiernos locales en seguridad ciudadana y prevención del delito}
+      \field{volume}{15}
+      \field{year}{2010}
+    \endentry
+    \entry{davila2004puntos}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{hash=f3dd612141496e59877d772fda9262dd}{%
+           family={Dávila\bibnamedelima Loor},
+           familyi={D\bibinitperiod\bibinitdelim L\bibinitperiod},
+           given={Luis},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Quito: FLACSO sede Ecuador}%
+      }
+      \strng{namehash}{f3dd612141496e59877d772fda9262dd}
+      \strng{fullhash}{f3dd612141496e59877d772fda9262dd}
+      \strng{fullhashraw}{f3dd612141496e59877d772fda9262dd}
+      \strng{bibnamehash}{f3dd612141496e59877d772fda9262dd}
+      \strng{authorbibnamehash}{f3dd612141496e59877d772fda9262dd}
+      \strng{authornamehash}{f3dd612141496e59877d772fda9262dd}
+      \strng{authorfullhash}{f3dd612141496e59877d772fda9262dd}
+      \strng{authorfullhashraw}{f3dd612141496e59877d772fda9262dd}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Puntos críticos de la aplicación de las nuevas tecnologías de información y comunicación (TIC) en la seguridad ciudadana}
+      \field{type}{mathesis}
+      \field{year}{2004}
+    \endentry
+    \entry{okmi2023systematic}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=0bdbec15c512752e93bd70df15b932c7}{%
+           family={Okmi},
+           familyi={O\bibinitperiod},
+           given={Mohammed},
+           giveni={M\bibinitperiod}}}%
+        {{hash=ee48564c384ed7fb45484963c571141f}{%
+           family={Por},
+           familyi={P\bibinitperiod},
+           given={Lip\bibnamedelima Yee},
+           giveni={L\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+        {{hash=eb19051b57d43f2369b37ca8caa47ee1}{%
+           family={Ang},
+           familyi={A\bibinitperiod},
+           given={Tan\bibnamedelima Fong},
+           giveni={T\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=41218681fb3a7a64f7be1b5c5aa4a92f}{%
+           family={Al-Hussein},
+           familyi={A\bibinithyphendelim H\bibinitperiod},
+           given={Ward},
+           giveni={W\bibinitperiod}}}%
+        {{hash=a6a1a5d9536a0b38b5dee025518d6522}{%
+           family={Ku},
+           familyi={K\bibinitperiod},
+           given={Chin\bibnamedelima Soon},
+           giveni={C\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {MDPI}%
+      }
+      \strng{namehash}{58f3a856b8cb2fd49e9d4d330159808f}
+      \strng{fullhash}{cb0ad057afb5a9f9f789cdb75e15e0cd}
+      \strng{fullhashraw}{cb0ad057afb5a9f9f789cdb75e15e0cd}
+      \strng{bibnamehash}{cb0ad057afb5a9f9f789cdb75e15e0cd}
+      \strng{authorbibnamehash}{cb0ad057afb5a9f9f789cdb75e15e0cd}
+      \strng{authornamehash}{58f3a856b8cb2fd49e9d4d330159808f}
+      \strng{authorfullhash}{cb0ad057afb5a9f9f789cdb75e15e0cd}
+      \strng{authorfullhashraw}{cb0ad057afb5a9f9f789cdb75e15e0cd}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sensors}
+      \field{number}{9}
+      \field{title}{A systematic review of mobile phone data in crime applications: a coherent taxonomy based on data types and analysis perspectives, challenges, and future research directions}
+      \field{volume}{23}
+      \field{year}{2023}
+      \field{pages}{4350}
+      \range{pages}{1}
+    \endentry
+    \entry{espinoza2024aplicacion}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=12837787136fb1242152b877adde8ac3}{%
+           family={Espinoza-Marca},
+           familyi={E\bibinithyphendelim M\bibinitperiod},
+           given={Biennal\bibnamedelima M},
+           giveni={B\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=e1e0e652fdcc8ddfdb99ff3df70a9475}{%
+           family={Cieza-Mostacero},
+           familyi={C\bibinithyphendelim M\bibinitperiod},
+           given={Segundo\bibnamedelima E},
+           giveni={S\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Associação Ibérica de Sistemas e Tecnologias de Informacao}%
+      }
+      \strng{namehash}{5f69bdb1d849aeeb8bc69fefbc2d0a05}
+      \strng{fullhash}{5f69bdb1d849aeeb8bc69fefbc2d0a05}
+      \strng{fullhashraw}{5f69bdb1d849aeeb8bc69fefbc2d0a05}
+      \strng{bibnamehash}{5f69bdb1d849aeeb8bc69fefbc2d0a05}
+      \strng{authorbibnamehash}{5f69bdb1d849aeeb8bc69fefbc2d0a05}
+      \strng{authornamehash}{5f69bdb1d849aeeb8bc69fefbc2d0a05}
+      \strng{authorfullhash}{5f69bdb1d849aeeb8bc69fefbc2d0a05}
+      \strng{authorfullhashraw}{5f69bdb1d849aeeb8bc69fefbc2d0a05}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista Ibérica de Sistemas e Tecnologias de Informação}
+      \field{number}{E73}
+      \field{title}{Aplicación Web Móvil en el Control de Incidencias Delictivas}
+      \field{year}{2024}
+      \field{pages}{58\bibrangedash 74}
+      \range{pages}{17}
+    \endentry
+    \entry{lobos2025efectos}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=782f2ff3f833441ab1236539a3f441d3}{%
+           family={Lobos\bibnamedelima Vargas},
+           familyi={L\bibinitperiod\bibinitdelim V\bibinitperiod},
+           given={Manuel},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Universidad de Chile}%
+      }
+      \strng{namehash}{782f2ff3f833441ab1236539a3f441d3}
+      \strng{fullhash}{782f2ff3f833441ab1236539a3f441d3}
+      \strng{fullhashraw}{782f2ff3f833441ab1236539a3f441d3}
+      \strng{bibnamehash}{782f2ff3f833441ab1236539a3f441d3}
+      \strng{authorbibnamehash}{782f2ff3f833441ab1236539a3f441d3}
+      \strng{authornamehash}{782f2ff3f833441ab1236539a3f441d3}
+      \strng{authorfullhash}{782f2ff3f833441ab1236539a3f441d3}
+      \strng{authorfullhashraw}{782f2ff3f833441ab1236539a3f441d3}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Efectos de la utilización de aplicaciones móviles de vigilancia sobre la Gobernanza de la Seguridad Urbana a nivel local: el caso de SOSAFE en la Comuna de Santiago de Chile}
+      \field{year}{2025}
+    \endentry
+    \entry{moya2024seguridad}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=296827a990cd6e4e080027f391f65e64}{%
+           family={Moya},
+           familyi={M\bibinitperiod},
+           given={Javier\bibnamedelima Guaña},
+           giveni={J\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{296827a990cd6e4e080027f391f65e64}
+      \strng{fullhash}{296827a990cd6e4e080027f391f65e64}
+      \strng{fullhashraw}{296827a990cd6e4e080027f391f65e64}
+      \strng{bibnamehash}{296827a990cd6e4e080027f391f65e64}
+      \strng{authorbibnamehash}{296827a990cd6e4e080027f391f65e64}
+      \strng{authornamehash}{296827a990cd6e4e080027f391f65e64}
+      \strng{authorfullhash}{296827a990cd6e4e080027f391f65e64}
+      \strng{authorfullhashraw}{296827a990cd6e4e080027f391f65e64}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{REVISTA MULTIDISCIPLINARIA DE DESARROLLO AGROPECUARIO, TECNOLÓGICO, EMPRESARIAL Y HUMANISTA.}
+      \field{number}{1}
+      \field{title}{Seguridad, amenazas y mecanismos de protección de los dispositivos móviles}
+      \field{volume}{6}
+      \field{year}{2024}
+      \field{pages}{9\bibrangedash 9}
+      \range{pages}{1}
+    \endentry
+    \entry{royce1987managing}{inproceedings}{}{}
+      \name{author}{1}{}{%
+        {{hash=541e173109dab443b9fc826b342e8e6f}{%
+           family={Royce},
+           familyi={R\bibinitperiod},
+           given={Winston\bibnamedelima W},
+           giveni={W\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{541e173109dab443b9fc826b342e8e6f}
+      \strng{fullhash}{541e173109dab443b9fc826b342e8e6f}
+      \strng{fullhashraw}{541e173109dab443b9fc826b342e8e6f}
+      \strng{bibnamehash}{541e173109dab443b9fc826b342e8e6f}
+      \strng{authorbibnamehash}{541e173109dab443b9fc826b342e8e6f}
+      \strng{authornamehash}{541e173109dab443b9fc826b342e8e6f}
+      \strng{authorfullhash}{541e173109dab443b9fc826b342e8e6f}
+      \strng{authorfullhashraw}{541e173109dab443b9fc826b342e8e6f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 9th international conference on Software Engineering}
+      \field{title}{Managing the development of large software systems: concepts and techniques}
+      \field{year}{1987}
+      \field{pages}{328\bibrangedash 338}
+      \range{pages}{11}
+    \endentry
+    \entry{moniruzzaman2013comparative}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=8ca6f0c63154ae67ed882b01b6b80fb3}{%
+           family={Moniruzzaman},
+           familyi={M\bibinitperiod},
+           given={ABM},
+           giveni={A\bibinitperiod}}}%
+        {{hash=753e0cd6330db8cfc4bd9cf481a690ca}{%
+           family={Hossain},
+           familyi={H\bibinitperiod},
+           given={Dr\bibnamedelima Syed\bibnamedelima Akhter},
+           giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{f40ca326b1f3251060813cb89fff441a}
+      \strng{fullhash}{f40ca326b1f3251060813cb89fff441a}
+      \strng{fullhashraw}{f40ca326b1f3251060813cb89fff441a}
+      \strng{bibnamehash}{f40ca326b1f3251060813cb89fff441a}
+      \strng{authorbibnamehash}{f40ca326b1f3251060813cb89fff441a}
+      \strng{authornamehash}{f40ca326b1f3251060813cb89fff441a}
+      \strng{authorfullhash}{f40ca326b1f3251060813cb89fff441a}
+      \strng{authorfullhashraw}{f40ca326b1f3251060813cb89fff441a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1307.3356}
+      \field{title}{Comparative Study on Agile software development methodologies}
+      \field{year}{2013}
+    \endentry
+    \entry{boehm1986spiral}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=0080da2810747a6a4a7e9df24ed3d7b9}{%
+           family={Boehm},
+           familyi={B\bibinitperiod},
+           given={Barry},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ACM New York, NY, USA}%
+      }
+      \strng{namehash}{0080da2810747a6a4a7e9df24ed3d7b9}
+      \strng{fullhash}{0080da2810747a6a4a7e9df24ed3d7b9}
+      \strng{fullhashraw}{0080da2810747a6a4a7e9df24ed3d7b9}
+      \strng{bibnamehash}{0080da2810747a6a4a7e9df24ed3d7b9}
+      \strng{authorbibnamehash}{0080da2810747a6a4a7e9df24ed3d7b9}
+      \strng{authornamehash}{0080da2810747a6a4a7e9df24ed3d7b9}
+      \strng{authorfullhash}{0080da2810747a6a4a7e9df24ed3d7b9}
+      \strng{authorfullhashraw}{0080da2810747a6a4a7e9df24ed3d7b9}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ACM SIGSOFT Software engineering notes}
+      \field{number}{4}
+      \field{title}{A spiral model of software development and enhancement}
+      \field{volume}{11}
+      \field{year}{1986}
+      \field{pages}{14\bibrangedash 24}
+      \range{pages}{11}
+    \endentry
+    \entry{balaji2012waterfall}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=a4513f3d425b41ebeb0a6524a583f094}{%
+           family={Balaji},
+           familyi={B\bibinitperiod},
+           given={Sundramoorthy},
+           giveni={S\bibinitperiod}}}%
+        {{hash=8f3a1f432a76e0e1c4d9a5d0532b7e29}{%
+           family={Murugaiyan},
+           familyi={M\bibinitperiod},
+           given={M\bibnamedelima Sundararajan},
+           giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{fb9ba2475716a4501df5b344ed644b9e}
+      \strng{fullhash}{fb9ba2475716a4501df5b344ed644b9e}
+      \strng{fullhashraw}{fb9ba2475716a4501df5b344ed644b9e}
+      \strng{bibnamehash}{fb9ba2475716a4501df5b344ed644b9e}
+      \strng{authorbibnamehash}{fb9ba2475716a4501df5b344ed644b9e}
+      \strng{authornamehash}{fb9ba2475716a4501df5b344ed644b9e}
+      \strng{authorfullhash}{fb9ba2475716a4501df5b344ed644b9e}
+      \strng{authorfullhashraw}{fb9ba2475716a4501df5b344ed644b9e}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Information Technology and Business Management}
+      \field{number}{1}
+      \field{title}{Waterfall vs. V-Model vs. Agile: A comparative study on SDLC}
+      \field{volume}{2}
+      \field{year}{2012}
+      \field{pages}{26\bibrangedash 30}
+      \range{pages}{5}
+    \endentry
+    \entry{ruparelia2010software}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=9c0d17ea5da2109929f3bc6ba87d92b8}{%
+           family={Ruparelia},
+           familyi={R\bibinitperiod},
+           given={Nayan\bibnamedelima B},
+           giveni={N\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ACM New York, NY, USA}%
+      }
+      \strng{namehash}{9c0d17ea5da2109929f3bc6ba87d92b8}
+      \strng{fullhash}{9c0d17ea5da2109929f3bc6ba87d92b8}
+      \strng{fullhashraw}{9c0d17ea5da2109929f3bc6ba87d92b8}
+      \strng{bibnamehash}{9c0d17ea5da2109929f3bc6ba87d92b8}
+      \strng{authorbibnamehash}{9c0d17ea5da2109929f3bc6ba87d92b8}
+      \strng{authornamehash}{9c0d17ea5da2109929f3bc6ba87d92b8}
+      \strng{authorfullhash}{9c0d17ea5da2109929f3bc6ba87d92b8}
+      \strng{authorfullhashraw}{9c0d17ea5da2109929f3bc6ba87d92b8}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ACM SIGSOFT Software Engineering Notes}
+      \field{number}{3}
+      \field{title}{Software development lifecycle models}
+      \field{volume}{35}
+      \field{year}{2010}
+      \field{pages}{8\bibrangedash 13}
+      \range{pages}{6}
+    \endentry
+    \entry{arvanitou2021software}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=e3d7e1719b918fd07adca30482b538c5}{%
+           family={Arvanitou},
+           familyi={A\bibinitperiod},
+           given={Elvira-Maria},
+           giveni={E\bibinithyphendelim M\bibinitperiod}}}%
+        {{hash=ca7bbdb1e0cbd0dfbafa64e9437cbe33}{%
+           family={Ampatzoglou},
+           familyi={A\bibinitperiod},
+           given={Apostolos},
+           giveni={A\bibinitperiod}}}%
+        {{hash=c4ffab925e2530c3d0e5dfb0c927b480}{%
+           family={Chatzigeorgiou},
+           familyi={C\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod}}}%
+        {{hash=de2403ab2ee8a31d396d2f2a5b13ae61}{%
+           family={Carver},
+           familyi={C\bibinitperiod},
+           given={Jeffrey\bibnamedelima C},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{a47b7616a9c41e46d78e1ab94451e61a}
+      \strng{fullhash}{19f6f82bdc3e96e7d3ac405f38d59049}
+      \strng{fullhashraw}{19f6f82bdc3e96e7d3ac405f38d59049}
+      \strng{bibnamehash}{19f6f82bdc3e96e7d3ac405f38d59049}
+      \strng{authorbibnamehash}{19f6f82bdc3e96e7d3ac405f38d59049}
+      \strng{authornamehash}{a47b7616a9c41e46d78e1ab94451e61a}
+      \strng{authorfullhash}{19f6f82bdc3e96e7d3ac405f38d59049}
+      \strng{authorfullhashraw}{19f6f82bdc3e96e7d3ac405f38d59049}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Systems and Software}
+      \field{title}{Software engineering practices for scientific software development: A systematic mapping study}
+      \field{volume}{172}
+      \field{year}{2021}
+      \field{pages}{110848}
+      \range{pages}{1}
+    \endentry
+    \entry{schwaber2013guia}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=ee6f08fcba839e09471a0bc69152b6a5}{%
+           family={Schwaber},
+           familyi={S\bibinitperiod},
+           given={Ken},
+           giveni={K\bibinitperiod}}}%
+        {{hash=6e3f26f6f816a26c6ab36bc7a899bcde}{%
+           family={Sutherland},
+           familyi={S\bibinitperiod},
+           given={Jeff},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{303ea1dc92fd8c772eac56316b2074ef}
+      \strng{fullhash}{303ea1dc92fd8c772eac56316b2074ef}
+      \strng{fullhashraw}{303ea1dc92fd8c772eac56316b2074ef}
+      \strng{bibnamehash}{303ea1dc92fd8c772eac56316b2074ef}
+      \strng{authorbibnamehash}{303ea1dc92fd8c772eac56316b2074ef}
+      \strng{authornamehash}{303ea1dc92fd8c772eac56316b2074ef}
+      \strng{authorfullhash}{303ea1dc92fd8c772eac56316b2074ef}
+      \strng{authorfullhashraw}{303ea1dc92fd8c772eac56316b2074ef}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Scrumguides. Org}
+      \field{title}{La guía de Scrum}
+      \field{volume}{1}
+      \field{year}{2013}
+      \field{pages}{21}
+      \range{pages}{1}
+    \endentry
+    \entry{dixit2019scrum}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=e007d08ec3279404e81327df935c3ec8}{%
+           family={Dixit},
+           familyi={D\bibinitperiod},
+           given={Rajani},
+           giveni={R\bibinitperiod}}}%
+        {{hash=2ac45958b630e8e7e5af3df4acfebc3a}{%
+           family={Bhushan},
+           familyi={B\bibinitperiod},
+           given={Brij},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{4f72e90d6f79b27cbb6092d93fc788d7}
+      \strng{fullhash}{4f72e90d6f79b27cbb6092d93fc788d7}
+      \strng{fullhashraw}{4f72e90d6f79b27cbb6092d93fc788d7}
+      \strng{bibnamehash}{4f72e90d6f79b27cbb6092d93fc788d7}
+      \strng{authorbibnamehash}{4f72e90d6f79b27cbb6092d93fc788d7}
+      \strng{authornamehash}{4f72e90d6f79b27cbb6092d93fc788d7}
+      \strng{authorfullhash}{4f72e90d6f79b27cbb6092d93fc788d7}
+      \strng{authorfullhashraw}{4f72e90d6f79b27cbb6092d93fc788d7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal on Today's Ideas-Tomorrow's Technologies}
+      \field{number}{1}
+      \field{title}{Scrum: An Agile software development process and metrics}
+      \field{volume}{7}
+      \field{year}{2019}
+      \field{pages}{73\bibrangedash 87}
+      \range{pages}{15}
+    \endentry
+    \entry{manssur2015aplicacion}{thesis}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=ab87dbc67079fc4dd4c01cca5592bbf4}{%
+           family={Manssur\bibnamedelima Nicola},
+           familyi={M\bibinitperiod\bibinitdelim N\bibinitperiod},
+           given={Adib\bibnamedelima Abrain},
+           giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{e472ab3e921c67e4cb48707920b1936d}
+      \strng{fullhash}{e472ab3e921c67e4cb48707920b1936d}
+      \strng{fullhashraw}{e472ab3e921c67e4cb48707920b1936d}
+      \strng{bibnamehash}{e472ab3e921c67e4cb48707920b1936d}
+      \strng{authorbibnamehash}{e472ab3e921c67e4cb48707920b1936d}
+      \strng{authornamehash}{e472ab3e921c67e4cb48707920b1936d}
+      \strng{authorfullhash}{e472ab3e921c67e4cb48707920b1936d}
+      \strng{authorfullhashraw}{e472ab3e921c67e4cb48707920b1936d}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Aplicación de la metodología Scrum para implementar el esquema gubernamental de seguridad de la información orientado a servicios tecnológicos}
+      \field{type}{{B.S.} thesis}
+      \field{year}{2015}
+    \endentry
+    \entry{blinowski2022monolithic}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=551994bb3af7cc01cbe7d35bf8a39837}{%
+           family={Blinowski},
+           familyi={B\bibinitperiod},
+           given={Grzegorz},
+           giveni={G\bibinitperiod}}}%
+        {{hash=b52b1becb70383aa456df2261ba629ad}{%
+           family={Ojdowska},
+           familyi={O\bibinitperiod},
+           given={Anna},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5eb6c3eaafc04535852773f48d21253e}{%
+           family={Przyby{ł}ek},
+           familyi={P\bibinitperiod},
+           given={Adam},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{680a1966f5d5167605f0ef7852e01e99}
+      \strng{fullhash}{31503060b9f18d0e46979405a7659cbc}
+      \strng{fullhashraw}{31503060b9f18d0e46979405a7659cbc}
+      \strng{bibnamehash}{31503060b9f18d0e46979405a7659cbc}
+      \strng{authorbibnamehash}{31503060b9f18d0e46979405a7659cbc}
+      \strng{authornamehash}{680a1966f5d5167605f0ef7852e01e99}
+      \strng{authorfullhash}{31503060b9f18d0e46979405a7659cbc}
+      \strng{authorfullhashraw}{31503060b9f18d0e46979405a7659cbc}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE access}
+      \field{title}{Monolithic vs. microservice architecture: A performance and scalability evaluation}
+      \field{volume}{10}
+      \field{year}{2022}
+      \field{pages}{20357\bibrangedash 20374}
+      \range{pages}{18}
+    \endentry
+    \entry{michelson2006event}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=2560ea2b72a42fd61ec4171a19d9de93}{%
+           family={Michelson},
+           familyi={M\bibinitperiod},
+           given={Brenda\bibnamedelima M},
+           giveni={B\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{2560ea2b72a42fd61ec4171a19d9de93}
+      \strng{fullhash}{2560ea2b72a42fd61ec4171a19d9de93}
+      \strng{fullhashraw}{2560ea2b72a42fd61ec4171a19d9de93}
+      \strng{bibnamehash}{2560ea2b72a42fd61ec4171a19d9de93}
+      \strng{authorbibnamehash}{2560ea2b72a42fd61ec4171a19d9de93}
+      \strng{authornamehash}{2560ea2b72a42fd61ec4171a19d9de93}
+      \strng{authorfullhash}{2560ea2b72a42fd61ec4171a19d9de93}
+      \strng{authorfullhashraw}{2560ea2b72a42fd61ec4171a19d9de93}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Patricia Seybold Group}
+      \field{number}{12}
+      \field{title}{Event-driven architecture overview}
+      \field{volume}{2}
+      \field{year}{2006}
+      \field{pages}{10\bibrangedash 1571}
+      \range{pages}{1562}
+    \endentry
+    \entry{gorton2006essential}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=d683605f72467dfa26e77f926f92e46d}{%
+           family={Gorton},
+           familyi={G\bibinitperiod},
+           given={Ian},
+           giveni={I\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{d683605f72467dfa26e77f926f92e46d}
+      \strng{fullhash}{d683605f72467dfa26e77f926f92e46d}
+      \strng{fullhashraw}{d683605f72467dfa26e77f926f92e46d}
+      \strng{bibnamehash}{d683605f72467dfa26e77f926f92e46d}
+      \strng{authorbibnamehash}{d683605f72467dfa26e77f926f92e46d}
+      \strng{authornamehash}{d683605f72467dfa26e77f926f92e46d}
+      \strng{authorfullhash}{d683605f72467dfa26e77f926f92e46d}
+      \strng{authorfullhashraw}{d683605f72467dfa26e77f926f92e46d}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Essential software architecture}
+      \field{year}{2006}
+    \endentry
+    \entry{erl2016soa}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=5606702d875163ff65690170e545c0b8}{%
+           family={Erl},
+           familyi={E\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Prentice Hall Press}%
+      }
+      \strng{namehash}{5606702d875163ff65690170e545c0b8}
+      \strng{fullhash}{5606702d875163ff65690170e545c0b8}
+      \strng{fullhashraw}{5606702d875163ff65690170e545c0b8}
+      \strng{bibnamehash}{5606702d875163ff65690170e545c0b8}
+      \strng{authorbibnamehash}{5606702d875163ff65690170e545c0b8}
+      \strng{authornamehash}{5606702d875163ff65690170e545c0b8}
+      \strng{authorfullhash}{5606702d875163ff65690170e545c0b8}
+      \strng{authorfullhashraw}{5606702d875163ff65690170e545c0b8}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{SOA Principles of Service Design (paperback)}
+      \field{year}{2016}
+    \endentry
+    \entry{newman2021building}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=b6be43602c2787d279f8522a7d9713db}{%
+           family={Newman},
+           familyi={N\bibinitperiod},
+           given={Sam},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {" O'Reilly Media, Inc."}%
+      }
+      \strng{namehash}{b6be43602c2787d279f8522a7d9713db}
+      \strng{fullhash}{b6be43602c2787d279f8522a7d9713db}
+      \strng{fullhashraw}{b6be43602c2787d279f8522a7d9713db}
+      \strng{bibnamehash}{b6be43602c2787d279f8522a7d9713db}
+      \strng{authorbibnamehash}{b6be43602c2787d279f8522a7d9713db}
+      \strng{authornamehash}{b6be43602c2787d279f8522a7d9713db}
+      \strng{authorfullhash}{b6be43602c2787d279f8522a7d9713db}
+      \strng{authorfullhashraw}{b6be43602c2787d279f8522a7d9713db}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Building microservices: designing fine-grained systems}
+      \field{year}{2021}
+    \endentry
+    \entry{vural2017systematic}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=571fd85a41b41f9a4615e4f504c04381}{%
+           family={Vural},
+           familyi={V\bibinitperiod},
+           given={Hulya},
+           giveni={H\bibinitperiod}}}%
+        {{hash=2ce08d7cf7a8ea11ff4832c1efea985e}{%
+           family={Koyuncu},
+           familyi={K\bibinitperiod},
+           given={Murat},
+           giveni={M\bibinitperiod}}}%
+        {{hash=26016344a5586ea499ea0ed3be6e415d}{%
+           family={Guney},
+           familyi={G\bibinitperiod},
+           given={Sinem},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{39eb3ad3caeebb05ae74445a30682b29}
+      \strng{fullhash}{af13cdaf50a98b7e254443b1f7210217}
+      \strng{fullhashraw}{af13cdaf50a98b7e254443b1f7210217}
+      \strng{bibnamehash}{af13cdaf50a98b7e254443b1f7210217}
+      \strng{authorbibnamehash}{af13cdaf50a98b7e254443b1f7210217}
+      \strng{authornamehash}{39eb3ad3caeebb05ae74445a30682b29}
+      \strng{authorfullhash}{af13cdaf50a98b7e254443b1f7210217}
+      \strng{authorfullhashraw}{af13cdaf50a98b7e254443b1f7210217}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{International Conference on Computational Science and Its Applications}
+      \field{title}{A systematic literature review on microservices}
+      \field{year}{2017}
+      \field{pages}{203\bibrangedash 217}
+      \range{pages}{15}
+    \endentry
+    \entry{el2024exploring}{article}{}{}
+      \name{author}{7}{}{%
+        {{hash=4b76f15db27fb729e8eedc7b46c738c1}{%
+           family={El\bibnamedelima Akhdar},
+           familyi={E\bibinitperiod\bibinitdelim A\bibinitperiod},
+           given={Abir},
+           giveni={A\bibinitperiod}}}%
+        {{hash=34e92783ea743d123780995b48ca534b}{%
+           family={Baidada},
+           familyi={B\bibinitperiod},
+           given={Chafik},
+           giveni={C\bibinitperiod}}}%
+        {{hash=9ccb393dc969c3aadee99f4ab380fc9d}{%
+           family={Kartit},
+           familyi={K\bibinitperiod},
+           given={Ali},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a0c13d5ad4f9200ac4ff0d07d3b70523}{%
+           family={Hanine},
+           familyi={H\bibinitperiod},
+           given={Mohamed},
+           giveni={M\bibinitperiod}}}%
+        {{hash=a1b9609bd0db4c6c39d7e49ac4e4077d}{%
+           family={García},
+           familyi={G\bibinitperiod},
+           given={Carlos\bibnamedelima Osorio},
+           giveni={C\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+        {{hash=607adc9e0a0cc8628480daf746715e5c}{%
+           family={Lara},
+           familyi={L\bibinitperiod},
+           given={Roberto\bibnamedelima Garcia},
+           giveni={R\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=38c004e153a7beeec2ef81b0ccd7821e}{%
+           family={Ashraf},
+           familyi={A\bibinitperiod},
+           given={Imran},
+           giveni={I\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {MDPI}%
+      }
+      \strng{namehash}{13247d3906df6fc88e81fbdb138714a5}
+      \strng{fullhash}{f22392d43c78229004462c4cbb2d186f}
+      \strng{fullhashraw}{f22392d43c78229004462c4cbb2d186f}
+      \strng{bibnamehash}{13247d3906df6fc88e81fbdb138714a5}
+      \strng{authorbibnamehash}{13247d3906df6fc88e81fbdb138714a5}
+      \strng{authornamehash}{13247d3906df6fc88e81fbdb138714a5}
+      \strng{authorfullhash}{f22392d43c78229004462c4cbb2d186f}
+      \strng{authorfullhashraw}{f22392d43c78229004462c4cbb2d186f}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sensors}
+      \field{number}{20}
+      \field{title}{Exploring the potential of microservices in internet of things: A systematic review of security and prospects}
+      \field{volume}{24}
+      \field{year}{2024}
+      \field{pages}{6771}
+      \range{pages}{1}
+    \endentry
+    \entry{gadge2017microservice}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=2cffeb4a84f0da683fb6a64f0d90a8d5}{%
+           family={Gadge},
+           familyi={G\bibinitperiod},
+           given={Sanjay},
+           giveni={S\bibinitperiod}}}%
+        {{hash=2f0f2523752bb762035984e3c1c4f036}{%
+           family={Kotwani},
+           familyi={K\bibinitperiod},
+           given={Vijaya},
+           giveni={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{25081563d3dd14ed8440a5f58dac816d}
+      \strng{fullhash}{25081563d3dd14ed8440a5f58dac816d}
+      \strng{fullhashraw}{25081563d3dd14ed8440a5f58dac816d}
+      \strng{bibnamehash}{25081563d3dd14ed8440a5f58dac816d}
+      \strng{authorbibnamehash}{25081563d3dd14ed8440a5f58dac816d}
+      \strng{authornamehash}{25081563d3dd14ed8440a5f58dac816d}
+      \strng{authorfullhash}{25081563d3dd14ed8440a5f58dac816d}
+      \strng{authorfullhashraw}{25081563d3dd14ed8440a5f58dac816d}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{GlobalLogic Organisations}
+      \field{title}{Microservice architecture: API gateway considerations}
+      \field{volume}{11}
+      \field{year}{2017}
+    \endentry
+    \entry{decimavilla2025arquitectura}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=f81637081ff06f7b76d069c3f7a246e5}{%
+           family={Decimavilla-Alarcón},
+           familyi={D\bibinithyphendelim A\bibinitperiod},
+           given={Diana\bibnamedelima Carolina},
+           giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=e13cecb5b61cba966161f39c5597224a}{%
+           family={Marcillo-Franco},
+           familyi={M\bibinithyphendelim F\bibinitperiod},
+           given={Pedro\bibnamedelima Fernando},
+           giveni={P\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \strng{namehash}{c1f68eb1f36e189fa31b6788014053cd}
+      \strng{fullhash}{c1f68eb1f36e189fa31b6788014053cd}
+      \strng{fullhashraw}{c1f68eb1f36e189fa31b6788014053cd}
+      \strng{bibnamehash}{c1f68eb1f36e189fa31b6788014053cd}
+      \strng{authorbibnamehash}{c1f68eb1f36e189fa31b6788014053cd}
+      \strng{authornamehash}{c1f68eb1f36e189fa31b6788014053cd}
+      \strng{authorfullhash}{c1f68eb1f36e189fa31b6788014053cd}
+      \strng{authorfullhashraw}{c1f68eb1f36e189fa31b6788014053cd}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista Científica Episteme \& Praxis}
+      \field{number}{1}
+      \field{title}{Arquitectura de microservicios basada en contenedores para despliegue ágil de aplicaciones IoT en la nube}
+      \field{volume}{3}
+      \field{year}{2025}
+      \field{pages}{35\bibrangedash 49}
+      \range{pages}{15}
+    \endentry
+    \entry{sharma2021study}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=d81e71d9b4340a16b6e586dba3de5842}{%
+           family={Sharma},
+           familyi={S\bibinitperiod},
+           given={Vatsal},
+           giveni={V\bibinitperiod}}}%
+        {{hash=4266352d8cc26887d9df9b793c624a6e}{%
+           family={Tiwari},
+           familyi={T\bibinitperiod},
+           given={Ankit\bibnamedelima Kumar},
+           giveni={A\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \strng{namehash}{1d25a46971c65df7185193917d32e6cf}
+      \strng{fullhash}{1d25a46971c65df7185193917d32e6cf}
+      \strng{fullhashraw}{1d25a46971c65df7185193917d32e6cf}
+      \strng{bibnamehash}{1d25a46971c65df7185193917d32e6cf}
+      \strng{authorbibnamehash}{1d25a46971c65df7185193917d32e6cf}
+      \strng{authornamehash}{1d25a46971c65df7185193917d32e6cf}
+      \strng{authorfullhash}{1d25a46971c65df7185193917d32e6cf}
+      \strng{authorfullhashraw}{1d25a46971c65df7185193917d32e6cf}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{World Journal of Research and Review (WJRR)}
+      \field{number}{6}
+      \field{title}{A study on user interface and user experience designs and its tools}
+      \field{volume}{12}
+      \field{year}{2021}
+      \field{pages}{41\bibrangedash 45}
+      \range{pages}{5}
+    \endentry
+    \entry{sanchez2021open}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=a14d1f08ad33ca1a7f56a15f8733a044}{%
+           family={Sánchez\bibnamedelima Díez},
+           familyi={S\bibinitperiod\bibinitdelim D\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{659bee23bcf26952f24264fdb4eb34d1}
+      \strng{fullhash}{659bee23bcf26952f24264fdb4eb34d1}
+      \strng{fullhashraw}{659bee23bcf26952f24264fdb4eb34d1}
+      \strng{bibnamehash}{659bee23bcf26952f24264fdb4eb34d1}
+      \strng{authorbibnamehash}{659bee23bcf26952f24264fdb4eb34d1}
+      \strng{authornamehash}{659bee23bcf26952f24264fdb4eb34d1}
+      \strng{authorfullhash}{659bee23bcf26952f24264fdb4eb34d1}
+      \strng{authorfullhashraw}{659bee23bcf26952f24264fdb4eb34d1}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Open Trivia App: aplicación móvil multiplataforma para juegos basados en preguntas y respuestas}
+      \field{year}{2021}
+    \endentry
+    \entry{li2018jira}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=edac7c06d3e2bdec5df8a3a0d01fef94}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Packt Publishing Ltd}%
+      }
+      \strng{namehash}{edac7c06d3e2bdec5df8a3a0d01fef94}
+      \strng{fullhash}{edac7c06d3e2bdec5df8a3a0d01fef94}
+      \strng{fullhashraw}{edac7c06d3e2bdec5df8a3a0d01fef94}
+      \strng{bibnamehash}{edac7c06d3e2bdec5df8a3a0d01fef94}
+      \strng{authorbibnamehash}{edac7c06d3e2bdec5df8a3a0d01fef94}
+      \strng{authornamehash}{edac7c06d3e2bdec5df8a3a0d01fef94}
+      \strng{authorfullhash}{edac7c06d3e2bdec5df8a3a0d01fef94}
+      \strng{authorfullhashraw}{edac7c06d3e2bdec5df8a3a0d01fef94}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Jira Software Essentials: Plan, track, and release great applications with Jira Software}
+      \field{year}{2018}
+    \endentry
+    \entry{uttarwar2021literature}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=077e7fe9c068d146b0a88378b35ede9e}{%
+           family={Uttarwar},
+           familyi={U\bibinitperiod},
+           given={Pritee\bibnamedelima S},
+           giveni={P\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=d3da1f356eb3e4b1bf0cd31cf4a6b5fe}{%
+           family={Tidke},
+           familyi={T\bibinitperiod},
+           given={Rani\bibnamedelima P},
+           giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=f438cd4da719e655039756d9628b90dd}{%
+           family={Dandwate},
+           familyi={D\bibinitperiod},
+           given={Deepak\bibnamedelima S},
+           giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=561638d0e13006801380b751b47bac5f}{%
+           family={Tupe},
+           familyi={T\bibinitperiod},
+           given={Umesh\bibnamedelima J},
+           giveni={U\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{b9e5691fefacbcc5655a83982b8e8044}
+      \strng{fullhash}{36a2d72d09a302fdadf77348dd5975b5}
+      \strng{fullhashraw}{36a2d72d09a302fdadf77348dd5975b5}
+      \strng{bibnamehash}{36a2d72d09a302fdadf77348dd5975b5}
+      \strng{authorbibnamehash}{36a2d72d09a302fdadf77348dd5975b5}
+      \strng{authornamehash}{b9e5691fefacbcc5655a83982b8e8044}
+      \strng{authorfullhash}{36a2d72d09a302fdadf77348dd5975b5}
+      \strng{authorfullhashraw}{36a2d72d09a302fdadf77348dd5975b5}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Research Journal of Engineering and Technology}
+      \field{number}{1}
+      \field{title}{A literature review on android-a mobile operating system}
+      \field{volume}{8}
+      \field{year}{2021}
+      \field{pages}{1\bibrangedash 6}
+      \range{pages}{6}
+    \endentry
+    \entry{chaubey2023integrated}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=61d6ae1fa2314e524d7e6ce0c57452b3}{%
+           family={Chaubey},
+           familyi={C\bibinitperiod},
+           given={Chitrangada},
+           giveni={C\bibinitperiod}}}%
+        {{hash=7d740b3ec41d338da48aca11e03813e5}{%
+           family={Sharma},
+           familyi={S\bibinitperiod},
+           given={Anuska},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {AIP Publishing LLC}%
+      }
+      \strng{namehash}{2a0c1f80bf9bff33e75f9800eacdbb8c}
+      \strng{fullhash}{2a0c1f80bf9bff33e75f9800eacdbb8c}
+      \strng{fullhashraw}{2a0c1f80bf9bff33e75f9800eacdbb8c}
+      \strng{bibnamehash}{2a0c1f80bf9bff33e75f9800eacdbb8c}
+      \strng{authorbibnamehash}{2a0c1f80bf9bff33e75f9800eacdbb8c}
+      \strng{authornamehash}{2a0c1f80bf9bff33e75f9800eacdbb8c}
+      \strng{authorfullhash}{2a0c1f80bf9bff33e75f9800eacdbb8c}
+      \strng{authorfullhashraw}{2a0c1f80bf9bff33e75f9800eacdbb8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{AIP Conference Proceedings}
+      \field{number}{1}
+      \field{title}{The integrated development environment (IDE) for application development: Android studio and its tools}
+      \field{volume}{2427}
+      \field{year}{2023}
+      \field{pages}{020087}
+      \range{pages}{1}
+    \endentry
+    \entry{putranto2020comparative}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=7165d50dd759521076d25cae68f39fb8}{%
+           family={Putranto},
+           familyi={P\bibinitperiod},
+           given={Bambang\bibnamedelimb Purnomosidi\bibnamedelima Dwi},
+           giveni={B\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=251de1899627569bfc37855f012ad746}{%
+           family={Saptoto},
+           familyi={S\bibinitperiod},
+           given={Robertus},
+           giveni={R\bibinitperiod}}}%
+        {{hash=871c4a9654c9379507ffe8572e960ce4}{%
+           family={Jakaria},
+           familyi={J\bibinitperiod},
+           given={Ovandry\bibnamedelima Chandra},
+           giveni={O\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=ce58ea8e1e455ded937f48c1dfb2c25f}{%
+           family={Andriyani},
+           familyi={A\bibinitperiod},
+           given={Widyastuti},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{81b61508c03e18d961057c1a72e588e3}
+      \strng{fullhash}{fb148b615253a38457447c9e57f6c0ef}
+      \strng{fullhashraw}{fb148b615253a38457447c9e57f6c0ef}
+      \strng{bibnamehash}{fb148b615253a38457447c9e57f6c0ef}
+      \strng{authorbibnamehash}{fb148b615253a38457447c9e57f6c0ef}
+      \strng{authornamehash}{81b61508c03e18d961057c1a72e588e3}
+      \strng{authorfullhash}{fb148b615253a38457447c9e57f6c0ef}
+      \strng{authorfullhashraw}{fb148b615253a38457447c9e57f6c0ef}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2020 3rd International Seminar on Research of Information Technology and Intelligent Systems (ISRITI)}
+      \field{title}{A comparative study of java and kotlin for android mobile application development}
+      \field{year}{2020}
+      \field{pages}{383\bibrangedash 388}
+      \range{pages}{6}
+    \endentry
+    \entry{moskala2017android}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=f2ac4d714a1ec8f4ef6f65b772264d69}{%
+           family={Moskala},
+           familyi={M\bibinitperiod},
+           given={Marcin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=c324a5c1a83f4495323fb873438c4080}{%
+           family={Wojda},
+           familyi={W\bibinitperiod},
+           given={Igor},
+           giveni={I\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Packt Publishing Ltd}%
+      }
+      \strng{namehash}{23c77120828f6c515079617d83f24e28}
+      \strng{fullhash}{23c77120828f6c515079617d83f24e28}
+      \strng{fullhashraw}{23c77120828f6c515079617d83f24e28}
+      \strng{bibnamehash}{23c77120828f6c515079617d83f24e28}
+      \strng{authorbibnamehash}{23c77120828f6c515079617d83f24e28}
+      \strng{authornamehash}{23c77120828f6c515079617d83f24e28}
+      \strng{authorfullhash}{23c77120828f6c515079617d83f24e28}
+      \strng{authorfullhashraw}{23c77120828f6c515079617d83f24e28}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Android Development with Kotlin}
+      \field{year}{2017}
+    \endentry
+    \entry{kesa2021performance}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=5fd0ca00fef6fea1521a762449a616f1}{%
+           family={Kesa},
+           familyi={K\bibinitperiod},
+           given={Heikki},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{5fd0ca00fef6fea1521a762449a616f1}
+      \strng{fullhash}{5fd0ca00fef6fea1521a762449a616f1}
+      \strng{fullhashraw}{5fd0ca00fef6fea1521a762449a616f1}
+      \strng{bibnamehash}{5fd0ca00fef6fea1521a762449a616f1}
+      \strng{authorbibnamehash}{5fd0ca00fef6fea1521a762449a616f1}
+      \strng{authornamehash}{5fd0ca00fef6fea1521a762449a616f1}
+      \strng{authorfullhash}{5fd0ca00fef6fea1521a762449a616f1}
+      \strng{authorfullhashraw}{5fd0ca00fef6fea1521a762449a616f1}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Performance characteristics of current microservice frameworks}
+      \field{year}{2021}
+    \endentry
+    \entry{alasmar2025evaluating}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=4ec3d2f4c1b1fbcf97167c212781d506}{%
+           family={Alasmar},
+           familyi={A\bibinitperiod},
+           given={Israa},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{4ec3d2f4c1b1fbcf97167c212781d506}
+      \strng{fullhash}{4ec3d2f4c1b1fbcf97167c212781d506}
+      \strng{fullhashraw}{4ec3d2f4c1b1fbcf97167c212781d506}
+      \strng{bibnamehash}{4ec3d2f4c1b1fbcf97167c212781d506}
+      \strng{authorbibnamehash}{4ec3d2f4c1b1fbcf97167c212781d506}
+      \strng{authornamehash}{4ec3d2f4c1b1fbcf97167c212781d506}
+      \strng{authorfullhash}{4ec3d2f4c1b1fbcf97167c212781d506}
+      \strng{authorfullhashraw}{4ec3d2f4c1b1fbcf97167c212781d506}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Evaluating the performance of the Node. js frameworks Express, Fastify, and NestJS in modern cloud environments: A comparative analysis of scalability, efficiency, and suitability for high-demand applications in 2025}
+      \field{year}{2025}
+    \endentry
+    \entry{meier2019sql}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=c85850c63c930c4211bd1baa46598989}{%
+           family={Meier},
+           familyi={M\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=9d193ef606aaaf76bdda5c5a747a9f59}{%
+           family={Kaufmann},
+           familyi={K\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{e9cb0cceebc437cca15c29d94cf2455e}
+      \strng{fullhash}{e9cb0cceebc437cca15c29d94cf2455e}
+      \strng{fullhashraw}{e9cb0cceebc437cca15c29d94cf2455e}
+      \strng{bibnamehash}{e9cb0cceebc437cca15c29d94cf2455e}
+      \strng{authorbibnamehash}{e9cb0cceebc437cca15c29d94cf2455e}
+      \strng{authornamehash}{e9cb0cceebc437cca15c29d94cf2455e}
+      \strng{authorfullhash}{e9cb0cceebc437cca15c29d94cf2455e}
+      \strng{authorfullhashraw}{e9cb0cceebc437cca15c29d94cf2455e}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{SQL \& NoSQL databases}
+      \field{year}{2019}
+    \endentry
+    \entry{vellanki2025sql}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=534f0c5e50432ec69e4708c2115db0eb}{%
+           family={Vellanki},
+           familyi={V\bibinitperiod},
+           given={Ravi\bibnamedelima Babu},
+           giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \strng{namehash}{534f0c5e50432ec69e4708c2115db0eb}
+      \strng{fullhash}{534f0c5e50432ec69e4708c2115db0eb}
+      \strng{fullhashraw}{534f0c5e50432ec69e4708c2115db0eb}
+      \strng{bibnamehash}{534f0c5e50432ec69e4708c2115db0eb}
+      \strng{authorbibnamehash}{534f0c5e50432ec69e4708c2115db0eb}
+      \strng{authornamehash}{534f0c5e50432ec69e4708c2115db0eb}
+      \strng{authorfullhash}{534f0c5e50432ec69e4708c2115db0eb}
+      \strng{authorfullhashraw}{534f0c5e50432ec69e4708c2115db0eb}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Computer Science and Technology Studies}
+      \field{number}{6}
+      \field{title}{SQL Server Administration and Maintenance: Best Practices for Modern Environments}
+      \field{volume}{7}
+      \field{year}{2025}
+      \field{pages}{839\bibrangedash 848}
+      \range{pages}{10}
+    \endentry
+    \entry{stonebraker1986design}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=9a603143e19a2dddd58e683838417ea3}{%
+           family={Stonebraker},
+           familyi={S\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=087921725ffc793b07acd9087a0fc24b}{%
+           family={Rowe},
+           familyi={R\bibinitperiod},
+           given={Lawrence\bibnamedelima A},
+           giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ACM New York, NY, USA}%
+      }
+      \strng{namehash}{ed8460e18ab7418c150d19db5644f29c}
+      \strng{fullhash}{ed8460e18ab7418c150d19db5644f29c}
+      \strng{fullhashraw}{ed8460e18ab7418c150d19db5644f29c}
+      \strng{bibnamehash}{ed8460e18ab7418c150d19db5644f29c}
+      \strng{authorbibnamehash}{ed8460e18ab7418c150d19db5644f29c}
+      \strng{authornamehash}{ed8460e18ab7418c150d19db5644f29c}
+      \strng{authorfullhash}{ed8460e18ab7418c150d19db5644f29c}
+      \strng{authorfullhashraw}{ed8460e18ab7418c150d19db5644f29c}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ACM Sigmod Record}
+      \field{number}{2}
+      \field{title}{The design of Postgres}
+      \field{volume}{15}
+      \field{year}{1986}
+      \field{pages}{340\bibrangedash 355}
+      \range{pages}{16}
+    \endentry
+    \entry{bradshaw2019mongodb}{book}{}{}
+      \name{author}{3}{}{%
+        {{hash=73da16e749fc561cf8ce526572aba550}{%
+           family={Bradshaw},
+           familyi={B\bibinitperiod},
+           given={Shannon},
+           giveni={S\bibinitperiod}}}%
+        {{hash=90fc720c7588d60890f6972c6ee326db}{%
+           family={Brazil},
+           familyi={B\bibinitperiod},
+           given={Eoin},
+           giveni={E\bibinitperiod}}}%
+        {{hash=5307ab27e1d22a04e88f8bffc57c547a}{%
+           family={Chodorow},
+           familyi={C\bibinitperiod},
+           given={Kristina},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {" O'Reilly Media, Inc."}%
+      }
+      \strng{namehash}{3e32c3e65333b0b9ef67d99c959d8fa1}
+      \strng{fullhash}{fa6fb4dc3702fb85891ee5c84683c6b8}
+      \strng{fullhashraw}{fa6fb4dc3702fb85891ee5c84683c6b8}
+      \strng{bibnamehash}{fa6fb4dc3702fb85891ee5c84683c6b8}
+      \strng{authorbibnamehash}{fa6fb4dc3702fb85891ee5c84683c6b8}
+      \strng{authornamehash}{3e32c3e65333b0b9ef67d99c959d8fa1}
+      \strng{authorfullhash}{fa6fb4dc3702fb85891ee5c84683c6b8}
+      \strng{authorfullhashraw}{fa6fb4dc3702fb85891ee5c84683c6b8}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{MongoDB: the definitive guide: powerful and scalable data storage}
+      \field{year}{2019}
+    \endentry
+    \entry{loeliger2012version}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=796df46c31a6a51e18a1ab65954ae13b}{%
+           family={Loeliger},
+           familyi={L\bibinitperiod},
+           given={Jon},
+           giveni={J\bibinitperiod}}}%
+        {{hash=2d3edb1e97ce1a5679c681b3ceb27aa9}{%
+           family={McCullough},
+           familyi={M\bibinitperiod},
+           given={Matthew},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {" O'Reilly Media, Inc."}%
+      }
+      \strng{namehash}{6f6e1a840511606b68933edba4bfe4a8}
+      \strng{fullhash}{6f6e1a840511606b68933edba4bfe4a8}
+      \strng{fullhashraw}{6f6e1a840511606b68933edba4bfe4a8}
+      \strng{bibnamehash}{6f6e1a840511606b68933edba4bfe4a8}
+      \strng{authorbibnamehash}{6f6e1a840511606b68933edba4bfe4a8}
+      \strng{authornamehash}{6f6e1a840511606b68933edba4bfe4a8}
+      \strng{authorfullhash}{6f6e1a840511606b68933edba4bfe4a8}
+      \strng{authorfullhashraw}{6f6e1a840511606b68933edba4bfe4a8}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Version Control with Git: Powerful tools and techniques for collaborative software development}
+      \field{year}{2012}
+    \endentry
+    \entry{dabbish2012social}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=ee3652563ee1a2be2dd2a300df9eaba9}{%
+           family={Dabbish},
+           familyi={D\bibinitperiod},
+           given={Laura},
+           giveni={L\bibinitperiod}}}%
+        {{hash=770193e7566750bfb748744175747716}{%
+           family={Stuart},
+           familyi={S\bibinitperiod},
+           given={Colleen},
+           giveni={C\bibinitperiod}}}%
+        {{hash=8bb5c168eef58a8003337ca7a5c3b05d}{%
+           family={Tsay},
+           familyi={T\bibinitperiod},
+           given={Jason},
+           giveni={J\bibinitperiod}}}%
+        {{hash=7d892990203dccc5f8227d40ff4398f0}{%
+           family={Herbsleb},
+           familyi={H\bibinitperiod},
+           given={Jim},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{66fc616825744bb9e07368b8d40150be}
+      \strng{fullhash}{291dc0b9fe5ccd0f38ba02bcf1ae7186}
+      \strng{fullhashraw}{291dc0b9fe5ccd0f38ba02bcf1ae7186}
+      \strng{bibnamehash}{291dc0b9fe5ccd0f38ba02bcf1ae7186}
+      \strng{authorbibnamehash}{291dc0b9fe5ccd0f38ba02bcf1ae7186}
+      \strng{authornamehash}{66fc616825744bb9e07368b8d40150be}
+      \strng{authorfullhash}{291dc0b9fe5ccd0f38ba02bcf1ae7186}
+      \strng{authorfullhashraw}{291dc0b9fe5ccd0f38ba02bcf1ae7186}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the ACM 2012 conference on computer supported cooperative work}
+      \field{title}{Social coding in GitHub: transparency and collaboration in an open software repository}
+      \field{year}{2012}
+      \field{pages}{1277\bibrangedash 1286}
+      \range{pages}{10}
+    \endentry
+    \entry{chakraborty2022practical}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=b0e54d2c16d91f062669cd65685a1879}{%
+           family={Chakraborty},
+           familyi={C\bibinitperiod},
+           given={Sudip},
+           giveni={S\bibinitperiod}}}%
+        {{hash=f2a6b54ed8657fd2673574a49c6f23b3}{%
+           family={Aithal},
+           familyi={A\bibinitperiod},
+           given={PS},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{7596de9fdc648b009c6964d68d9285dc}
+      \strng{fullhash}{7596de9fdc648b009c6964d68d9285dc}
+      \strng{fullhashraw}{7596de9fdc648b009c6964d68d9285dc}
+      \strng{bibnamehash}{7596de9fdc648b009c6964d68d9285dc}
+      \strng{authorbibnamehash}{7596de9fdc648b009c6964d68d9285dc}
+      \strng{authornamehash}{7596de9fdc648b009c6964d68d9285dc}
+      \strng{authorfullhash}{7596de9fdc648b009c6964d68d9285dc}
+      \strng{authorfullhashraw}{7596de9fdc648b009c6964d68d9285dc}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Applied Engineering and Management Letters (IJAEML)}
+      \field{number}{2}
+      \field{title}{A practical approach to GIT using bitbucket, GitHub and SourceTree}
+      \field{volume}{6}
+      \field{year}{2022}
+      \field{pages}{254\bibrangedash 263}
+      \range{pages}{10}
+    \endentry
+    \entry{hethey2013gitlab}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=2d31750b5cf2bbb2a113de2d1adddc41}{%
+           family={Hethey},
+           familyi={H\bibinitperiod},
+           given={Jonathan\bibnamedelima M},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Packt Publishing}%
+      }
+      \strng{namehash}{2d31750b5cf2bbb2a113de2d1adddc41}
+      \strng{fullhash}{2d31750b5cf2bbb2a113de2d1adddc41}
+      \strng{fullhashraw}{2d31750b5cf2bbb2a113de2d1adddc41}
+      \strng{bibnamehash}{2d31750b5cf2bbb2a113de2d1adddc41}
+      \strng{authorbibnamehash}{2d31750b5cf2bbb2a113de2d1adddc41}
+      \strng{authornamehash}{2d31750b5cf2bbb2a113de2d1adddc41}
+      \strng{authorfullhash}{2d31750b5cf2bbb2a113de2d1adddc41}
+      \strng{authorfullhashraw}{2d31750b5cf2bbb2a113de2d1adddc41}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{GitLab repository management}
+      \field{year}{2013}
+    \endentry
+    \entry{duc2020developing}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=66c6d8fd11e5c9acbecc8d9b8532d285}{%
+           family={Duc},
+           familyi={D\bibinitperiod},
+           given={PA},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{66c6d8fd11e5c9acbecc8d9b8532d285}
+      \strng{fullhash}{66c6d8fd11e5c9acbecc8d9b8532d285}
+      \strng{fullhashraw}{66c6d8fd11e5c9acbecc8d9b8532d285}
+      \strng{bibnamehash}{66c6d8fd11e5c9acbecc8d9b8532d285}
+      \strng{authorbibnamehash}{66c6d8fd11e5c9acbecc8d9b8532d285}
+      \strng{authornamehash}{66c6d8fd11e5c9acbecc8d9b8532d285}
+      \strng{authorfullhash}{66c6d8fd11e5c9acbecc8d9b8532d285}
+      \strng{authorfullhashraw}{66c6d8fd11e5c9acbecc8d9b8532d285}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{DEVELOPING BACK-END OF A WEB APPLICATION WITH NESTJS FRAMEWORK Title of publication Developing back-end of a web application with NestJS framework Case: Integrify Oy’s student management system}
+      \field{year}{2020}
+    \endentry
+    \entry{aggarwal2018comparative}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=eb6a25edf174e221baeb6c2d8965486d}{%
+           family={Aggarwal},
+           familyi={A\bibinitperiod},
+           given={Sanchit},
+           giveni={S\bibinitperiod}}}%
+        {{hash=721889f2d5518696bd2b5a045814f2f6}{%
+           family={Verma},
+           familyi={V\bibinitperiod},
+           given={Jyoti},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{3a428a71d6d76783d61bce33e440dc52}
+      \strng{fullhash}{3a428a71d6d76783d61bce33e440dc52}
+      \strng{fullhashraw}{3a428a71d6d76783d61bce33e440dc52}
+      \strng{bibnamehash}{3a428a71d6d76783d61bce33e440dc52}
+      \strng{authorbibnamehash}{3a428a71d6d76783d61bce33e440dc52}
+      \strng{authornamehash}{3a428a71d6d76783d61bce33e440dc52}
+      \strng{authorfullhash}{3a428a71d6d76783d61bce33e440dc52}
+      \strng{authorfullhashraw}{3a428a71d6d76783d61bce33e440dc52}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Recent Research Aspects}
+      \field{number}{1}
+      \field{title}{Comparative analysis of MEAN stack and MERN stack.}
+      \field{volume}{5}
+      \field{year}{2018}
+    \endentry
+    \entry{cardozo2021fastrabbit}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=4e83abd266269a41cf3e4773f4271200}{%
+           family={Cardozo\bibnamedelima Guedes},
+           familyi={C\bibinitperiod\bibinitdelim G\bibinitperiod},
+           given={Igor},
+           giveni={I\bibinitperiod}}}%
+        {{hash=ec4e242e20f6aa3d038ed3357b3119dd}{%
+           family={Lauz\bibnamedelima Infantozzi},
+           familyi={L\bibinitperiod\bibinitdelim I\bibinitperiod},
+           given={Diego},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Universidad ORT Uruguay}%
+      }
+      \strng{namehash}{50e62f3502e39d15daf9babc2bea9207}
+      \strng{fullhash}{50e62f3502e39d15daf9babc2bea9207}
+      \strng{fullhashraw}{50e62f3502e39d15daf9babc2bea9207}
+      \strng{bibnamehash}{50e62f3502e39d15daf9babc2bea9207}
+      \strng{authorbibnamehash}{50e62f3502e39d15daf9babc2bea9207}
+      \strng{authornamehash}{50e62f3502e39d15daf9babc2bea9207}
+      \strng{authorfullhash}{50e62f3502e39d15daf9babc2bea9207}
+      \strng{authorfullhashraw}{50e62f3502e39d15daf9babc2bea9207}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{FastRabbit}
+      \field{year}{2021}
+    \endentry
+    \entry{gudelli2023containerization}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=1736b79746c1554e6ea44e176702c4bb}{%
+           family={Gudelli},
+           familyi={G\bibinitperiod},
+           given={Venkata\bibnamedelima Ramana},
+           giveni={V\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{1736b79746c1554e6ea44e176702c4bb}
+      \strng{fullhash}{1736b79746c1554e6ea44e176702c4bb}
+      \strng{fullhashraw}{1736b79746c1554e6ea44e176702c4bb}
+      \strng{bibnamehash}{1736b79746c1554e6ea44e176702c4bb}
+      \strng{authorbibnamehash}{1736b79746c1554e6ea44e176702c4bb}
+      \strng{authornamehash}{1736b79746c1554e6ea44e176702c4bb}
+      \strng{authorfullhash}{1736b79746c1554e6ea44e176702c4bb}
+      \strng{authorfullhashraw}{1736b79746c1554e6ea44e176702c4bb}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Innovative Research in Management, Pharmacy and Sciences (IJIRMPS)}
+      \field{number}{3}
+      \field{title}{Containerization technologies: ECR and Docker for microservices architecture}
+      \field{volume}{11}
+      \field{year}{2023}
+    \endentry
+    \entry{acharya2021docker}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=338c55d7821d47979e946327bda18939}{%
+           family={Acharya},
+           familyi={A\bibinitperiod},
+           given={Jigna\bibnamedelima N},
+           giveni={J\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=6638c3e2dc7ce09537449ae17023ae51}{%
+           family={Suthar},
+           familyi={S\bibinitperiod},
+           given={Anil\bibnamedelima C},
+           giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{247bac3fab7aa3a8ebac9e45e428b83a}
+      \strng{fullhash}{247bac3fab7aa3a8ebac9e45e428b83a}
+      \strng{fullhashraw}{247bac3fab7aa3a8ebac9e45e428b83a}
+      \strng{bibnamehash}{247bac3fab7aa3a8ebac9e45e428b83a}
+      \strng{authorbibnamehash}{247bac3fab7aa3a8ebac9e45e428b83a}
+      \strng{authornamehash}{247bac3fab7aa3a8ebac9e45e428b83a}
+      \strng{authorfullhash}{247bac3fab7aa3a8ebac9e45e428b83a}
+      \strng{authorfullhashraw}{247bac3fab7aa3a8ebac9e45e428b83a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{International Conference on Intelligent Vision and Computing}
+      \field{title}{Docker container orchestration management: A review}
+      \field{year}{2021}
+      \field{pages}{140\bibrangedash 153}
+      \range{pages}{14}
+    \endentry
+    \entry{erdenebat2023multi}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=30cfde5424da8e8e3be74f4838efb8f4}{%
+           family={Erdenebat},
+           familyi={E\bibinitperiod},
+           given={Baasanjargal},
+           giveni={B\bibinitperiod}}}%
+        {{hash=d92d33289b0246c7db71df219ee57b10}{%
+           family={Bud},
+           familyi={B\bibinitperiod},
+           given={Bayarjargal},
+           giveni={B\bibinitperiod}}}%
+        {{hash=aff8822d544d6dffb1834582d9d0d3f7}{%
+           family={Batsuren},
+           familyi={B\bibinitperiod},
+           given={Temuulen},
+           giveni={T\bibinitperiod}}}%
+        {{hash=e6c142b0621fa1514f03a2a6ea98bd9e}{%
+           family={Kozsik},
+           familyi={K\bibinitperiod},
+           given={Tamás},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {MDPI}%
+      }
+      \strng{namehash}{5c413fd4981d71cb18617be5e070c96d}
+      \strng{fullhash}{8c2f45003e15b199c2083210e2cb7ae5}
+      \strng{fullhashraw}{8c2f45003e15b199c2083210e2cb7ae5}
+      \strng{bibnamehash}{8c2f45003e15b199c2083210e2cb7ae5}
+      \strng{authorbibnamehash}{8c2f45003e15b199c2083210e2cb7ae5}
+      \strng{authornamehash}{5c413fd4981d71cb18617be5e070c96d}
+      \strng{authorfullhash}{8c2f45003e15b199c2083210e2cb7ae5}
+      \strng{authorfullhashraw}{8c2f45003e15b199c2083210e2cb7ae5}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computers}
+      \field{number}{12}
+      \field{title}{Multi-Project Multi-Environment Approach—An Enhancement to Existing DevOps and Continuous Integration and Continuous Deployment Tools}
+      \field{volume}{12}
+      \field{year}{2023}
+      \field{pages}{254}
+      \range{pages}{1}
+    \endentry
+    \entry{johnson2019visual}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=f610088bcf541371985069030e0eb116}{%
+           family={Johnson},
+           familyi={J\bibinitperiod},
+           given={Bruce},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {John Wiley \& Sons}%
+      }
+      \strng{namehash}{f610088bcf541371985069030e0eb116}
+      \strng{fullhash}{f610088bcf541371985069030e0eb116}
+      \strng{fullhashraw}{f610088bcf541371985069030e0eb116}
+      \strng{bibnamehash}{f610088bcf541371985069030e0eb116}
+      \strng{authorbibnamehash}{f610088bcf541371985069030e0eb116}
+      \strng{authornamehash}{f610088bcf541371985069030e0eb116}
+      \strng{authorfullhash}{f610088bcf541371985069030e0eb116}
+      \strng{authorfullhashraw}{f610088bcf541371985069030e0eb116}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Visual studio code: End-to-end editing and debugging tools for web developers}
+      \field{year}{2019}
+    \endentry
+    \entry{al2017elasticity}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=9e9a8050df46fa931510b9b55a4b7400}{%
+           family={Al-Dhuraibi},
+           familyi={A\bibinithyphendelim D\bibinitperiod},
+           given={Yahya},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=60002eecf9e98788757b2a26d3d517ba}{%
+           family={Paraiso},
+           familyi={P\bibinitperiod},
+           given={Fawaz},
+           giveni={F\bibinitperiod}}}%
+        {{hash=c77dc16a824aac9b05cfa635905d352e}{%
+           family={Djarallah},
+           familyi={D\bibinitperiod},
+           given={Nabil},
+           giveni={N\bibinitperiod}}}%
+        {{hash=b92b9e53119e93213743d576aba0e0a0}{%
+           family={Merle},
+           familyi={M\bibinitperiod},
+           given={Philippe},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{6e072bbde2379d0ee82947f8bc7ec960}
+      \strng{fullhash}{e84bd3ee89a2ed7e22847f55b2277fac}
+      \strng{fullhashraw}{e84bd3ee89a2ed7e22847f55b2277fac}
+      \strng{bibnamehash}{e84bd3ee89a2ed7e22847f55b2277fac}
+      \strng{authorbibnamehash}{e84bd3ee89a2ed7e22847f55b2277fac}
+      \strng{authornamehash}{6e072bbde2379d0ee82947f8bc7ec960}
+      \strng{authorfullhash}{e84bd3ee89a2ed7e22847f55b2277fac}
+      \strng{authorfullhashraw}{e84bd3ee89a2ed7e22847f55b2277fac}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on services computing}
+      \field{number}{2}
+      \field{title}{Elasticity in cloud computing: state of the art and research challenges}
+      \field{volume}{11}
+      \field{year}{2017}
+      \field{pages}{430\bibrangedash 447}
+      \range{pages}{18}
+    \endentry
+    \entry{kopka2004guide}{book}{}{}
+      \name{author}{3}{}{%
+        {{hash=7ad513520366785f926861843001ed4e}{%
+           family={Kopka},
+           familyi={K\bibinitperiod},
+           given={Helmut},
+           giveni={H\bibinitperiod}}}%
+        {{hash=8d668f2ff08c48a82cff87c087cdf12e}{%
+           family={Daly},
+           familyi={D\bibinitperiod},
+           given={Patrick\bibnamedelima W},
+           giveni={P\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=1bfe53fe4b0c23b779d60bc5919cf50b}{%
+           family={Rahtz},
+           familyi={R\bibinitperiod},
+           given={SPQ},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley Boston, MA}%
+      }
+      \strng{namehash}{c65b7ff37e8bc033778dedb9f4d67c7a}
+      \strng{fullhash}{16c295c11e788a6350c0efc5c038a88b}
+      \strng{fullhashraw}{16c295c11e788a6350c0efc5c038a88b}
+      \strng{bibnamehash}{16c295c11e788a6350c0efc5c038a88b}
+      \strng{authorbibnamehash}{16c295c11e788a6350c0efc5c038a88b}
+      \strng{authornamehash}{c65b7ff37e8bc033778dedb9f4d67c7a}
+      \strng{authorfullhash}{16c295c11e788a6350c0efc5c038a88b}
+      \strng{authorfullhashraw}{16c295c11e788a6350c0efc5c038a88b}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Guide to LATEX}
+      \field{volume}{4}
+      \field{year}{2004}
+      \true{nocite}
+    \endentry
+    \entry{lamport1991latex}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=5d77435450d10a850a5b58577b9a456b}{%
+           family={Lamport},
+           familyi={L\bibinitperiod},
+           given={Leslie},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ŚCompany Cyfronet}%
+      }
+      \strng{namehash}{5d77435450d10a850a5b58577b9a456b}
+      \strng{fullhash}{5d77435450d10a850a5b58577b9a456b}
+      \strng{fullhashraw}{5d77435450d10a850a5b58577b9a456b}
+      \strng{bibnamehash}{5d77435450d10a850a5b58577b9a456b}
+      \strng{authorbibnamehash}{5d77435450d10a850a5b58577b9a456b}
+      \strng{authornamehash}{5d77435450d10a850a5b58577b9a456b}
+      \strng{authorfullhash}{5d77435450d10a850a5b58577b9a456b}
+      \strng{authorfullhashraw}{5d77435450d10a850a5b58577b9a456b}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{LaTeX}
+      \field{year}{1991}
+      \true{nocite}
+    \endentry
+    \entry{mittelbach2004latex}{book}{}{}
+      \name{author}{5}{}{%
+        {{hash=9355edd511e3f6fdd880ee98722a53fb}{%
+           family={Mittelbach},
+           familyi={M\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod}}}%
+        {{hash=0743efb276e9219ee664a9b3dbd60619}{%
+           family={Goossens},
+           familyi={G\bibinitperiod},
+           given={Michel},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d52f183a29af96d48695b8bea23e66e1}{%
+           family={Braams},
+           familyi={B\bibinitperiod},
+           given={Johannes},
+           giveni={J\bibinitperiod}}}%
+        {{hash=3094f4812cc660f7320fd1ab3d3da906}{%
+           family={Carlisle},
+           familyi={C\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=0907be26d21af9e9c3820d51f421fe33}{%
+           family={Rowley},
+           familyi={R\bibinitperiod},
+           given={Chris},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley Professional}%
+      }
+      \strng{namehash}{f6d3f5d3a9cc39507a7ff2f9963883dc}
+      \strng{fullhash}{81b7ecc7e76086895ab856756307e8bc}
+      \strng{fullhashraw}{81b7ecc7e76086895ab856756307e8bc}
+      \strng{bibnamehash}{81b7ecc7e76086895ab856756307e8bc}
+      \strng{authorbibnamehash}{81b7ecc7e76086895ab856756307e8bc}
+      \strng{authornamehash}{f6d3f5d3a9cc39507a7ff2f9963883dc}
+      \strng{authorfullhash}{81b7ecc7e76086895ab856756307e8bc}
+      \strng{authorfullhashraw}{81b7ecc7e76086895ab856756307e8bc}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The LATEX companion}
+      \field{year}{2004}
+      \true{nocite}
+    \endentry
+    \entry{wonohardjo2019systematic}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=2e4cb0988c07d856fe922b5a29441e74}{%
+           family={Wonohardjo},
+           familyi={W\bibinitperiod},
+           given={Eduard\bibnamedelima Pangestu},
+           giveni={E\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=8611abeabc887b03bff80260a64c216f}{%
+           family={Sunaryo},
+           familyi={S\bibinitperiod},
+           given={Rizky\bibnamedelima Febriyanto},
+           giveni={R\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=91281fbfff7ca74b21eb3b0e565b102f}{%
+           family={Sudiyono},
+           familyi={S\bibinitperiod},
+           given={Yusuf},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{5dc60b5efe2a458b87777a4c0eccccde}
+      \strng{fullhash}{c540d5c4c70d90c1fe9bf13b082f8eb2}
+      \strng{fullhashraw}{c540d5c4c70d90c1fe9bf13b082f8eb2}
+      \strng{bibnamehash}{c540d5c4c70d90c1fe9bf13b082f8eb2}
+      \strng{authorbibnamehash}{c540d5c4c70d90c1fe9bf13b082f8eb2}
+      \strng{authornamehash}{5dc60b5efe2a458b87777a4c0eccccde}
+      \strng{authorfullhash}{c540d5c4c70d90c1fe9bf13b082f8eb2}
+      \strng{authorfullhashraw}{c540d5c4c70d90c1fe9bf13b082f8eb2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{JOIV: International Journal on Informatics Visualization}
+      \field{number}{2}
+      \field{title}{A systematic review of SCRUM in software development}
+      \field{volume}{3}
+      \field{year}{2019}
+      \true{nocite}
+      \field{pages}{108\bibrangedash 112}
+      \range{pages}{5}
+    \endentry
+    \entry{zayat2020framework}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=c18fc94f149ad4e763299cf916f51863}{%
+           family={Zayat},
+           familyi={Z\bibinitperiod},
+           given={Wael},
+           giveni={W\bibinitperiod}}}%
+        {{hash=58ec2cee412feedddc30cff64bb7a437}{%
+           family={Senvar},
+           familyi={S\bibinitperiod},
+           given={Ozlem},
+           giveni={O\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {World Scientific}%
+      }
+      \strng{namehash}{6178cd0665b144fa2c2be919ed18e9e3}
+      \strng{fullhash}{6178cd0665b144fa2c2be919ed18e9e3}
+      \strng{fullhashraw}{6178cd0665b144fa2c2be919ed18e9e3}
+      \strng{bibnamehash}{6178cd0665b144fa2c2be919ed18e9e3}
+      \strng{authorbibnamehash}{6178cd0665b144fa2c2be919ed18e9e3}
+      \strng{authornamehash}{6178cd0665b144fa2c2be919ed18e9e3}
+      \strng{authorfullhash}{6178cd0665b144fa2c2be919ed18e9e3}
+      \strng{authorfullhashraw}{6178cd0665b144fa2c2be919ed18e9e3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International journal of innovation and technology management}
+      \field{number}{04}
+      \field{title}{Framework study for agile software development via scrum and Kanban}
+      \field{volume}{17}
+      \field{year}{2020}
+      \true{nocite}
+      \field{pages}{2030002}
+      \range{pages}{1}
+    \endentry
+    \entry{kanade2025agile}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=efc1e5537ed23229d3da62498faacdef}{%
+           family={Kanade},
+           familyi={K\bibinitperiod},
+           given={Tarun\bibnamedelima Madan},
+           giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=4242f8256dc2fceb303e90c73384655c}{%
+           family={Crasto},
+           familyi={C\bibinitperiod},
+           given={Cyril},
+           giveni={C\bibinitperiod}}}%
+        {{hash=3f2668363cb68d2eb33077ab26e783e8}{%
+           family={Patel},
+           familyi={P\bibinitperiod},
+           given={Snehal},
+           giveni={S\bibinitperiod}}}%
+        {{hash=c1e2bd0f35a45f84cce0adacb4d62077}{%
+           family={Wanjare},
+           familyi={W\bibinitperiod},
+           given={Hemant},
+           giveni={H\bibinitperiod}}}%
+        {{hash=c1b0160ca155d9b26faf7504d2382a2b}{%
+           family={Savale},
+           familyi={S\bibinitperiod},
+           given={Tushar},
+           giveni={T\bibinitperiod}}}%
+        {{hash=d2fb0977a156b3dfc02b1ca34afaef12}{%
+           family={Varghese},
+           familyi={V\bibinitperiod},
+           given={Ashima},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{af56c33d23d629e18786d38057537edb}
+      \strng{fullhash}{a4484631a0292f9faa03e26d08193152}
+      \strng{fullhashraw}{a4484631a0292f9faa03e26d08193152}
+      \strng{bibnamehash}{a4484631a0292f9faa03e26d08193152}
+      \strng{authorbibnamehash}{a4484631a0292f9faa03e26d08193152}
+      \strng{authornamehash}{af56c33d23d629e18786d38057537edb}
+      \strng{authorfullhash}{a4484631a0292f9faa03e26d08193152}
+      \strng{authorfullhashraw}{a4484631a0292f9faa03e26d08193152}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Insurance Law Review}
+      \field{number}{S4}
+      \field{title}{Agile Change Management: Navigating Uncertainty and Complexity}
+      \field{volume}{33}
+      \field{year}{2025}
+      \true{nocite}
+      \field{pages}{127\bibrangedash 142}
+      \range{pages}{16}
+    \endentry
+    \entry{kaur2022systematic}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=42095171aab13fee3de51ab59c40b514}{%
+           family={Kaur},
+           familyi={K\bibinitperiod},
+           given={Anureet},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a5fc545c999a16e69a702d8af8c23ce4}{%
+           family={Kaur},
+           familyi={K\bibinitperiod},
+           given={Kulwant},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{df244007dbfb9025dbee4f6717fb2a32}
+      \strng{fullhash}{df244007dbfb9025dbee4f6717fb2a32}
+      \strng{fullhashraw}{df244007dbfb9025dbee4f6717fb2a32}
+      \strng{bibnamehash}{df244007dbfb9025dbee4f6717fb2a32}
+      \strng{authorbibnamehash}{df244007dbfb9025dbee4f6717fb2a32}
+      \strng{authornamehash}{df244007dbfb9025dbee4f6717fb2a32}
+      \strng{authorfullhash}{df244007dbfb9025dbee4f6717fb2a32}
+      \strng{authorfullhashraw}{df244007dbfb9025dbee4f6717fb2a32}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of King Saud University-Computer and Information Sciences}
+      \field{number}{2}
+      \field{title}{Systematic literature review of mobile application development and testing effort estimation}
+      \field{volume}{34}
+      \field{year}{2022}
+      \true{nocite}
+      \field{pages}{1\bibrangedash 15}
+      \range{pages}{15}
+    \endentry
+    \entry{lauber2024designing}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=892120a813c95ebd6b71ae372ee090d1}{%
+           family={Lauber},
+           familyi={L\bibinitperiod},
+           given={Vincent\bibnamedelima Georg},
+           giveni={V\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {University of Bamberg Press}%
+      }
+      \strng{namehash}{892120a813c95ebd6b71ae372ee090d1}
+      \strng{fullhash}{892120a813c95ebd6b71ae372ee090d1}
+      \strng{fullhashraw}{892120a813c95ebd6b71ae372ee090d1}
+      \strng{bibnamehash}{892120a813c95ebd6b71ae372ee090d1}
+      \strng{authorbibnamehash}{892120a813c95ebd6b71ae372ee090d1}
+      \strng{authornamehash}{892120a813c95ebd6b71ae372ee090d1}
+      \strng{authorfullhash}{892120a813c95ebd6b71ae372ee090d1}
+      \strng{authorfullhashraw}{892120a813c95ebd6b71ae372ee090d1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Designing Complex Software Architecture: Guidelines on Pattern Selection and Microservice Identification Methods}
+      \field{volume}{44}
+      \field{year}{2024}
+      \true{nocite}
+    \endentry
+    \entry{kathuria2015challenges}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=12c69c2cc405ba0e5beb2f2fc6d9b601}{%
+           family={Kathuria},
+           familyi={K\bibinitperiod},
+           given={Abhinav},
+           giveni={A\bibinitperiod}}}%
+        {{hash=787c3d44c255c9fd126ee2b2a868bac8}{%
+           family={Gupta},
+           familyi={G\bibinitperiod},
+           given={Anu},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{3fed47e36bfeed53ddf78c6ff1da1a0c}
+      \strng{fullhash}{3fed47e36bfeed53ddf78c6ff1da1a0c}
+      \strng{fullhashraw}{3fed47e36bfeed53ddf78c6ff1da1a0c}
+      \strng{bibnamehash}{3fed47e36bfeed53ddf78c6ff1da1a0c}
+      \strng{authorbibnamehash}{3fed47e36bfeed53ddf78c6ff1da1a0c}
+      \strng{authornamehash}{3fed47e36bfeed53ddf78c6ff1da1a0c}
+      \strng{authorfullhash}{3fed47e36bfeed53ddf78c6ff1da1a0c}
+      \strng{authorfullhashraw}{3fed47e36bfeed53ddf78c6ff1da1a0c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of computer science and mobile computing}
+      \field{number}{5}
+      \field{title}{Challenges in android application development: a case study}
+      \field{volume}{4}
+      \field{year}{2015}
+      \true{nocite}
+      \field{pages}{294\bibrangedash 299}
+      \range{pages}{6}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

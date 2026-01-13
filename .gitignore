@@ -1,0 +1,61 @@
+# LaTeX temporary files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.maf
+*.mtc
+*.mtc0
+*.mtc1
+*.mtc2
+*.mtc3
+*.mtc4
+*.mtc5
+*.mtc6
+*.mtc7
+*.run.xml
+*.toc
+
+# LaTeX output
+*.pdf
+*.dvi
+*.ps
+
+# LaTeX intermediate files
+*.log
+*.out
+*.synctex.gz
+*.synctex
+*.fls
+*.ilg
+*.ind
+*.idx
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS files
+Thumbs.db
+.directory
+
+# Node modules (if using any build tools)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Snyk Security Extension - AI Rules (auto-generated)
+.github/instructions/snyk_rules.instructions.md

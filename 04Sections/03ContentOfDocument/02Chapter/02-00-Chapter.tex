@@ -1,0 +1,515 @@
+El Módulo de Ruteo Seguro busca la optimización de rutas variables haciendo uso de variables de inseguridad ciudadana, por lo cual se optó por un enfoque de investigación aplicada estructurado bajo el marco de trabajo ágil Scrum. En esta sección se describe el proceso de desarrollo organizado en fases iterativas, desde la exploración y planificación hasta la implementación y despliegue, de manera que se asegura la entrega incremental de valor al usuario final.
+
+\section{Fase Exploratoria}
+En esta etapa se lleva a cabo la identificación y caracterización de los actores clave que intervienen directa e indirectamente en el sistema, asegurando que las funcionalidades de navegación y seguridad preventiva respondan a necesidades reales.
+
+\subsection{Stakeholders}
+Para el desarrollo del módulo es fundamental identificar a las partes interesadas que interactúan directa o indirectamente con el sistema mediante la correcta identificación de sus roles y necesidades permite alinear los requerimientos del algoritmo de ruteo y la interfaz móvil con las expectativas reales de uso y supervisión académica en la Tabla ~\ref{tab:stakeholders} se describe a los stakeholders principales. 
+
+\begin{table}[H]
+\caption{Partes Interesadas (Stakeholders)}
+\label{tab:stakeholders}
+\centering
+\begin{tabular}{|c|p{3cm}|p{3.5cm}|p{7cm}|}
+\hline
+\textbf{ID} & \textbf{Stakeholder} & \textbf{Persona/Grupo Asignado} & \textbf{Descripción} \\ \hline
+
+S1 & Ciudadano (Usuario Final) & Ciudadanía de Quito (Jóvenes y adultos) & 
+Usuarios que interactúan con la aplicación móvil para solicitar y visualizar rutas seguras. \\ \hline
+
+S2 & Director del Proyecto & Dr. Víctor Vicente Velepucha Bonett & 
+Responsable de supervisar el rigor académico y técnico del proyecto, validando que el motor de ruteo y la arquitectura se cumplan. \\ \hline
+
+S3 & Desarrollador & Erick Sebastián Ballas Paguay & 
+Responsable del diseño, construcción e implementación del Módulo de Ruteo Seguro. \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{Planificación del proyecto}
+
+Para el desarrollo módulo, se ha planificado y estructurado una carga de trabajo de 288 horas, la cual se visualiza en la Figura \ref{fig:Cronograma}. Estas horas se disbruyen en la investigación preliminar, el diseño arquitectónico, la implementación del código, y la ejecución de pruebas. Cada fase ha sido distribuida de forma progresiva e incremental, garantizando que las actividades técnicas y las tareas organizativas se complementen eficientemente, lo cual permite mitigar riesgos y asegurar la viabilidad técnica del módulo en los plazos establecidos.
+
+En la etapa inicial, el cronograma prioriza una fase de investigación, esencial para establecer la arquitectura que soportará el sistema y la forma en la que se graficara la ruta. Posteriormente, para el cumplimiento del cronograma se inicia con la estructuración de la base de datos, continuando con la implementación de la lógica de negocio en el motor de ruteo y finalizando con la integración de la interfaz móvil para el usuario final. De igual manera a estas actividades de desarrollo, se incorporan las reuniones del marco de trabajo Scrum, tales como las reuniones diarias de seguimiento y las revisiones de Sprint. Asegurando un monitoreo continuo del progreso y permitiendo ajustes tempranos. Por último el proceso finaliza con una fase de validación funcional y pruebas de usabilidad que certifican la calidad y estabilidad del entregable final.
+\begin{figure}[htbp]
+    \centering  
+    \includegraphics[width=0.9\textwidth]{../02Figures/02Chapter/Cronograma.png}
+    \caption{Cronograma de actividades del proyecto}
+    \label{fig:Cronograma}
+\end{figure}
+
+Por otro lado, para la gestión ágil del proyecto, se han definido los roles fundamentales para el marco de trabajo Scrum. La Tabla ~\ref{tab:roles-scrum} detalla la asignación de responsabilidades, donde el Dr. Víctor Velepucha asume los roles de dirección y gestión del producto de manera que se garantiza la implementación buena prácticas de Scrum, mientras que el desarrollo técnico es ejecutado por el equipo de estudiantes, con responsabilidades específicas en cada módulo, realizando los incrementos para cada una de las actividades definidas.
+
+\begin{table}[H]
+\caption{Roles y responsabilidades del marco Scrum en el proyecto.}
+\label{tab:roles-scrum}
+\centering
+\begin{tabular}{|p{3cm}|p{4cm}|p{7cm}|}
+\hline
+\textbf{Rol de Scrum} & \textbf{Persona Asignada} & \textbf{Responsabilidad Principal} \\ \hline
+
+\textbf{Scrum Master} 
+& Dr. Víctor Vicente Velepucha Bonett 
+& Facilitador del proceso, asegurando la eliminación de impedimentos técnicos y la correcta aplicación de la metodología ágil. \\ \hline
+
+\textbf{Product Owner} 
+& Dr. Víctor Vicente Velepucha Bonett 
+& Responsable de validar que las funcionalidades del motor de ruteo cumplan con los objetivos de seguridad preventiva y aporten valor al usuario final. \\ \hline
+
+\textbf{Scrum Team} 
+& Erick Ballas, Johan Baño, Luis Rocha 
+& Equipo de desarrollo multifuncional encargado de la construcción de los módulos. Específicamente, \textbf{Erick Ballas} lidera la implementación técnica del Módulo de Ruteo Seguro. \\ \hline
+
+\end{tabular}
+\end{table}
+
+\section{Fase Exploratoria}
+
+Esta etapa incluye la configuración del entorno técnico y la especificación minuciosa de los requisitos funcionales del sistema. Se definen las herramientas de desarrollo, se instalan los servicios en la nube y el Product Backlog se establece al traducir los requerimientos de los interesados en historias de usuario que son valoradas y ordenadas por prioridad.
+
+\subsection{Herramientas y Entorno de Trabajo}
+A continuación en la Tabla \ref{tab:herramientas-tecnologias} se describen brevemente las herramientas y tecnologías seleccionadas para el desarrollo del módulo, asegurando su integración adecuada en la arquitectura de microservicios. La decisión de este stack tecnológico se debe a la necesidad de garantizar una disponibilidad alta y de procesar datos geográficos. 
+
+\begin{table}[H]
+\caption{Herramientas y tecnologías utilizadas en el desarrollo del sistema.}
+\label{tab:herramientas-tecnologias}
+\centering
+\begin{tabular}{|p{3.5cm}|p{4cm}|p{7cm}|}
+\hline
+\textbf{Categoría} & \textbf{Herramienta / Tecnología} & \textbf{Justificación Técnica} \\ \hline
+
+\textbf{Gestión y Diseño} 
+& Jira
+& Esta herramienta se utiliza para la gestión de las historias de usuario y seguimiento de los Sprints. \\ \cline{2-3}
+
+& Figma 
+& Se utiliza para el prototipado de las interfaces de usuario y definición de flujos de navegación. \\ \hline
+
+\textbf{Desarrollo (IDEs)} 
+& Android Studio 
+& Esta herramieta es fundamental para el desarrollo nativo en \textbf{Kotlin}, fundamental para la integración de SDKs de mapas. \\ \cline{2-3}
+
+& Visual Studio Code 
+& Mediante este editor de código se realiza el desarrollo del backend en \textbf{NestJS} dado a su facilidad de integración y la compatibilidad con múltiples lenguajes \cite{johnson2019visual}. \\ \hline
+
+\textbf{Control de Versiones} 
+& Git / GitHub 
+& Para el control de versiones se hace uso de la estrategia \textit{Gitflow} para la gestión de ramas (develop, main)\cite{loeliger2012version}. \\ \hline
+
+\textbf{Backend \& API} 
+& NestJS
+& Mediante este framework se realizara la construcción de microservicios eficientes en el servidor. \\ \hline
+
+\textbf{Base de Datos} 
+& SQL Server 
+& Este es el motor de base de datos relacional seleccionado por su robusto soporte de \textit{datos espaciales}, esenciales para el algoritmo de ruteo. \\ \hline
+
+\textbf{Infraestructura} 
+& Azure App Service 
+& Servicio PaaS para alojar y escalar \cite{al2017elasticity}.\\ \hline
+
+\end{tabular}
+\end{table}
+
+\subsection{Definición de requerimientos}
+
+Para la definición de los requerimientos correspondientes del módulo se estructuró a partir de historias de usuario, en donde primero se redactaron las épicas de usuario dando como prioridad a las funcionalidades de alto nivel. Una vez definidas las épicas, se distribuyeron en historias de usuario más detalladas y pequeñas para el Product Backlog con su respectivo desarrollo en los Sprints planificados.
+
+\subsubsection{Historias Épicas de usuario}
+
+En esta sección se describen las épicas de usuario que abarcan la gestión de datos, el motor de ruteo y la interacción visual con el usuario. En la Tabla \ref{tab:epicas-usuario} se detallan con una breve descripción de cada una de ellas y a su vez las historias de usuario asociadas.
+
+\begin{table}[H]
+\caption{Definición de épicas y sus historias de usuario asociadas}
+\label{tab:epicas-usuario}
+\centering
+\begin{tabular}{|p{1.5cm}|p{3cm}|p{5cm}|p{4cm}|}
+\hline
+\textbf{Código} & \textbf{Épica} & \textbf{Descripción} & \textbf{Historias Usuario Asociadas} \\ \hline
+
+\textbf{E-01} 
+& Gestión del Grafo Vial y Riesgo 
+& Se define las labores de backend y de base de datos que son requeridos, de manera que se permita actualizar los pesos de las aristas (calles) a partir de incidentes relacionados con la seguridad. 
+& HU-04, HU-06 \\ \hline
+
+\textbf{E-02} 
+& Motor de Cálculo de Rutas 
+& Organiza la lógica de negocio para implementar los algoritmos de búsqueda que manejan la solicitud y la creación del recorrido. 
+& HU-02, HU-05 \\ \hline
+
+\textbf{E-03} 
+& Visualización y Navegación Móvil 
+& Desarrollo de la interfaz del usuario, dando la posibilidad que el usuario interactúe con el mapa, seleccione puntos y visualice las rutas. 
+& HU-01, HU-03 \\ \hline
+
+\end{tabular}
+\end{table}
+
+Una vez definidas las épicas de usuario, se presentan su desglose en las tareas específicas para cada historia dando la descripción de cada una, con sus criterios de aceptación y su respectiva prioridad. El detalle mencionado de las historias de usuario se visualizaran en las Tablas \ref{tab:historias-usuario-1}, \ref{tab:historias-usuario-2},\ref{tab:historias-usuario-3},\ref{tab:historias-usuario-4}, \ref{tab:historias-usuario-5} y \ref{tab:historias-usuario-6}.
+
+\begin{table}[H]
+\caption{Historia de Usuario HU-01: Selección de Origen y Destino.}
+\label{tab:historias-usuario-1}
+\centering
+\begin{tabular}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Código} & HU-01 \\ \hline
+\textbf{Nombre} & Selección de Origen y Destino \\ \hline
+\textbf{Prioridad} & Alta \\ \hline
+\textbf{Estimación} & 5 Puntos \\ \hline
+\textbf{Descripción} &
+Como usuario, quiero poder seleccionar mi ubicación actual y un punto de destino mediante una barra de búsqueda o tocando el mapa, para iniciar la solicitud de una ruta. \\ \hline
+\textbf{Criterios de Aceptación} &
+1. Integrar el SDK de mapas permitiendo gestos táctiles. \newline
+2. Debe existir un autocompletado de direcciones básicas. \newline
+3. El sistema debe capturar las coordenadas (latitud y longitud) de ambos puntos. \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\caption{Historia de Usuario HU-02: Cálculo de Ruta Segura.}
+\label{tab:historias-usuario-2}
+\centering
+\begin{tabular}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Código} & HU-02 \\ \hline
+\textbf{Nombre} & Cálculo de Ruta Segura \\ \hline
+\textbf{Prioridad} & Alta \\ \hline
+\textbf{Estimación} & 8 Puntos \\ \hline
+\textbf{Descripción} &
+Como usuario, quiero que el sistema calcule una ruta que priorice calles con menor índice de criminalidad, evitando zonas con altos reportes de incidentes. \\ \hline
+\textbf{Criterios de Aceptación} &
+1. El servicio debe recibir el par de coordenadas. \newline
+2. El algoritmo debe consultar a la base de datos y utilizar el indice de criminalidad para el peso de las aristas. \newline
+3. El sistema debe retornar un archivo con la ruta y el tiempo estimado. \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Historia de Usuario HU-03: Visualización de Trayecto.}
+\label{tab:historias-usuario-3}
+\centering
+\begin{tabular}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Código} & HU-03 \\ \hline
+\textbf{Nombre} & Visualización de Trayecto en Mapa \\ \hline
+\textbf{Prioridad} & Alta \\ \hline
+\textbf{Estimación} & 5 Puntos \\ \hline
+\textbf{Descripción} &
+Como usuario, quiero ver dibujada en el mapa la línea de la ruta sugerida para poder seguirla visualmente hacia mi destino. \\ \hline
+\textbf{Criterios de Aceptación} &
+1. La aplicación debe recibir la geometría de la API y dibujarla como una \textit{Polyline}. \newline
+2. La cámara del mapa debe ajustarse para mostrar toda la ruta. \newline
+3. Se debe diferenciar visualmente el inicio y el fin con marcadores. \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\caption{Historia de Usuario HU-04: Ponderación de Riesgo.}
+\label{tab:historias-usuario-4}
+\centering
+\begin{tabular}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Código} & HU-04 \\ \hline
+\textbf{Nombre} & Actualización de Pesos por Incidentes \\ \hline
+\textbf{Prioridad} & Media \\ \hline
+\textbf{Estimación} & 8 Puntos \\ \hline
+\textbf{Descripción} &
+Como sistema, requiero actualizar el costo de una calle cuando se reporta un nuevo incidente, para que las futuras rutas eviten esa zona. \\ \hline
+\textbf{Criterios de Aceptación} &
+1. Debe existir un procedimiento almacenado que intercepte nuevos reportes. \newline
+2. Se debe identificar la arista más cercana al incidente y aumentar su coste en el grafo. \newline
+3. La actualización debe ser consistente sin bloquear lecturas. \\ \hline
+\end{tabular}
+\end{table} 
+
+\begin{table}[H]
+\caption{Historia de Usuario HU-05: Recálculo de Ruta por Desvío.}
+\label{tab:historias-usuario-5}
+\centering
+\begin{tabular}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Código} & HU-05 \\ \hline
+\textbf{Nombre} & Recálculo de Ruta por Desvío \\ \hline
+\textbf{Prioridad} & Media \\ \hline
+\textbf{Estimación} & 8 puntos \\ \hline
+\textbf{Descripción} &
+Como usuario, quiero que el sistema detecte si me he desviado de la ruta sugerida y recalcule automáticamente un nuevo trayecto seguro desde mi nueva ubicación hacia el destino original. \\ \hline
+\textbf{Criterios de Aceptación} &
+1. Se debe detectar si la ubicación actual del usuario se aleja de la polilínea de la ruta. \newline
+2. Se debe disparar una nueva petición, con las nuevas coordenadas de origen. \newline
+3. La transición visual en el mapa debe ser fluida, reemplazando la línea antigua por la nueva sin bloquear la interfaz. \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\caption{Historia de Usuario HU-06: Carga y Estructuración de Red Vial.}
+\label{tab:historias-usuario-6}
+\centering
+\begin{tabular}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Código} & HU-06 \\ \hline
+\textbf{Nombre} & Carga y Estructuración de Red Vial\\ \hline
+\textbf{Prioridad} & Alta \\ \hline
+\textbf{Estimación} & 5 Puntos \\ \hline
+\textbf{Descripción} &
+Como sistema, debo cargar la cartografía de la ciudad (OpenStreetMap) en la base de datos SQL Server, convirtiendo los datos en una topología de grafos (nodos y aristas) que sea adecuada para el ruteo. \\ \hline
+\textbf{Criterios de Aceptación} &
+1. Importación de datos geográficos de Quito en formato .osm o .shp a tablas de SQL Server.\newline
+2. Conversión correcta de coordenadas a tipos de datos Geography o Geometry.\newline
+3. Creación de índices espaciales para optimizar las consultas de búsqueda de nodos cercanos. \\ \hline
+\end{tabular}
+\end{table}
+
+
+\subsubsection{Escala de Estimación de Complejidad}
+
+Se empleó la técnica de Planning Poker, con la secuencia Fibonacci como referencia, para cuantificar el esfuerzo técnico relacionado con cada historia de usuario. Se eligió esta escala  por su manera representar la incertidumbre que viene con el desarrollo de software, a medida que la tarea se hace más grande. Esta escala se detalla en la Tabla \ref{tab:escala-complejidad}.
+
+\begin{table}[H]
+\caption{Escala de Estimación de Complejidad para Historias de Usuario}
+\label{tab:escala-complejidad}
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Puntos de Historia} & \textbf{Descripción de Complejidad} \\ \hline
+1 & Muy Baja \\ \hline
+2 & Baja\\ \hline
+3 & Media\\ \hline
+5 & Alta \\ \hline
+8 & Muy Alta\\ \hline
+\end{tabular}
+\end{table}     
+
+\subsubsection{Escala de Priorización de Historias de Usuario}
+
+Esta respectiva escala permite alinear el desarrollo con los objetivos estratégicos del proyecto garantizando el éxito del mismo, de manera que, se clasifica las historias de usuario en cuatro grados de priorización: Baja, Media, Alta y Muy Alta. Esta escala se referencia en la Tabla \ref{tab:escala-priorizacion}.
+\begin{table}[H]
+\caption{Escala de Priorización para Historias de Usuario}
+\label{tab:escala-priorizacion}
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Nivel de Prioridad} & \textbf{Descripción} \\ \hline
+1 & Baja \\ \hline
+2 & Media \\ \hline
+3 & Alta \\ \hline
+4 & Muy Alta \\ \hline
+\end{tabular}
+\end{table} 
+
+Con la definición de la escala de prioridad y de complejidad, se procede a su organización en el Product Backlog, detallando las tareas con mayor impacto para el usuario y la funcionalidad del sistema, asegurando que el desglose esté alineado con su respectiva historia de usuario. A continuación, en la Tabla \ref{tab:desglose-tareas} se presenta el desglose de las tareas.
+
+\begin{longtable}{|p{2cm}|p{2cm}|p{5cm}|p{2.2cm}|p{2.2cm}|}
+\caption{Desglose de tareas por Historia de Usuario}
+\label{tab:desglose-tareas} \\
+\hline
+\textbf{Historia} & \textbf{Tarea} & \textbf{Nombre} & \textbf{Complejidad} & \textbf{Prioridad} \\
+\hline
+\endfirsthead
+\hline
+\endhead
+\hline
+\endfoot
+\endlastfoot
+
+% HU-01
+HU-01 & T-01 &
+Configuración de proyecto e integración inicial de Google Maps SDK. &
+3 & 4 \\ \hline
+
+HU-01 & T-02 &
+Interfaz para búsqueda de direcciones con autocompletado. &
+3 & 4 \\ \hline
+
+HU-01 & T-03 &
+Captura de coordenadas de inicio y fin. &
+2 & 4 \\ \hline
+
+HU-01 & T-04 &
+Validar que las coordenadas estén dentro de Quito. &
+2 & 4 \\ \hline
+
+% HU-02
+HU-02 & T-05 &
+Estructuración de controladores para el ruteo. &
+1 & 4 \\ \hline
+
+HU-02 & T-06 &
+Implementación del algoritmo asumiendo la variable de riesgo. &
+8 & 4 \\ \hline
+
+HU-02 & T-07 &
+Obtención de grafos (nodos/aristas) y sus pesos. &
+5 & 4 \\ \hline
+
+HU-02 & T-08 &
+Transformación de la información geográfica y exposición mediante API REST. &
+3 & 4 \\ \hline
+
+% HU-03
+HU-03 & T-09 &
+Configuración para consumir el API de ruteo. &
+2 & 4 \\ \hline
+
+HU-03 & T-10 &
+Deducción de la geometría de la ruta y trazado de Polyline en el mapa. &
+5 & 4 \\ \hline
+
+HU-03 & T-11 &
+Implementación de marcadores personalizados para Inicio y Fin. &
+1 & 3 \\ \hline
+
+HU-03 & T-12 &
+Encuadre automático de toda la ruta en pantalla. &
+2 & 3 \\ \hline
+
+% HU-04
+HU-04 & T-13 &
+Creación de Stored Procedure para interceptar nuevos reportes. &
+5 & 3 \\ \hline
+
+HU-04 & T-14 &
+Vinculación de incidente con la arista más cercana. &
+5 & 3 \\ \hline
+
+HU-04 & T-15 &
+Automatización de la actualización del campo \texttt{riesgo}. &
+3 & 3 \\ \hline
+
+% HU-05
+HU-05 & T-16 &
+Implementación de servicio en segundo plano para monitoreo GPS continuo. &
+5 & 4 \\ \hline
+
+HU-05 & T-17 &
+Detección de desvío de usuario. &
+5 & 3 \\ \hline
+
+HU-05 & T-18 &
+Lógica para disparar automáticamente una nueva petición al backend tras desvío. &
+3 & 3 \\ \hline
+
+HU-05 & T-19 &
+Manejo de transición suave en la UI al reemplazar la ruta antigua. &
+3 & 2 \\ \hline
+
+% HU-06
+HU-06 & T-20 &
+Configuración de Azure SQL Database habilitando extensiones geográficas. &
+2 & 4 \\ \hline
+
+HU-06 & T-21 &
+Obtención y limpieza de cartografía de Quito. &
+3 & 4 \\ \hline
+
+HU-06 & T-22 &
+ETL para migrar datos geográficos a tablas Nodos y Aristas. &
+5 & 4 \\ \hline
+
+HU-06 & T-23 &
+Creación de índices geográficos para optimización de consultas. &
+3 & 4 \\ \hline
+
+\end{longtable}
+
+\subsection{Definición de Sprints}
+
+Para asegurar un desempeño eficaz y reducir los riesgos, se organizó la planificación operativa en seis ciclos de trabajo con un Sprint 0 como etapa preparatoria. Esta primera iteración busca sentar las bases del proyecto, lo que incluye la preparación de los repositorios, el diseño arquitectónico y la configuración del entorno. Los Sprints 1 a 5 se desarrollan de manera incremental validando la persistencia de datos y el núcleo algorítmico, después se añade la capa visual concluyendo con funcionalidades más complejas como el recálculo de rutas o la ponderación de riesgos. Esta división se detalla en la Tabla \ref{tab:sprints}.
+
+\renewcommand{\arraystretch}{1.5} 
+\begin{longtable}{|c|c|p{5.5cm}|p{5.5cm}|}
+\caption{Desglose de tareas por Sprint} \label{tab:sprints} \\
+\hline
+\textbf{Sprint} & \textbf{Duración} & \textbf{Objetivo Principal} & \textbf{Tareas Asignadas} \\
+\hline
+\endfirsthead
+
+% Cabecera para las páginas siguientes (si la tabla se corta)
+\hline
+\textbf{Sprint} & \textbf{Duración} & \textbf{Objetivo Principal} & \textbf{Tareas Asignadas} \\
+\hline
+\endhead
+
+% Contenido de la tabla
+0 & 2 Semanas & Estructuración inicial, realización de diagramas de arquitectura y creación de prototipo. & Fase de planificación. \\
+\hline
+1 & 3 Semanas & Configuración de la infraestructura en Azure y estructuración de la Base de Datos Espacial con la red vial de Quito (Requisito indispensable para el ruteo). & \textbf{De HU-06 (Carga y Estructuración de Red Vial):} \newline T-20, T-21, T-22 y T-23. \newline \newline \textbf{De HU-01 (Selección de Origen y Destino):} \newline T-01. \\
+\hline
+2 & 4 Semanas & Desarrollo del algoritmo de búsqueda en NestJS y los mecanismos de selección de puntos en la app móvil. & \textbf{De HU-01 (Selección de Origen y Destino):} \newline T-02, T-03 y T-04. \newline \newline \textbf{De HU-02 (Cálculo de Ruta Segura):} \newline T-05, T-06, T-07 y T-08. \\
+\hline
+3 & 3 Semanas & Conexión del cliente móvil con el servidor para visualizar gráficamente la ruta segura calculada. & \textbf{De HU-03 (Visualización de Trayecto):} \newline T-09, T-10, T-11 y T-12. \\
+\hline
+4 & 2 Semanas & Implementación de la lógica de base de datos que actualiza los pesos de las calles basándose en incidentes reales. & \textbf{De HU-04 (Ponderación de Riesgo):} \newline T-13, T-14 y T-15. \\
+\hline
+5 & 3 Semanas & Desarrollo de capacidades avanzadas para detectar desvíos y solicitar nuevas rutas automáticamente. & \textbf{De HU-05 (Recálculo por Desvío):} \newline T-16, T-17, T-18 y T-19. \\
+\hline
+
+\end{longtable}
+
+\subsection{Sprint 0}
+
+En la etapa inicial del proyecto se crea la infraestructura técnica y los lineamientos arquitectónicos antes de comenzar a desarrollar las funcionalidades de manera progresiva. En esta fase, se pusieron en marcha los repositorios de código, se determinó la estructura del software que respaldará las operaciones de geoprocesamiento, la definición de prototipos y por último la base de datos.
+
+\subsubsection{Diagrama de arquitectura}
+
+Se adoptó una arquitectura de microservicios para asegurar la escalabilidad y el desacoplamiento funcional del Módulo de Ruteo Seguro en el ecosistema Alertify. Al hacer uso de esta opción se puede separar la carga computacional de los algoritmos de grafos de otros ámbitos del sistema, lo que hace más sencillo el mantenimiento y la escalabilidad autónoma del servicio. La Figura \ref{Arquitectura_Microservicios_Alertify} ilustra la interacción entre los componentes lógicos del cliente móvil, el servicio de backend y la persistencia de datos.
+
+%Label en la parte de arriba CORREGIR
+\begin{figure}[htbp]
+    \centering  
+    \includegraphics[width=0.9\textwidth]{../02Figures/02Chapter/Arquitectura_Microservicios_Alertify.png}
+    \caption{Arquitectura de Microservicios del Módulo de Ruteo Seguro en Alertify}
+    \label{Arquitectura_Microservicios_Alertify}
+\end{figure}
+
+La arquitectura propuesta organiza el sistema en tres niveles funcionales que interactúan secuencialmente. La aplicación móvil gestiona la interfaz de usuario y la visualización del trayecto sobre el mapa, manteniendo  un monitoreo constante de la ubicación geográfica para trazar la ruta correctamente. La lógica central se basa en recibir las peticiones de navegación y ejecuta los algoritmos de búsqueda sobre el grafo vial. Este módulo tiene la responsabilidad de determinar el camino óptimo tomando en cuenta dos variables: el nivel de riesgo acumulado y la distancia física. Por último, la Capa de Datos guarda el historial de incidentes y la topología de la red vial. Esta estructura posibilita que se hagan consultas espaciales y que los "costos" de las calles se actualicen en tiempo real, garantizando así que las rutas producidas eludan las áreas con reportes de seguridad recientes.
+
+\subsubsection{Prototipos de aplicación móvil}
+
+Una vez planteada la arquitectura del módulo, se procedió con el bosquejo de los prototipos de la aplicación móvil. Estos diseños iniciales se enfocan en la experiencia del usuario al interactuar con el mapa, seleccionar puntos de origen y destino, y visualizar la ruta segura sugerida. La Figura \ref{fig:prototipo-app} muestra las pantallas diseñadas en Figma, en donde se visualizan los elementos que conforman la interfaz del aplicativo.
+
+\begin{figure}[htbp]
+    \centering  
+    \includegraphics[width=0.9\textwidth]{../02Figures/02Chapter/Prototipos_Ruteo_Seguro.png}
+    \caption{Prototipos de la aplicación móvil para el Módulo de Ruteo Seguro}
+    \label{fig:prototipo-app}
+\end{figure}
+
+\subsubsection{Estructura de la base de datos}
+
+El esquema de la base de datos se definió para soportar datos geográficos y permitir consultas eficientes. La Figura \ref{fig:esquema-bd} ilustra las tablas principales que componen la base de datos, destacando las relaciones entre ellas. Los cruces de vías se almacenan en la tabla NODOS como puntos geográficos, a su vez la tabla ARISTAS, que representa los segmentos de calle que enlazan dos nodos esta entidad considera el campo de riesgo como una variable dinámica que se actualiza según los reportes de incidentes, con la cual el algoritmo prioriza en busca de la ruta más segura. Por último, la tabla INCIDENTES almacena los atributos críticos necesarios para el cálculo geométrico (ubicación y gravedad), de esta manera se garantiza que el procedimiento almacenado se ejecute eficazmente.
+
+\begin{figure}[htbp]
+    \centering  
+    \includegraphics[width=0.9\textwidth]{../02Figures/02Chapter/BDD_Modulo_Ruteo_Seguro.png}
+    \caption{Esquema de la base de datos}
+    \label{fig:esquema-bd}
+\end{figure}
+
+\subsubsection{Configuración de organización en GitHub}
+
+Para la distribución y control del código se configuró una organización en GitHub, la cual permite gestionar los repositorios de los diferentes módulos del sistema Alertify facilitando la colaboración entre los desarrolladores. En la Figura \ref{fig:github-org} se muestra la estructura de la organización y sus respectivos repositorios.
+
+\begin{figure}[htbp]
+    \centering  
+    \includegraphics[width=0.9\textwidth]{../02Figures/02Chapter/Organización_Github.png}
+    \caption{Organización en GitHub para el proyecto Alertify}
+    \label{fig:github-org}
+\end{figure}
+
+\subsubsection{Tablero de gestión en Jira}
+
+
+
+%\section{SECTION 1}
+%\lipsum[1-3]
+%\subsection{SUBSECTION 1}
+%\lipsum[1-3]
+%\subsubsection{SUBSUBSECTION 1}
+%\lipsum[1-3]
+%%%---------- Tabla C2T1. tableExample ----------%%%
+%\input{03Tables/02Chapter/C2T1:tableExample.tex}
+%\lipsum[1-3]
+%\paragraph{Paragraph}
+%\lipsum[1-3]

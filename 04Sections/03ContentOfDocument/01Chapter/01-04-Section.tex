@@ -1,0 +1,216 @@
+%PONER PARRAFO INTRODUCTORIO
+La idea de que la tecnología tiene que ser un instrumento para prevenir riesgos es la base de este módulo. El concepto principal es incluir la información comunitaria acerca de la inseguridad urbana en el procedimiento de cálculo de rutas. Esto quiere decir que el sistema emplea los datos de incidentes para otorgar un peso o riesgo a las calles. En donde el objetivo principal es convertir los datos de peligrosidad en un elemento de navegación, garantizando que el usuario tenga la opción de elegir una ruta que lo exponga al riesgo en la ciudad lo menos posible.
+
+\subsection{Percepción de la Inseguridad}
+La seguridad ciudadana es un pilar esencial para el desarrollo y el bienestar de cualquier sociedad. En Ecuador, no basta con pensar que la seguridad es solo que no haya crímenes, sino que es algo mucho más intrincado y con un contexto que va más allá. Estudios recientes señalan que la falta de seguridad está muy ligada a temas sociales, económicos y a si la gente confía o no en las entidades del gobierno \cite{bravo2024seguridad}. Esta conexión tiene un efecto que va más allá de cuántos delitos hay, pues afecta directamente cómo vive la gente.
+
+Algo muy importante aquí es cómo la gente siente la inseguridad. Los estudios sobre ser víctima de un delito en Ecuador muestran que el temor a que te roben o te hagan daño puede ser tan malo como que te pase de verdad, lo cual cambia el tipo de rutina diaria, te impide moverte libremente y hace que la sociedad se debilite \cite{freire2024analisis}. Es en esta situación donde la gente siente mucho riesgo y se hace evidente la necesidad de avanzar de modelos de seguridad puramente reactivos hacia enfoques más proactivos y preventivos.
+
+\subsubsection{El Rol de la Tecnología}
+Ante las pruebas que presenta la seguridad en la ciudad, las tácticas actuales han empezado a dar más importancia a evitar los delitos. En esta idea, la ciudadanía toma el papel principal para adelantarse a los problemas, en vez de solo reaccionar a ellos \cite{munizaga2010aspectos}. En este cambio, las herramientas digitales se han vuelto muy importantes, dando opciones nuevas para manejar la seguridad \cite{davila2004puntos}.
+Que casi todos tengan celulares ha creado una oportunidad nueva y fuerte en este tema. Poder crear y mandar datos al instante ha hecho que la gente sea como un radar que siente lo que pasa a su alrededor. Un estudio detallado de textos dice que los datos de los celulares son muy valiosos para ver y saber cuándo habrá delitos, lo que da una base firme para usarlos para evitar el crimen \cite{okmi2023systematic}.
+El sitio más claro en donde se evidencia capacidad se puede observar en las apps móviles enfocadas en la seguridad de los ciudadanos. Hoy en día, estas plataformas son un medio para reportar y manejar eventos criminales, demostrando que operan de forma eficaz como instrumentos de vigilancia colectiva \cite{espinoza2024aplicacion}
+Un buen ejemplo es la app SOSAFE, en donde se evidencia cómo estas tecnologías pueden mejorar la gestión de la seguridad en las ciudades a nivel local \cite{lobos2025efectos}. Al hacer más fácil que los vecinos se comuniquen al instante entre ellos y con las autoridades, estas apps no solo aceleran la respuesta, sino que también promueven la unión y la responsabilidad de todos.
+El proyecto Alertify encaja de lleno en esta nueva forma de hacer las cosas. Apuesta por la seguridad preventiva, dando a los usuarios información al momento creada por la comunidad para decidir mejor, por ejemplo, qué camino tomar. Para que esto funcione, es clave cuidar la seguridad, la privacidad y la protección de los datos del usuario, ya que la gente tiene que confiar en la plataforma para usarla y que sea útil \cite{moya2024seguridad}. Alertify, en resumen, no es solo una herramienta tecnológica, sino una forma de reforzar la sociedad y que la gente se sienta más segura en la ciudad.
+
+\subsection{Metodología tradicional con Modelo Cascada}
+La creación de software cuenta con varios modelos de desarrollo, cada uno con ventajas específicas para diferentes tipos de proyectos. El enfoque tradicional por excelencia es el Modelo de Cascada (Waterfall). Su mayor ventaja es su organización secuencial y lineal, la cual brinda transparencia, predecibilidad y una gestión fácil de proyectos al requerir que cada etapa (análisis, diseño, implementación, pruebas, mantenimiento) termine antes de comenzar la siguiente \cite{royce1987managing}. Este modelo es muy eficaz para proyectos en los que los requisitos son estables, se entienden adecuadamente desde el comienzo y es fundamental crear una documentación técnica detallada durante el proceso \cite{moniruzzaman2013comparative}.Esta metodología se la evidencia en la Figura \ref{Arquitectura_Cascada}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{../02Figures/01Chapter/Arquitectura_Cascada.png}
+    \caption{Modelo Cascada \cite{royce1987managing}}
+    \label{Arquitectura_Cascada}
+\end{figure}
+%%DIAGRAMA MODELO CASCADA
+
+\subsection{Metodologías Alternativas de Desarrollo de Software}
+Asi mismo existen otros modelos que ofrecen beneficios para contextos específicos y se muestra que enfoques ágiles y lineales no son la única forma de desarrollar software. 
+\subsubsection*{\hspace{0.7cm}Modelo Espiral}
+La gestión y la reducción de riesgos fueron el enfoque para el que se desarrolló el Modelo Espiral \cite{boehm1986spiral}. Su mayor beneficio es que es de naturaleza iterativa, lo que significa que cada ciclo (o espiral) contiene un análisis de riesgo explícito. Esto lo hace apropiado para proyectos que son grandes, complejos y técnicamente peligrosos \cite{boehm1986spiral}. 
+\subsubsection*{\hspace{0.7cm}Modelo-V}
+El Modelo-V, por su parte, es un modelo que ha evolucionado a partir del modelo Cascada y tiene como principal ventaja un proceso meticuloso de verificación y validación \cite{balaji2012waterfall}. Su estructura conecta cada fase de desarrollo con una fase de prueba correspondiente, lo que asegura un alto nivel de calidad y disciplina, algo esencial en sistemas donde los errores son críticos \cite{balaji2012waterfall}.
+\subsubsection*{\hspace{0.7cm}Modelo Prototipado}
+El modelo de prototipado, además, se enfoca en el beneficio de aclarar requisitos; se emplea cuando los requerimientos del usuario no son claros y permite crear rápidamente un prototipo para recibir comentarios tempranos antes de desarrollar el sistema final \cite{ruparelia2010software}.
+
+
+
+\subsection{Metodología Desarrollo Ágil de Software}
+
+En proyectos como Alertify, donde las necesidades de los usuarios y las condiciones del entorno, en este caso la seguridad en la ciudad, cambia mucho no se debe ser demasiado rígido ya que puede resultar en un producto final que no satisfaga al usuario o que ya no sirva para cuando salga al mercado.
+Para abordar entornos donde los requisitos son inherentemente volátiles o no se comprenden completamente al inicio, surgieron las metodologías Ágiles. El beneficio clave de los enfoques ágiles, en contraposición a los modelos rígidos, es su capacidad intrínseca de adaptación al cambio \cite{arvanitou2021software}.  En vez de planear un lanzamiento final grande, estos modelos fomentan la entrega continua e incremental de software que es funcional. Su utilidad se enfoca en la adaptabilidad, el trabajo colaborativo constante con los clientes (o sus representantes) y la habilidad de re-priorizar las tareas en función de un feedback continuo\cite{moniruzzaman2013comparative}.
+Este método ayuda a mejorar la capacidad de predecir y a mantener el riesgo bajo control en situaciones que se pueden salir de las manos, siendo perfecto para proyectos difíciles donde los requisitos pueden cambiar \cite{schwaber2013guia}.
+
+\subsubsection{Scrum como Marco de Trabajo}
+En el ámbito ágil, Scrum destaca como uno de los modelos de trabajo más extendidos y preferidos \cite{dixit2019scrum}. Se concibe como un esquema de procesos que usa una estrategia repetitiva y progresiva para direccionar la creación de productos intrincados \cite{schwaber2013guia}. Su ejecución se cimienta en una doctrina de mando de procedimientos práctica, que se apoya en tres fundamentos clave: claridad, revisión y ajuste \cite{schwaber2013guia}.
+
+En lo que respecta al proyecto Alertify, la selección de Scrum se fundamenta en su aptitud para brindar un avance dinámico, cooperativo y productivo, sobre todo en ambientes intrincados como el de la protección de datos \cite{manssur2015aplicacion}. Seguidamente, se exponen los elementos de este modelo de trabajo y su trascendencia para el proyecto en cuestión.
+
+\subsubsection{La Estructura de Scrum}
+La implementación de Scrum se organiza en torno a un conjunto de roles, eventos y artefactos que trabajan en sinergia para entregar valor de manera continua \cite{dixit2019scrum}. En la Figura \ref{Marco_Scrum} se ilustra la estructura de Scrum y sus componentes principales.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{../02Figures/01Chapter/Marco_Scrum.png}
+    \caption{Estructura Scrum \cite{dixit2019scrum}}
+    \label{Marco_Scrum}
+\end{figure}
+
+\subsubsection{Roles en Scrum (El Equipo Scrum)}
+
+El equipo es autoorganizado y multifuncional, lo que garantiza que el trabajo se realice sin dependencias externas \cite{schwaber2013guia}.
+\begin{itemize}
+    \item \textbf{Product Owner (Dueño del Producto):}Es el único responsable de gestionar el \textit{Product Backlog} (la lista de requisitos del producto) y de maximizar el valor del trabajo realizado por el equipo de desarrollo. Actúa como la voz del cliente y los stakeholders, asegurando que el equipo construya el producto correcto \cite{dixit2019scrum}. Para Alertify, es quien traduce las necesidades de seguridad de los usuarios en funcionalidades concretas y priorizadas.
+    \item \textbf{Development Team (Equipo de Desarrollo):}Está compuesto por los profesionales (desarrolladores, testers, diseñadores, etc.) que se encargan de entregar un incremento de producto "Terminado" y potencialmente desplegable en cada Sprint. Nadie, ni siquiera el Scrum Master, les indica cómo convertir los elementos del \textit{Product Backlog} en funcionalidades \cite{schwaber2013guia}.
+    \item \textbf{Scrum Master:}Actúa como un líder servicial para el equipo. Su función principal es asegurar que Scrum sea entendido y adoptado, eliminando impedimentos y facilitando los eventos de Scrum según sea necesario \cite{dixit2019scrum}. Es un coach que protege al equipo de interrupciones externas y guía a la organización en la adopción de Scrum \cite{dixit2019scrum}.
+\end{itemize}
+
+\subsubsection{Eventos en Scrum}
+Estos eventos están diseñados para minimizar la necesidad de reuniones no planificadas y crear una cadencia regular de inspección y adaptación \cite{schwaber2013guia}.
+\begin{itemize}
+    \item \textbf{El Sprint:}Es el corazón de Scrum, un ciclo de trabajo de duración fija (generalmente entre una y cuatro semanas) en el que se crea un incremento de producto utilizable \cite{dixit2019scrum}. Un nuevo Sprint comienza inmediatamente después de la conclusión del anterior \cite{schwaber2013guia}.
+    \item \textbf{Sprint Planning:} Al inicio de cada Sprint, todo el equipo Scrum colabora para definir qué se puede entregar en el siguiente incremento y cómo se logrará ese trabajo \cite{schwaber2013guia}. 
+    \item \textbf{Daily Scrum:}Es una reunión diaria de 15 minutos para el Equipo de Desarrollo. Su propósito es sincronizar actividades y crear un plan para las próximas 24 horas, inspeccionando el progreso hacia el objetivo del Sprint \cite{schwaber2013guia}.
+    \item \textbf{Sprint Review:}Al final del Sprint, el equipo y los stakeholders inspeccionan el incremento y adaptan el \textit{Product Backlog} si es necesario. Es una sesión para demostrar el trabajo "Terminado" y obtener retroalimentación \cite{dixit2019scrum}.
+    \item \textbf{Sprint Retrospective:}Es una oportunidad para que el equipo se inspeccione a sí mismo y cree un plan de mejoras para el próximo Sprint, enfocándose en sus procesos, relaciones y herramientas \cite{schwaber2013guia}.
+\end{itemize}
+
+\subsubsection{Artefactos de Scrum}
+Representan el trabajo o valor y están diseñados para maximizar la transparencia de la información clave \cite{schwaber2013guia}.
+
+\begin{itemize}
+    \item \textbf{Product Backlog:} Es la única fuente de requisitos del producto. Se trata de una lista ordenada y dinámica de todo lo que se conoce que es necesario para el producto (características, funciones, mejoras, correcciones), gestionada por el Product Owner \cite{dixit2019scrum}.
+    \item \textbf{Sprint Backlog:} Es el conjunto de elementos del \textit{Product Backlog} seleccionados para un Sprint, más el plan para entregarlos y alcanzar el Objetivo del Sprint (Sprint Goal) \cite{schwaber2013guia}.
+    \item \textbf{Incremento:} Es la suma de todos los elementos del Product Backlog completados durante un Sprint y todos los Sprints anteriores. Al final de cada Sprint, el nuevo incremento debe estar "Terminado", lo que significa que está en condiciones de ser utilizado  \cite{schwaber2013guia}.
+\end{itemize}
+
+% \subsubsection{Justificación de Scrum para el Desarrollo de Alertify}
+% La adopción de Scrum para el proyecto Alertify no es una decisión arbitraria, sino una elección estratégica que responde a las características intrínsecas del proyecto:
+
+% \begin{enumerate}
+%     \item \textbf{Gestión de la Incertidumbre y Adaptabilidad:} Lidiar con lo Impredecible y Ser Flexibles: El desarrollo de una app de seguridad preventiva como Alertify viene con muchos interrogantes. Las áreas peligrosas varían, los incidentes mutan y lo que los usuarios quieren se define sobre la marcha. En este sentido Scrum brilla, permitiendo que los cambios sean bienvenidos, incluso en etapas tardías del desarrollo, para maximizar el valor entregado al usuario \cite{dixit2019scrum}. La agilidad es fundamental para navegar la incertidumbre y la complejidad inherentes a este tipo de proyectos \cite{kanade2025agile}.
+    
+%     \item \textbf{Entrega Temprana y Continua de Valor:} Scrum asegura que el software que funcione sea entregado de manera constante y frecuente a través de los Sprints \cite{wonohardjo2019systematic}. Para Alertify, esto significa que no es imprescindible aguardar a que la aplicación esté completamente finalizada para lanzarla. Una versión inicial puede ser lanzada con las funciones más críticas (como el informe de incidentes), y luego, en sprints siguientes, se pueden agregar y mejorar otras características, como el módulo de ruteo seguro. Esto disminuye el tiempo de salida al mercado y posibilita la obtención de datos reales de los usuarios desde los primeros Sprints. \cite{zayat2020framework}.
+
+%     \item \textbf{Mitigación de Riesgos y Mejora Continua:} Los ciclos de desarrollo breves y las actividades de evaluación (Sprint Retrospective, Daily Scrum, Sprint Review) hacen posible detectar riesgos y dificultades con antelación. Este método disminuye la posibilidad de que errores serios lleguen al producto final en una aplicación donde la seguridad y la confiabilidad son esenciales. Cada Sprint brinda la oportunidad para que el equipo mejore tanto los procesos como la calidad del producto\cite{schwaber2013guia}.
+
+%     \item \textbf{Fomento de la Colaboración y la Productividad:} El uso de Scrum  no solo fomenta, sino que también estimula el trabajo en un ambiente laboral creativo y productivo, ya que permite que los miembros del equipo de desarrollo se autoorganicen y determinen la forma más adecuada de llevar a cabo su trabajo \cite{wonohardjo2019systematic}.  Esta manera de cooperar, junto con una comunicación continua y la eliminación de obstáculos por parte del Scrum Master, no solo genera un aumento en la motivación además de la productividad del equipo \cite{manssur2015aplicacion}.
+% \end{enumerate}
+
+\subsection{Arquitectura de Software}
+Una arquitectura de software apropiada es la estructura principal que tiene un impacto directo en la habilidad del sistema para evolucionar, mantenerse actualizado y adaptarse a lo largo del tiempo. Cuando se trata de una herramienta flexible como Alertify, es crucial optar por un modelo que posibilite que cada componente funcione de manera independiente y, además, facilite su desarrollo en el futuro.
+\subsubsection{Tipos de Arquitectura}
+Existen varios tipos de arquitecturas de software, cada con sus respectivas ventajas y características que las diferencias entre sí.
+\subsubsection*{\hspace{0.7cm}Arquitectura Monolítica}
+La arquitectura monolítica representa el enfoque tradicional donde una aplicación se construye como una única unidad. En este modelo, todos los componentes funcionales están fuertemente acoplados, comparten una sola base de código y se despliegan como un solo artefacto \cite{blinowski2022monolithic}. La aplicación se basa en un solo proceso o contenedor, que administra las distintas labores (como la autenticación, el ruteo o los reportes) dentro de una misma estructura de código.
+\subsubsection*{\hspace{0.7cm}Arquitectura Dirigida por Eventos}
+La Arquitectura Dirigida por Eventos (EDA) es un paradigma de diseño de software en el cual el flujo del sistema es determinado por eventos, que son notificaciones de cambios de estado significativos \cite{michelson2006event}.
+\subsubsection*{\hspace{0.7cm}Arquitectura en Capas}
+La Arquitectura en Capas (Layered Architecture) es uno de los patrones más fundamentales y utilizados en el diseño de software, cuyo objetivo principal es la separación de intereses (separation of concerns) \cite{gorton2006essential}.
+\subsubsection*{\hspace{0.7cm}Arquitectura Orientada a Servicios (SOA)}
+La Arquitectura Orientada a Servicios (SOA) es un estilo arquitectónico que promueve la creación de aplicaciones a través de la orquestación de servicios de negocio reutilizables y débilmente acoplados \cite{erl2016soa}.
+\subsubsection*{\hspace{0.7cm}Arquitectura Microservicios}
+La arquitectura de microservicios  es un estilo arquitectónico que estructura una aplicación como una colección de servicios pequeños y autónomos \cite{newman2021building}. Cada servicio se configura en función de una capacidad de negocio concreta, es administrado por un grupo independiente y tiene la posibilidad de ser implementado de manera autónoma \cite{vural2017systematic}. Esta independencia posibilita que cada servicio funcione y crezca independientemente \cite{blinowski2022monolithic}.
+
+
+% Tradicionalmente, las aplicaciones se han creado bajo un modelo monolítico, donde cada componente funcional se une en una sola base de código y se despliega como una sola unidad \cite{lauber2024designing}. Aunque al principio esto pueda facilitar las cosas, a medida que la aplicación se expande, comienzan a surgir problemas importantes. Haciendo que la incorporación de nuevas funciones, arreglar fallos e integrar nuevas tecnologías sea todo un reto \cite{blinowski2022monolithic}. Para Alertify, esto querría decir que un simple cambio en el apartado de ``Ruteo Seguro'' podría afectar al de ``Autenticación'' y obligaría a volver a desplegar toda la aplicación, un proceso que es lento y donde es fácil equivocarse \cite{newman2021building}.
+% Para dejar atrás estas desventajas, aparece la arquitectura de microservicios. Esta plantea crear una aplicación dividiéndola en pequeños servicios, donde cada uno funciona por su cuenta y se comunica con los demás mediante métodos sencillos, normalmente una API con recursos HTTP \cite{newman2021building}. Cada servicio se levanta pensando en una función específica del negocio y se puede desplegar por separado, lo cual brinda más agilidad y libertad al desarrollar.
+
+\subsubsection{Beneficios de los Microservicios}
+Al hacer uso de una arquitectura de microservicios en Alertify, se justifica el hecho de operar un servicio de manera independiente y, de igual manera, brinda una serie de ventajas estratégicas que se alinean directamente con los objetivos y la estructura del proyecto:
+
+\begin{itemize}
+    \item \textbf{Despliegue Independiente y Autonomía de Equipos:} Al dividir la aplicación en partes autónomas (Manejo de Reportes y Alertas, Manejo de Gestión de Identidad y Enrutamiento Seguro), cada integrante puede trabajar, testear y poner en marcha su parte de manera autónoma. Esto no solo hace que todo vaya más rápido, sino que también encaja perfectamente con la estructura del proyecto \cite{vural2017systematic}.
+    \item \textbf{Escalabilidad Selectiva:}No todos los componentes de Alertify van a tener el mismo peso. Por ejemplo, el servicio de ``Ruteo Seguro'' podría necesitar mucha potencia de cálculo en las horas de más movimiento, mientras que el servicio de ``Autenticación'' podría ir más relajado. La arquitectura de microservicios permite ampliar cada servicio por separado, según lo que pida, aprovechando mejor los recursos y mejorando el rendimiento general sin tener que ampliar toda la aplicación \cite{blinowski2022monolithic}.
+    \item \textbf{Resiliencia y Aislamiento de Fallos:} En una configuración monolítica, un error en una parte puede tirar abajo toda la aplicación. Al usar microservicios, el sistema se vuelve más resistente. Si el servicio de "Gestión de Reportes" falla por un momento, los usuarios de Alertify todavía podrían iniciar sesión y calcular rutas seguras, ya que los demás servicios seguirían operando de forma independiente \cite{newman2021building}. Esto es fundamental para una aplicación de seguridad, donde la disponibilidad es lo más importante.
+    \item \textbf{Flexibilidad Tecnológica:}En sí, cada microservicio puede ser creado utilizando un conjunto de tecnologías diferente. Aunque en Alertify todos los servicios de backend usarán NestJS, esta cualidad de la arquitectura facilita futuras actualizaciones, permitiendo adoptar la mejor herramienta para un problema específico sin estar atado a las decisiones tecnológicas del pasado \cite{vural2017systematic}.
+    
+\end{itemize}
+\subsubsection{Funcionamiento y Patrones de Implementación}
+En una arquitectura de microservicios, la comunicación es un factor clave. En vez de invocar funciones en un proceso específico, los servicios se comunican entre sí por medio de la red, usualmente a través de APIs RESTful \cite{el2024exploring}.  Cada uno de los tres módulos de Alertify (Ruteo, Reportes y Autenticación) mostrará una serie de endpoints que pueden ser utilizados tanto por el cliente móvil, como por otros servicios.
+
+Con el fin de administrar eficazmente esta comunicación y hacer más sencilla la lógica del lado del cliente, se aplicará el patrón API Gateway. Este funciona como un punto de acceso único para todas las peticiones que vienen del aplicativo móvil \cite{gadge2017microservice}. En vez de que la aplicación tenga que saber las direcciones de red de los tres microservicios, simplemente se envía todas sus solicitudes al Gateway. Este mismo se encarga de dirigir cada petición al microservicio que le corresponde, añadir respuestas cuando sea necesario y administrar tareas transversales como la autenticación de tokens y el registro \cite{gadge2017microservice}. Esto permite desblindar al cliente de la estructura interna del backend, ofreciendo una interfaz sólida y limpia que hace más fácil el mantenimiento y desarrollo del ecosistema de servicios. En la Figura \ref{Arquitectura_Microservicios} se ilustra cómo se estructura la arquitectura de microservicios.
+
+%%CAMBIAR IMAGEN
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{../02Figures/01Chapter/Arquitectura_Microservicios.png}
+    \caption{Arquitectura de Microservicios}
+    \label{Arquitectura_Microservicios}
+    \cite{sharma2024microservices}    
+\end{figure}
+
+
+\subsection{Herramientas y Tecnologías}
+Con el objetivo de optimizar la productividad, garantizar que el sistema final sea robusto y asegurar su capacidad para escalar, cada uno de los elementos del stack tecnológico ha sido seleccionado con un enfoque estratégico.
+
+\subsubsection{Herramientas de diseño y prototipado}
+
+\subsubsection*{\hspace{0.7cm}Figma}
+Figma es un instrumento de diseño moderna que se emplea para definir la experiencia del usuario (UX) y elaborar interfaces de usuario (UI) \cite{sharma2021study}. Se caracteriza por ser una plataforma colaborativa en línea, lo que posibilita a los equipos de desarrollo y diseño trabajar juntos en tiempo real sobre las maquetas y prototipos de la aplicación. Para determinar el aspecto visual y la secuencia de interacción de la aplicación móvil antes de la etapa de implementación, su atención en el diseño UI/UX es esencial \cite{sharma2021study}.
+
+\subsubsection*{\hspace{0.7cm}NinjaMock}
+NinjaMock se utiliza como una herramienta de prototipado rápido (wireframing). Su utilidad radica en permitir a los diseñadores y desarrolladores crear representaciones visuales de aplicaciones móviles y web de manera intuitiva y sin necesidad de codificación previa. Esta herramienta facilita la validación temprana de la navegación y el diseño de la aplicación, siendo un recurso valioso para conceptualizar aplicaciones móviles multiplataforma antes de iniciar la fase de implementación \cite{sanchez2021open}.
+
+\subsubsection*{\hspace{0.7cm}Jira}
+Jira se ha establecido como una herramienta fundamental en la gestión de proyectos de desarrollo de software, especialmente bajo metodologías ágiles. Su funcionalidad principal abarca la planificación, el rastreo y el lanzamiento de aplicaciones, permitiendo a los equipos de desarrollo organizar su trabajo de manera eficiente mediante tableros y flujos de trabajo personalizados. La capacidad de Jira para gestionar incidencias y visualizar el progreso del proyecto es esencial para asegurar la entrega de software de calidad y cumplir con los cronogramas establecidos \cite{li2018jira}.
+
+\subsubsection{Herramientas de Frontend}
+
+\subsubsection*{\hspace{0.7cm}Android}
+Android es un sistema operativo móvil de código abierto y se fundamenta en una variante alterada del kernel de Linux \cite{uttarwar2021literature}. Su diseño está orientado a dispositivos móviles con pantalla táctil, como las tabletas y los teléfonos inteligentes, y su estructura abierta ha promovido la adopción y personalización extensiva de parte de los fabricantes. Se ha consolidado como una de las plataformas más empleadas en el mundo entero, resaltando por su flexibilidad y su extenso ecosistema de aplicaciones \cite{uttarwar2021literature}.
+
+El desarrollo de aplicaciones nativas para esta plataforma se lleva a cabo en su mayoría por medio del entorno de desarrollo integrado (IDE) oficial, Android Studio \cite{chaubey2023integrated}. Este ambiente ofrece un paquete integral de herramientas especializadas que ayudan al desarrollador, incluyendo un editor de código, herramientas de depuración avanzadas y emuladores para evaluar la aplicación en una variedad de dispositivos virtuales \cite{chaubey2023integrated}.
+
+\subsubsection*{\hspace{0.7cm}Kotlin}
+Para crear el aplicativo móvil se eligió Kotlin como lenguaje de programación, ya que permite un desarrollo nativo en Android. Esta resolución se fundamenta en los importantes beneficios que Kotlin proporciona en comparación con opciones más convencionales como Java. Los estudios comparativos muestran que Kotlin posibilita redactar código con mayor concisión y expresividad, disminuyendo así la cantidad de código repetido (boilerplate) y, por lo tanto, el riesgo de errores \cite{putranto2020comparative}.
+
+Una de las cualidades más sobresalientes de Kotlin es su sistema de seguridad frente a nulos (null safety), que está incorporado directamente en el lenguaje. Este sistema hace una distinción entre referencias nulas y no nulas, eliminando durante la compilación los riesgosos errores de NullPointerException, que son una de las causas más frecuentes de fallos en las aplicaciones Android \cite{putranto2020comparative}. Kotlin también es completamente interoperable con Java, lo que quiere decir que puede convivir en un mismo proyecto sin inconvenientes y beneficiarse del amplio ecosistema de librerías y frameworks existentes en Java \cite{moskala2017android}.
+
+\subsubsection{Herramientas de Backend}
+
+\subsubsection{NestJS}
+Alertify empleará NestJS como framework de desarrollo y su backend se edificará empleando una arquitectura de microservicios. Nest.JS es un marco de trabajo para Node.js que simplifica la elaboración de aplicaciones del lado del servidor que sean confiables, escalables y eficaces. Su mayor beneficio es que establece una estructura modular y ordenada, inspirada en Angular, la cual es perfecta para implementar microservicios \cite{kesa2021performance}.
+Nest.JS emplea TypeScript y promueve patrones de diseño robustos, como la Inyección de Dependencias; esto permite que el código esté más desacoplado, sea más fácil de mantener y, esencialmente, más sencillo de probar. Esta estructura es esencial para un sistema como Alertify, que está dividido en servicios independientes (Ruteo, Reportes y Autenticación). Las evaluaciones de rendimiento en ambientes de nube contemporáneos han probado que Nest.JS es muy apropiado para aplicaciones con alta demanda, mostrando una eficiencia y escalabilidad sobresalientes \cite{alasmar2025evaluating}. 
+
+\subsubsection{Bases de Datos Relacionales (SQL) y No Relacionales (NoSQL)}
+Los enfoques principales que componen el panorama de las bases de datos son dos: NoSQL y SQL. Las bases de datos relacionales (SQL) tienen como objetivo asegurar la integridad de las transacciones a través de las propiedades ACID (Atomicidad, Aislamiento, Consistencia y Durabilidad) y distribuyen los datos en tablas estructuradas \cite{meier2019sql}. En cambio, los modelos que ofrecen las bases de datos NoSQL (como el documental o clave-valor) están diseñados para tener una alta escalabilidad y para gestionar datos no estructurados, poniendo a menudo la disponibilidad por encima de la consistencia estricta de ACID \cite{meier2019sql}.
+
+\subsubsection*{\hspace{0.7cm}SQL Server}
+Para Alertify, que trabaja con datos estructurados y críticos como reportes geo-localizados, usuarios e información de carreteras, la opción más robusta es un modelo relacional. SQL Server fue seleccionado específicamente porque garantiza las propiedades ACID \cite{meier2019sql}, lo que es esencial para evitar inconsistencias, como un reporte sin un usuario conectado. También, SQL Server proporciona un rendimiento mejorado para las consultas complejas que necesitan realizar operaciones de unión (joins) entre las tablas del sistema. La implementación de buenas prácticas de mantenimiento y administración garantiza que SQL Server funcione con seguridad y eficacia en contextos contemporáneos \cite{vellanki2025sql}.
+
+\subsubsection*{\hspace{0.7cm}PostgreSQL}
+PostgreSQL representa una evolución significativa en los sistemas de gestión de bases de datos, introduciendo un enfoque objeto-relacional robusto. Su diseño arquitectónico permite extender el modelo de datos tradicional mediante la definición de nuevos tipos de datos, operadores y métodos de acceso. Esta capacidad de extensibilidad, combinada con un sistema de reglas activo, posiciona a PostgreSQL como una solución potente para manejar datos complejos y garantizar la integridad de la información en entornos que requieren un rigor transaccional estricto \cite{stonebraker1986design}.
+
+\subsubsection*{\hspace{0.7cm}MongoDB}
+Como alternativa a los modelos relacionales, MongoDB ofrece una solución de almacenamiento de datos potente y altamente escalable, orientada a documentos. Esta tecnología permite gestionar información de manera flexible, sin la rigidez de los esquemas de tablas tradicionales, lo que resulta ideal para aplicaciones modernas que manejan grandes volúmenes de datos diversos. La arquitectura de MongoDB está diseñada para facilitar el escalado horizontal y proporcionar un alto rendimiento en la recuperación y almacenamiento de información \cite{bradshaw2019mongodb}.
+
+\subsubsection{Herramientas de Control de Versiones y Colaboración}
+
+\subsubsection*{\hspace{0.7cm}Git}
+Git es un sistema de control de versiones distribuido (DVCS), el cual es una herramienta fundamental para la creación de software cooperativo \cite{loeliger2012version}. Su objetivo principal es rastrear de manera eficaz las modificaciones que se han hecho al código fuente con el tiempo. Contrario a los sistemas centralizados, Git otorga a cada uno de los desarrolladores un repositorio local completo. Esto hace posible la creación de ramas (branching) y la fusión de código (merging) con una velocidad enorme y unas capacidades muy potentes \cite{loeliger2012version}.
+
+\subsubsection*{\hspace{0.7cm}Github}
+GitHub es una plataforma de alojamiento web que emplea Git como su motor para el control de versiones, aunque amplía sus posibilidades al incorporar una sólida capa de colaboración y ``codificación social'' \cite{dabbish2012social}. Ofrece un espacio para que los programadores puedan almacenar sus repositorios de Git y promueve la colaboración mediante la transparencia del código. Elementos como las peticiones de integración (pull requests) y el rastreo de problemas (issues) posibilitan que se realicen revisiones y diálogos sobre el código de manera organizada, lo que mejora la administración y la calidad del proyecto \cite{dabbish2012social}.
+
+\subsubsection*{\hspace{0.7cm}Bitbucket}
+Bitbucket es una plataforma diseñada para el alojamiento y gestión de repositorios de código, proporcionando un enfoque práctico para el uso de sistemas de control de versiones como Git. Facilita la colaboración entre desarrolladores mediante herramientas de integración y revisión de código, permitiendo una administración eficiente de las ramas y fusiones del proyecto. Su uso es clave para equipos que buscan mantener un historial de cambios ordenado y seguro dentro del ciclo de vida del desarrollo \cite{chakraborty2022practical}.
+
+\subsubsection*{\hspace{0.7cm}Gitlab}
+GitLab se centra en la gestión integral de repositorios de software, ofreciendo un entorno centralizado para el control de versiones y la colaboración en equipo. Más allá del simple almacenamiento de código, GitLab facilita la administración de proyectos mediante características que apoyan el flujo de trabajo de desarrollo, desde la gestión de usuarios y permisos hasta la revisión de código, consolidándose como una herramienta vital para mantener la coherencia y seguridad en el desarrollo colaborativo \cite{hethey2013gitlab}.
+%%%CORREGIR HERRAMIENTAS DE PRUEBAS MOVIL/PRUEBAS DESARROLLO
+\subsubsection{Herramientas de Pruebas y Validación}
+\subsubsection*{\hspace{0.7cm}Herramientas para Pruebas Funcionales}
+El framework NestJS está diseñado para facilitar las pruebas automatizadas, integrando por defecto un entorno de pruebas robusto \cite{duc2020developing}. NestJS emplea Jest como su marco de pruebas primordial para las pruebas funcionales, produciendo automáticamente archivos que especifican los componentes. La biblioteca Supertest \cite{duc2020developing} es la que se usa normalmente para las pruebas de extremo a extremo (E2E), las cuales son esenciales para validar tanto los endpoints de la API como el flujo total de la aplicación. Supertest posibilita emular solicitudes HTTP a los controladores y comprobar las respuestas, lo que garantiza que el backend actúe de la manera prevista \cite{duc2020developing}.
+
+\subsubsection*{\hspace{0.7cm}Herramientas para Pruebas No Funcionales}
+Para las pruebas no funcionales, que analizan características como la eficiencia, el rendimiento y la capacidad de escalar, se utilizan herramientas externas. Para analizar el desempeño de NestJS en condiciones de alta demanda y en ambientes basados en nube, es crucial llevar a cabo pruebas de carga controladas \cite{alasmar2025evaluating}. Para realizar pruebas de rendimiento, simular cargas de usuarios concurrentes y medir los tiempos de respuesta del servidor \cite{aggarwal2018comparative}, son frecuentemente usadas herramientas estándar de la industria, como Apache JMeter, en pilas tecnológicas semejantes (por ejemplo MERN, que tiene el mismo entorno Node.js). Este tipo de análisis es esencial para recolectar métricas de rendimiento y garantizar la solidez del backend \cite{cardozo2021fastrabbit}.
+
+\subsubsection{Herramientas de Despliegue y Mantenimiento}
+\subsubsection*{\hspace{0.7cm}Docker y Azure App Service}
+La tecnología de contenedores Docker, ubicada en la plataforma Azure App Service, será la base para implementar los microservicios de Alertify.
+
+Docker es una tecnología de contenedorización que posibilita la agrupación de una aplicación y de sus dependencias (como configuraciones, bibliotecas, etc.) en una unidad estandarizada conocida como contenedor \cite{gudelli2023containerization}. Para Alertify, esto implica que cada microservicio (Ruteo, Autenticación, Reportes) se agrupará en un contenedor Docker individual. Esta perspectiva asegura que los servicios se lleven a cabo de forma predecible y consistente en cualquier entorno, lo que soluciona los problemas de compatibilidad entre el ambiente de producción y el de desarrollo.
+
+Estos contenedores se implementarán en Azure App Service, un servicio de plataforma como servicio (PaaS) que facilita la gestión y orquestación de aplicaciones alojadas en contenedores \cite{acharya2021docker}. El uso de App Service posibilita abstraerse de la dificultad que conlleva gestionar la infraestructura subyacente (como las máquinas virtuales, las redes, etc.) y brinda características integradas como el escalado automático, el balanceo de carga y la integración/despliegue continuos (CI/CD); estos procesos automatizan la construcción, prueba y despliegue de los contenedores cada vez que se realiza un cambio en el código \cite{erdenebat2023multi}.
+
