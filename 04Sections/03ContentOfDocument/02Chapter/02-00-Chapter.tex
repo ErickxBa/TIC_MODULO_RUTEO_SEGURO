@@ -1,7 +1,7 @@
-El Módulo de Ruteo Seguro busca la optimización de rutas variables haciendo uso de variables de inseguridad ciudadana, por lo cual se optó por un enfoque de investigación aplicada estructurado bajo el marco de trabajo ágil Scrum. En esta sección se describe el proceso de desarrollo organizado en fases iterativas, desde la exploración y planificación hasta la implementación y despliegue, de manera que se asegura la entrega incremental de valor al usuario final.
+El Módulo de Ruteo Seguro busca la optimización de rutas variables haciendo uso de variables de inseguridad ciudadana, por lo cual se optó por una metodología de investigación aplicada organizada según el marco de trabajo Scrum. En esta sección describe el proceso de desarrollo organizado en fases iterativas, desde la exploración y planificación hasta la implementación y despliegue, de manera que se asegura la entrega incremental de valor al usuario final.
 
 \section{Fase Exploratoria}
-En esta etapa se lleva a cabo la identificación y caracterización de los actores clave que intervienen directa e indirectamente en el sistema, asegurando que las funcionalidades de navegación y seguridad preventiva respondan a necesidades reales.
+En esta fase se realiza la identificación y caracterización de los actores relevantes que participan en el sistema, tanto directa como indirectamente, asegurando que las funcionalidades de navegación y seguridad preventiva respondan a necesidades reales.
 
 \subsection{Stakeholders}
 Para el desarrollo del módulo es fundamental identificar a las partes interesadas que interactúan directa o indirectamente con el sistema mediante la correcta identificación de sus roles y necesidades permite alinear los requerimientos del algoritmo de ruteo y la interfaz móvil con las expectativas reales de uso y supervisión académica en la Tabla ~\ref{tab:stakeholders} se describe a los stakeholders principales. 
@@ -27,9 +27,9 @@ Responsable del diseño, construcción e implementación del Módulo de Ruteo Se
 
 \subsection{Planificación del proyecto}
 
-Para el desarrollo módulo, se ha planificado y estructurado una carga de trabajo de 288 horas, la cual se visualiza en la Figura \ref{fig:Cronograma}. Estas horas se disbruyen en la investigación preliminar, el diseño arquitectónico, la implementación del código, y la ejecución de pruebas. Cada fase ha sido distribuida de forma progresiva e incremental, garantizando que las actividades técnicas y las tareas organizativas se complementen eficientemente, lo cual permite mitigar riesgos y asegurar la viabilidad técnica del módulo en los plazos establecidos.
+Se ha organizado y planeado para el desarrollo del módulo una carga de trabajo de 288 horas, la cual se visualiza en la Figura \ref{fig:Cronograma}. Estas horas se disbruyen en la investigación preliminar, el diseño arquitectónico, la implementación del código, y la ejecución de pruebas. Cada fase ha sido distribuida de forma progresiva e incremental, garantizando que las actividades técnicas y las tareas organizativas se complementen eficientemente, lo cual permite mitigar riesgos y asegurar la viabilidad técnica del módulo en los plazos establecidos.
 
-En la etapa inicial, el cronograma prioriza una fase de investigación, esencial para establecer la arquitectura que soportará el sistema y la forma en la que se graficara la ruta. Posteriormente, para el cumplimiento del cronograma se inicia con la estructuración de la base de datos, continuando con la implementación de la lógica de negocio en el motor de ruteo y finalizando con la integración de la interfaz móvil para el usuario final. De igual manera a estas actividades de desarrollo, se incorporan las reuniones del marco de trabajo Scrum, tales como las reuniones diarias de seguimiento y las revisiones de Sprint. Asegurando un monitoreo continuo del progreso y permitiendo ajustes tempranos. Por último el proceso finaliza con una fase de validación funcional y pruebas de usabilidad que certifican la calidad y estabilidad del entregable final.
+En la etapa inicial, el cronograma prioriza una fase de investigación, esencial para establecer la arquitectura que soportará el sistema y la forma en la que se graficara la ruta. Posteriormente, para el cumplimiento del cronograma se inicia con la estructuración de la base de datos, siguiendo con la integración de la interfaz móvil para el usuario final y terminando con la aplicación de la lógica comercial en el motor de ruteo. De igual manera a estas actividades de desarrollo, se incorporan las reuniones del marco de trabajo Scrum, tales como las reuniones diarias de seguimiento y las revisiones de Sprint. Asegurando un monitoreo continuo del progreso y permitiendo ajustes tempranos. Por último el proceso finaliza con una fase de validación funcional y pruebas de usabilidad que certifican la calidad y estabilidad del entregable final.
 \begin{figure}[htbp]
     \centering  
     \includegraphics[width=0.9\textwidth]{../02Figures/02Chapter/Cronograma.png}
@@ -67,10 +67,10 @@ Por otro lado, para la gestión ágil del proyecto, se han definido los roles fu
 Esta etapa incluye la configuración del entorno técnico y la especificación minuciosa de los requisitos funcionales del sistema. Se definen las herramientas de desarrollo, se instalan los servicios en la nube y el Product Backlog se establece al traducir los requerimientos de los interesados en historias de usuario que son valoradas y ordenadas por prioridad.
 
 \subsection{Herramientas y Entorno de Trabajo}
-A continuación en la Tabla \ref{tab:herramientas-tecnologias} se describen brevemente las herramientas y tecnologías seleccionadas para el desarrollo del módulo, asegurando su integración adecuada en la arquitectura de microservicios. La decisión de este stack tecnológico se debe a la necesidad de garantizar una disponibilidad alta y de procesar datos geográficos. 
+En la Tabla \ref{tab:herramientas-tecnologias} se explican, a continuación, de manera sucinta las tecnologías y herramientas elegidas con el propósito del desarrollo del módulo, asegurando su integración adecuada en la arquitectura de microservicios. La decisión de este stack tecnológico se debe a la necesidad de garantizar una disponibilidad alta y de procesar datos geográficos. 
 
 \begin{table}[H]
-\caption{Herramientas y tecnologías utilizadas en el desarrollo del sistema.}
+\caption{Tecnologías y herramientas empleadas en el desarrollo del sistema.}
 \label{tab:herramientas-tecnologias}
 \centering
 \begin{tabular}{|p{3.5cm}|p{4cm}|p{7cm}|}
@@ -101,7 +101,7 @@ A continuación en la Tabla \ref{tab:herramientas-tecnologias} se describen brev
 
 \textbf{Base de Datos} 
 & SQL Server 
-& Este es el motor de base de datos relacional seleccionado por su robusto soporte de \textit{datos espaciales}, esenciales para el algoritmo de ruteo. \\ \hline
+& Este es el motor de base de datos relacional se eligió por su sólido soporte de \textit{datos espaciales}, esenciales para el algoritmo de ruteo. \\ \hline
 
 \textbf{Infraestructura} 
 & Azure App Service 
