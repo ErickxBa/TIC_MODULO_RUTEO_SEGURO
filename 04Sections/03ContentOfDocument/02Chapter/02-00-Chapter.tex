@@ -1,6 +1,6 @@
 El Módulo de Ruteo Seguro busca la optimización de rutas variables haciendo uso de variables de inseguridad ciudadana, por lo cual se optó por una metodología de investigación aplicada organizada según el marco de trabajo Scrum. En esta sección describe el proceso de desarrollo organizado en fases iterativas, desde la exploración y planificación hasta la implementación y despliegue, de manera que se asegura la entrega incremental de valor al usuario final.
 
-\section{Fase Exploratoria}
+\section{Instauración del marco de trabajo Scrum}
 En esta fase se realiza la identificación y caracterización de los actores relevantes que participan en el sistema, tanto directa como indirectamente, asegurando que las funcionalidades de navegación y seguridad preventiva respondan a necesidades reales.
 
 \subsection{Stakeholders}
@@ -62,7 +62,7 @@ Por otro lado, para la gestión ágil del proyecto, se han definido los roles fu
 \end{tabular}
 \end{table}
 
-\section{Fase Exploratoria}
+\section{Preparación del Entorno e Inicialización}
 
 Esta etapa incluye la configuración del entorno técnico y la especificación minuciosa de los requisitos funcionales del sistema. Se definen las herramientas de desarrollo, se instalan los servicios en la nube y el Product Backlog se establece al traducir los requerimientos de los interesados en historias de usuario que son valoradas y ordenadas por prioridad.
 
@@ -150,38 +150,38 @@ Una vez definidas las épicas de usuario, se presentan su desglose en las tareas
 \caption{Historia de Usuario HU-01: Selección de Origen y Destino.}
 \label{tab:historias-usuario-1}
 \centering
-\begin{tabular}{|p{4cm}|p{10cm}|}
+\begin{tabularx}{\textwidth}{|p{3.5cm}|p{3cm}|X|}
 \hline
-\textbf{Código} & HU-01 \\ \hline
-\textbf{Nombre} & Selección de Origen y Destino \\ \hline
-\textbf{Prioridad} & Alta \\ \hline
-\textbf{Estimación} & 5 Puntos \\ \hline
-\textbf{Descripción} &
+\multirow{2}{3.5cm}{\textbf{HU-01:} Selección de Origen y Destino}
+ & \textbf{Prioridad} & Alta \\ \cline{2-3}
+ & \textbf{Estimación} & 5 Puntos \\
+\hline
+\multicolumn{2}{|l|}{\textbf{Descripción}} &
 Como usuario, quiero poder seleccionar mi ubicación actual y un punto de destino mediante una barra de búsqueda o tocando el mapa, para iniciar la solicitud de una ruta. \\ \hline
-\textbf{Criterios de Aceptación} &
+\multicolumn{2}{|l|}{\textbf{Criterios de Aceptación}} &
 1. Integrar el SDK de mapas permitiendo gestos táctiles. \newline
 2. Debe existir un autocompletado de direcciones básicas. \newline
 3. El sistema debe capturar las coordenadas (latitud y longitud) de ambos puntos. \\ \hline
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 \begin{table}[H]
 \caption{Historia de Usuario HU-02: Cálculo de Ruta Segura.}
 \label{tab:historias-usuario-2}
 \centering
-\begin{tabular}{|p{4cm}|p{10cm}|}
+\begin{tabularx}{\textwidth}{|p{3.5cm}|p{3cm}|X|}
 \hline
-\textbf{Código} & HU-02 \\ \hline
-\textbf{Nombre} & Cálculo de Ruta Segura \\ \hline
-\textbf{Prioridad} & Alta \\ \hline
-\textbf{Estimación} & 8 Puntos \\ \hline
-\textbf{Descripción} &
+\multirow{2}{3.5cm}{\textbf{HU-02:} Cálculo de Ruta Segura}
+ & \textbf{Prioridad} & Alta \\ \cline{2-3}
+ & \textbf{Estimación} & 8 Puntos \\
+\hline
+\multicolumn{2}{|l|}{\textbf{Descripción}} &
 Como usuario, quiero que el sistema calcule una ruta que priorice calles con menor índice de criminalidad, evitando zonas con altos reportes de incidentes. \\ \hline
-\textbf{Criterios de Aceptación} &
+\multicolumn{2}{|l|}{\textbf{Criterios de Aceptación}} &
 1. El servicio debe recibir el par de coordenadas. \newline
 2. El algoritmo debe consultar a la base de datos y utilizar el indice de criminalidad para el peso de las aristas. \newline
 3. El sistema debe retornar un archivo con la ruta y el tiempo estimado. \\ \hline
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 
@@ -189,76 +189,76 @@ Como usuario, quiero que el sistema calcule una ruta que priorice calles con men
 \caption{Historia de Usuario HU-03: Visualización de Trayecto.}
 \label{tab:historias-usuario-3}
 \centering
-\begin{tabular}{|p{4cm}|p{10cm}|}
+\begin{tabularx}{\textwidth}{|p{3.5cm}|p{3cm}|X|}
 \hline
-\textbf{Código} & HU-03 \\ \hline
-\textbf{Nombre} & Visualización de Trayecto en Mapa \\ \hline
-\textbf{Prioridad} & Alta \\ \hline
-\textbf{Estimación} & 5 Puntos \\ \hline
-\textbf{Descripción} &
+\multirow{2}{3.5cm}{\textbf{HU-03:} Visualización de Trayecto en Mapa}
+ & \textbf{Prioridad} & Alta \\ \cline{2-3}
+ & \textbf{Estimación} & 5 Puntos \\
+\hline
+\multicolumn{2}{|l|}{\textbf{Descripción}} &
 Como usuario, quiero ver dibujada en el mapa la línea de la ruta sugerida para poder seguirla visualmente hacia mi destino. \\ \hline
-\textbf{Criterios de Aceptación} &
+\multicolumn{2}{|l|}{\textbf{Criterios de Aceptación}} &
 1. La aplicación debe recibir la geometría de la API y dibujarla como una \textit{Polyline}. \newline
 2. La cámara del mapa debe ajustarse para mostrar toda la ruta. \newline
 3. Se debe diferenciar visualmente el inicio y el fin con marcadores. \\ \hline
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 \begin{table}[H]
 \caption{Historia de Usuario HU-04: Ponderación de Riesgo.}
 \label{tab:historias-usuario-4}
 \centering
-\begin{tabular}{|p{4cm}|p{10cm}|}
+\begin{tabularx}{\textwidth}{|p{3.5cm}|p{3cm}|X|}
 \hline
-\textbf{Código} & HU-04 \\ \hline
-\textbf{Nombre} & Actualización de Pesos por Incidentes \\ \hline
-\textbf{Prioridad} & Media \\ \hline
-\textbf{Estimación} & 8 Puntos \\ \hline
-\textbf{Descripción} &
+\multirow{2}{3.5cm}{\textbf{HU-04:} Actualización de Pesos por Incidentes}
+ & \textbf{Prioridad} & Media \\ \cline{2-3}
+ & \textbf{Estimación} & 8 Puntos \\
+\hline
+\multicolumn{2}{|l|}{\textbf{Descripción}} &
 Como sistema, requiero actualizar el costo de una calle cuando se reporta un nuevo incidente, para que las futuras rutas eviten esa zona. \\ \hline
-\textbf{Criterios de Aceptación} &
+\multicolumn{2}{|l|}{\textbf{Criterios de Aceptación}} &
 1. Debe existir un procedimiento almacenado que intercepte nuevos reportes. \newline
 2. Se debe identificar la arista más cercana al incidente y aumentar su coste en el grafo. \newline
 3. La actualización debe ser consistente sin bloquear lecturas. \\ \hline
-\end{tabular}
+\end{tabularx}
 \end{table} 
 
 \begin{table}[H]
 \caption{Historia de Usuario HU-05: Recálculo de Ruta por Desvío.}
 \label{tab:historias-usuario-5}
 \centering
-\begin{tabular}{|p{4cm}|p{10cm}|}
+\begin{tabularx}{\textwidth}{|p{3.5cm}|p{3cm}|X|}
 \hline
-\textbf{Código} & HU-05 \\ \hline
-\textbf{Nombre} & Recálculo de Ruta por Desvío \\ \hline
-\textbf{Prioridad} & Media \\ \hline
-\textbf{Estimación} & 8 puntos \\ \hline
-\textbf{Descripción} &
+\multirow{2}{3.5cm}{\textbf{HU-05:} Recálculo de Ruta por Desvío}
+ & \textbf{Prioridad} & Media \\ \cline{2-3}
+ & \textbf{Estimación} & 8 Puntos \\
+\hline
+\multicolumn{2}{|l|}{\textbf{Descripción}} &
 Como usuario, quiero que el sistema detecte si me he desviado de la ruta sugerida y recalcule automáticamente un nuevo trayecto seguro desde mi nueva ubicación hacia el destino original. \\ \hline
-\textbf{Criterios de Aceptación} &
+\multicolumn{2}{|l|}{\textbf{Criterios de Aceptación}} &
 1. Se debe detectar si la ubicación actual del usuario se aleja de la polilínea de la ruta. \newline
 2. Se debe disparar una nueva petición, con las nuevas coordenadas de origen. \newline
 3. La transición visual en el mapa debe ser fluida, reemplazando la línea antigua por la nueva sin bloquear la interfaz. \\ \hline
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 \begin{table}[H]
 \caption{Historia de Usuario HU-06: Carga y Estructuración de Red Vial.}
 \label{tab:historias-usuario-6}
 \centering
-\begin{tabular}{|p{4cm}|p{10cm}|}
+\begin{tabularx}{\textwidth}{|p{3.5cm}|p{3cm}|X|}
 \hline
-\textbf{Código} & HU-06 \\ \hline
-\textbf{Nombre} & Carga y Estructuración de Red Vial\\ \hline
-\textbf{Prioridad} & Alta \\ \hline
-\textbf{Estimación} & 5 Puntos \\ \hline
-\textbf{Descripción} &
+\multirow{2}{3.5cm}{\textbf{HU-06:} Carga y Estructuración de Red Vial}
+ & \textbf{Prioridad} & Alta \\ \cline{2-3}
+ & \textbf{Estimación} & 5 Puntos \\
+\hline
+\multicolumn{2}{|l|}{\textbf{Descripción}} &
 Como sistema, debo cargar la cartografía de la ciudad (OpenStreetMap) en la base de datos SQL Server, convirtiendo los datos en una topología de grafos (nodos y aristas) que sea adecuada para el ruteo. \\ \hline
-\textbf{Criterios de Aceptación} &
+\multicolumn{2}{|l|}{\textbf{Criterios de Aceptación}} &
 1. Importación de datos geográficos de Quito en formato .osm o .shp a tablas de SQL Server.\newline
 2. Conversión correcta de coordenadas a tipos de datos Geography o Geometry.\newline
 3. Creación de índices espaciales para optimizar las consultas de búsqueda de nodos cercanos. \\ \hline
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 
@@ -447,11 +447,11 @@ Para asegurar un desempeño eficaz y reducir los riesgos, se organizó la planif
 
 \end{longtable}
 
-\subsection{Sprint 0}
+\section{Sprint 0}
 
 En la etapa inicial del proyecto se crea la infraestructura técnica y los lineamientos arquitectónicos antes de comenzar a desarrollar las funcionalidades de manera progresiva. En esta fase, se pusieron en marcha los repositorios de código, se determinó la estructura del software que respaldará las operaciones de geoprocesamiento, la definición de prototipos y por último la base de datos.
 
-\subsubsection{Diagrama de arquitectura}
+\subsection{Diagrama de arquitectura}
 
 Se adoptó una arquitectura de microservicios para asegurar la escalabilidad y el desacoplamiento funcional del Módulo de Ruteo Seguro en el ecosistema Alertify. Al hacer uso de esta opción se puede separar la carga computacional de los algoritmos de grafos de otros ámbitos del sistema, lo que hace más sencillo el mantenimiento y la escalabilidad autónoma del servicio. La Figura \ref{Arquitectura_Microservicios_Alertify} ilustra la interacción entre los componentes lógicos del cliente móvil, el servicio de backend y la persistencia de datos.
 
@@ -465,7 +465,7 @@ Se adoptó una arquitectura de microservicios para asegurar la escalabilidad y e
 
 La arquitectura propuesta organiza el sistema en tres niveles funcionales que interactúan secuencialmente. La aplicación móvil gestiona la interfaz de usuario y la visualización del trayecto sobre el mapa, manteniendo  un monitoreo constante de la ubicación geográfica para trazar la ruta correctamente. La lógica central se basa en recibir las peticiones de navegación y ejecuta los algoritmos de búsqueda sobre el grafo vial. Este módulo tiene la responsabilidad de determinar el camino óptimo tomando en cuenta dos variables: el nivel de riesgo acumulado y la distancia física. Por último, la Capa de Datos guarda el historial de incidentes y la topología de la red vial. Esta estructura posibilita que se hagan consultas espaciales y que los "costos" de las calles se actualicen en tiempo real, garantizando así que las rutas producidas eludan las áreas con reportes de seguridad recientes.
 
-\subsubsection{Prototipos de aplicación móvil}
+\subsection{Prototipos de aplicación móvil}
 
 Una vez planteada la arquitectura del módulo, se procedió con el bosquejo de los prototipos de la aplicación móvil. Estos diseños iniciales se enfocan en la experiencia del usuario al interactuar con el mapa, seleccionar puntos de origen y destino, y visualizar la ruta segura sugerida. La Figura \ref{fig:prototipo-app} muestra las pantallas diseñadas en Figma, en donde se visualizan los elementos que conforman la interfaz del aplicativo.
 
@@ -476,7 +476,7 @@ Una vez planteada la arquitectura del módulo, se procedió con el bosquejo de l
     \label{fig:prototipo-app}
 \end{figure}
 
-\subsubsection{Estructura de la base de datos}
+\subsection{Estructura de la base de datos}
 
 El esquema de la base de datos se definió para soportar datos geográficos y permitir consultas eficientes. La Figura \ref{fig:esquema-bd} ilustra las tablas principales que componen la base de datos, destacando las relaciones entre ellas. Los cruces de vías se almacenan en la tabla NODOS como puntos geográficos, a su vez la tabla ARISTAS, que representa los segmentos de calle que enlazan dos nodos esta entidad considera el campo de riesgo como una variable dinámica que se actualiza según los reportes de incidentes, con la cual el algoritmo prioriza en busca de la ruta más segura. Por último, la tabla INCIDENTES almacena los atributos críticos necesarios para el cálculo geométrico (ubicación y gravedad), de esta manera se garantiza que el procedimiento almacenado se ejecute eficazmente.
 
@@ -487,7 +487,7 @@ El esquema de la base de datos se definió para soportar datos geográficos y pe
     \label{fig:esquema-bd}
 \end{figure}
 
-\subsubsection{Configuración de organización en GitHub}
+\subsection{Configuración de organización en GitHub}
 
 Para la distribución y control del código se configuró una organización en GitHub, la cual permite gestionar los repositorios de los diferentes módulos del sistema Alertify facilitando la colaboración entre los desarrolladores. En la Figura \ref{fig:github-org} se muestra la estructura de la organización y sus respectivos repositorios.
 
@@ -499,7 +499,7 @@ Para la distribución y control del código se configuró una organización en G
 \end{figure}
 
 
-\subsubsection{Tablero de gestión en Jira}
+\subsection{Tablero de gestión en Jira}
 
 Para la planificación y supervisión de las tareas, se procedió a la realización del Product Backlog representándolo mediante un tablero en Jira, en el cual se configuró Scrum, donde se transcribieron las historias de usuario y sus respectivas tareas técnicas. En la Figura \ref{fig:jira-board}, cada ítem de trabajo fue etiquetado con su Épica correspondiente (E-01 Gestión del Grafo, de manera que se garantiza la trazabilidad de los requisitos.
 
@@ -512,6 +512,72 @@ Para la planificación y supervisión de las tareas, se procedió a la realizaci
 
 \subsubsection{Sprint 0 Review}
 Se expusieron y se comprobaron los artículos de diseño en la revisión del sprint, en relación con las metas establecidas. Se corroboró que el Diagrama de Arquitectura satisface las necesidades de desacoplamiento para una arquitectura de microservicios, separando adecuadamente la lógica de ruteo del resto de módulos de Alertify. Además, se verificó que el modelo entidad-relación cumpla con la estructura de tablas (nodos y aristas). Por último, la configuración inicial del proyecto estaba completa, por lo que se proclamó el sprint como logrado.
+
+\section{Implementación de funcionalidades}
+La construcción del módulo se lleva a cabo siguiendo el marco de trabajo Scrum, que fue establecido durante la etapa de planificación, en la que se concretan los modelos de datos y los diseños arquitectónicos previamente establecidos. Desde la preparación de la infraestructura espacial de la red vial en la base de datos, el desarrollo del algoritmo central para calcular rutas en el backend, hasta que se incorpore con la interfaz móvil y se aplique una lógica dinámica para prevenir riesgos. Cada iteración es un reflejo de la calidad del código y las capacidades funcionales del sistema.
+
+\subsection{Sprint 1}
+
+La construcción de la base técnica y la infraestructura de datos espaciales son componentes esenciales para permitir las capacidades futuras de cálculo de rutas y visualización de mapas. 
+Esta iteración incluyó la preparación de la base de datos relacional con compatibilidad para categorías de datos geográficos, la adquisición y depuración del mapa sin procesar de Quito, así como el desarrollo de scripts para extraer, transformar e introducir los datos a las tablas finales correspondientes a Nodos y Aristas. Simultáneamente, se organizó el entorno inicial del SDK de Google Maps.
+
+\subsection{Sprint Backlog}
+
+La implementación se basa principalmente en la creación de la estructura de la base de datos, la depuración del mapa sin procesar de Quito, así como el desarrollo de scripts para extraer, transformar e introducir los datos a las tablas finales correspondientes a Nodos y Aristas. Las tareas a cumplir se detallan en la Tabla \ref{tab:sprint1-backlog}.
+
+\begin{table}[H]
+\caption{Backlog para el Sprint 1}
+\label{tab:sprint1-backlog}
+\centering
+
+\begin{tabularx}{\textwidth}{|p{3.5cm}|p{1.5cm}|X|}
+\hline
+\textbf{Historia de Usuario} & \textbf{Código} & \textbf{Descripción} \\
+\hline
+
+\multirow{4}{3.5cm}{HU-06: Carga y Estructuración de Red Vial}
+& \textbf{T-20} & Configuración de Azure SQL Database habilitando extensiones geográficas. \\
+\cline{2-3}
+& \textbf{T-21} & Obtención y limpieza de cartografía de Quito (OpenStreetMap). \\
+\cline{2-3}
+& \textbf{T-22} & Desarrollo de script ETL para migrar datos geográficos a tablas \texttt{Nodos} y \texttt{Aristas}. \\
+\cline{2-3}
+& \textbf{T-23} & Creación de índices geográficos (\texttt{SPATIAL\_INDEX}) para optimización de consultas. \\
+\hline
+
+\multirow{1}{3.5cm}{HU-01: Selección de Origen y Destino}
+& \textbf{T-01} & Configuración de proyecto (Android/Kotlin) e integración inicial de Google Maps SDK. \\
+\hline
+
+\end{tabularx}
+\end{table}
+
+El desarrollo del módulo inició a partir del aprovisionamiento de la base de datos en la nube.  Se estableció un servidor en Azure SQL Database (\texttt{server-ruteo-seguro.database.windows.net}), se eligió este motor por su manera de procesar datos geoespaciales usando el tipo de dato \texttt{GEOGRAPHY}. Esta propiedad es esencial para el ruteo, porque posibilita la ejecución de cálculos relacionados con distancias y la búsqueda de intersecciones en función de coordenadas geográficas reales. El plan de servicio seleccionado dentro de la nube de Azure se muestra en la Figura \ref{Configuración_Azure.png}
+
+\begin{figure}[htbp]
+    \centering  
+    \includegraphics[width=0.9\textwidth]{../02Figures/02Chapter/Configuración_Azure.png}
+    \caption{Configuración del servicio de base de datos en Azure}
+    \label{Configuración_Azure.png}
+\end{figure}    
+
+Con la creación del recurso de base de datos, se procedió a la definición de las tablas \texttt{Nodos}, \texttt{Aristas} e \texttt{Incidentes} con sus respectivos campos y tipos de datos. Se establecieron relaciones entre las tablas para representar la topología de la red vial y se configuraron índices espaciales en los campos geográficos para optimizar las consultas de búsqueda de rutas, el script SQL para la creación de las tablas en la base de datos (\texttt{db-ruteo-seguro}) se muestra en la Figura \ref{Creación_BDD.png}.
+
+\begin{figure}[htbp]
+    \centering  
+    \includegraphics[width=0.9\textwidth]{../02Figures/02Chapter/Creación_BDD.png}
+    \caption{Script para la creación de las tablas base de datos}
+    \label{Creación_BDD.png}    
+\end{figure}
+
+
+
+Luego, se procedió a la adquisición de la cartografía sin procesar de Quito, obtenida desde OpenStreetMap, la cual se limpió y transformó para que se ajustara al modelo de datos definido en la base de datos. Finalmente, se desarrollaron scripts de ETL (Extract, Transform, Load) para migrar los datos geográficos a las tablas Nodos y Aristas, asegurando que cada segmento de calle (arista) estuviera correctamente vinculado a sus respectivos cruces (nodos) y que se crearan índices espaciales para optimizar las consultas de búsqueda.
+
+\subsection{Sprint 2}
+\subsection{Sprint 3}
+\subsection{Sprint 4}
+\subsection{Sprint 5}
 
 
 
