@@ -150,38 +150,38 @@ Una vez definidas las épicas de usuario, se presentan su desglose en las tareas
 \caption{Historia de Usuario HU-01: Selección de Origen y Destino.}
 \label{tab:historias-usuario-1}
 \centering
-\begin{tabular}{|p{4cm}|p{10cm}|}
+\begin{tabularx}{\textwidth}{|p{3.5cm}|p{3cm}|X|}
 \hline
-\textbf{Código} & HU-01 \\ \hline
-\textbf{Nombre} & Selección de Origen y Destino \\ \hline
-\textbf{Prioridad} & Alta \\ \hline
-\textbf{Estimación} & 5 Puntos \\ \hline
-\textbf{Descripción} &
+\multirow{2}{3.5cm}{\textbf{HU-01:} Selección de Origen y Destino}
+ & \textbf{Prioridad} & Alta \\ \cline{2-3}
+ & \textbf{Estimación} & 5 Puntos \\
+\hline
+\multicolumn{2}{|l|}{\textbf{Descripción}} &
 Como usuario, quiero poder seleccionar mi ubicación actual y un punto de destino mediante una barra de búsqueda o tocando el mapa, para iniciar la solicitud de una ruta. \\ \hline
-\textbf{Criterios de Aceptación} &
+\multicolumn{2}{|l|}{\textbf{Criterios de Aceptación}} &
 1. Integrar el SDK de mapas permitiendo gestos táctiles. \newline
 2. Debe existir un autocompletado de direcciones básicas. \newline
 3. El sistema debe capturar las coordenadas (latitud y longitud) de ambos puntos. \\ \hline
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 \begin{table}[H]
 \caption{Historia de Usuario HU-02: Cálculo de Ruta Segura.}
 \label{tab:historias-usuario-2}
 \centering
-\begin{tabular}{|p{4cm}|p{10cm}|}
+\begin{tabularx}{\textwidth}{|p{3.5cm}|p{3cm}|X|}
 \hline
-\textbf{Código} & HU-02 \\ \hline
-\textbf{Nombre} & Cálculo de Ruta Segura \\ \hline
-\textbf{Prioridad} & Alta \\ \hline
-\textbf{Estimación} & 8 Puntos \\ \hline
-\textbf{Descripción} &
+\multirow{2}{3.5cm}{\textbf{HU-02:} Cálculo de Ruta Segura}
+ & \textbf{Prioridad} & Alta \\ \cline{2-3}
+ & \textbf{Estimación} & 8 Puntos \\
+\hline
+\multicolumn{2}{|l|}{\textbf{Descripción}} &
 Como usuario, quiero que el sistema calcule una ruta que priorice calles con menor índice de criminalidad, evitando zonas con altos reportes de incidentes. \\ \hline
-\textbf{Criterios de Aceptación} &
+\multicolumn{2}{|l|}{\textbf{Criterios de Aceptación}} &
 1. El servicio debe recibir el par de coordenadas. \newline
 2. El algoritmo debe consultar a la base de datos y utilizar el indice de criminalidad para el peso de las aristas. \newline
 3. El sistema debe retornar un archivo con la ruta y el tiempo estimado. \\ \hline
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 
@@ -189,76 +189,76 @@ Como usuario, quiero que el sistema calcule una ruta que priorice calles con men
 \caption{Historia de Usuario HU-03: Visualización de Trayecto.}
 \label{tab:historias-usuario-3}
 \centering
-\begin{tabular}{|p{4cm}|p{10cm}|}
+\begin{tabularx}{\textwidth}{|p{3.5cm}|p{3cm}|X|}
 \hline
-\textbf{Código} & HU-03 \\ \hline
-\textbf{Nombre} & Visualización de Trayecto en Mapa \\ \hline
-\textbf{Prioridad} & Alta \\ \hline
-\textbf{Estimación} & 5 Puntos \\ \hline
-\textbf{Descripción} &
+\multirow{2}{3.5cm}{\textbf{HU-03:} Visualización de Trayecto en Mapa}
+ & \textbf{Prioridad} & Alta \\ \cline{2-3}
+ & \textbf{Estimación} & 5 Puntos \\
+\hline
+\multicolumn{2}{|l|}{\textbf{Descripción}} &
 Como usuario, quiero ver dibujada en el mapa la línea de la ruta sugerida para poder seguirla visualmente hacia mi destino. \\ \hline
-\textbf{Criterios de Aceptación} &
+\multicolumn{2}{|l|}{\textbf{Criterios de Aceptación}} &
 1. La aplicación debe recibir la geometría de la API y dibujarla como una \textit{Polyline}. \newline
 2. La cámara del mapa debe ajustarse para mostrar toda la ruta. \newline
 3. Se debe diferenciar visualmente el inicio y el fin con marcadores. \\ \hline
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 \begin{table}[H]
 \caption{Historia de Usuario HU-04: Ponderación de Riesgo.}
 \label{tab:historias-usuario-4}
 \centering
-\begin{tabular}{|p{4cm}|p{10cm}|}
+\begin{tabularx}{\textwidth}{|p{3.5cm}|p{3cm}|X|}
 \hline
-\textbf{Código} & HU-04 \\ \hline
-\textbf{Nombre} & Actualización de Pesos por Incidentes \\ \hline
-\textbf{Prioridad} & Media \\ \hline
-\textbf{Estimación} & 8 Puntos \\ \hline
-\textbf{Descripción} &
+\multirow{2}{3.5cm}{\textbf{HU-04:} Actualización de Pesos por Incidentes}
+ & \textbf{Prioridad} & Media \\ \cline{2-3}
+ & \textbf{Estimación} & 8 Puntos \\
+\hline
+\multicolumn{2}{|l|}{\textbf{Descripción}} &
 Como sistema, requiero actualizar el costo de una calle cuando se reporta un nuevo incidente, para que las futuras rutas eviten esa zona. \\ \hline
-\textbf{Criterios de Aceptación} &
+\multicolumn{2}{|l|}{\textbf{Criterios de Aceptación}} &
 1. Debe existir un procedimiento almacenado que intercepte nuevos reportes. \newline
 2. Se debe identificar la arista más cercana al incidente y aumentar su coste en el grafo. \newline
 3. La actualización debe ser consistente sin bloquear lecturas. \\ \hline
-\end{tabular}
+\end{tabularx}
 \end{table} 
 
 \begin{table}[H]
 \caption{Historia de Usuario HU-05: Recálculo de Ruta por Desvío.}
 \label{tab:historias-usuario-5}
 \centering
-\begin{tabular}{|p{4cm}|p{10cm}|}
+\begin{tabularx}{\textwidth}{|p{3.5cm}|p{3cm}|X|}
 \hline
-\textbf{Código} & HU-05 \\ \hline
-\textbf{Nombre} & Recálculo de Ruta por Desvío \\ \hline
-\textbf{Prioridad} & Media \\ \hline
-\textbf{Estimación} & 8 puntos \\ \hline
-\textbf{Descripción} &
+\multirow{2}{3.5cm}{\textbf{HU-05:} Recálculo de Ruta por Desvío}
+ & \textbf{Prioridad} & Media \\ \cline{2-3}
+ & \textbf{Estimación} & 8 Puntos \\
+\hline
+\multicolumn{2}{|l|}{\textbf{Descripción}} &
 Como usuario, quiero que el sistema detecte si me he desviado de la ruta sugerida y recalcule automáticamente un nuevo trayecto seguro desde mi nueva ubicación hacia el destino original. \\ \hline
-\textbf{Criterios de Aceptación} &
+\multicolumn{2}{|l|}{\textbf{Criterios de Aceptación}} &
 1. Se debe detectar si la ubicación actual del usuario se aleja de la polilínea de la ruta. \newline
 2. Se debe disparar una nueva petición, con las nuevas coordenadas de origen. \newline
 3. La transición visual en el mapa debe ser fluida, reemplazando la línea antigua por la nueva sin bloquear la interfaz. \\ \hline
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 \begin{table}[H]
 \caption{Historia de Usuario HU-06: Carga y Estructuración de Red Vial.}
 \label{tab:historias-usuario-6}
 \centering
-\begin{tabular}{|p{4cm}|p{10cm}|}
+\begin{tabularx}{\textwidth}{|p{3.5cm}|p{3cm}|X|}
 \hline
-\textbf{Código} & HU-06 \\ \hline
-\textbf{Nombre} & Carga y Estructuración de Red Vial\\ \hline
-\textbf{Prioridad} & Alta \\ \hline
-\textbf{Estimación} & 5 Puntos \\ \hline
-\textbf{Descripción} &
+\multirow{2}{3.5cm}{\textbf{HU-06:} Carga y Estructuración de Red Vial}
+ & \textbf{Prioridad} & Alta \\ \cline{2-3}
+ & \textbf{Estimación} & 5 Puntos \\
+\hline
+\multicolumn{2}{|l|}{\textbf{Descripción}} &
 Como sistema, debo cargar la cartografía de la ciudad (OpenStreetMap) en la base de datos SQL Server, convirtiendo los datos en una topología de grafos (nodos y aristas) que sea adecuada para el ruteo. \\ \hline
-\textbf{Criterios de Aceptación} &
+\multicolumn{2}{|l|}{\textbf{Criterios de Aceptación}} &
 1. Importación de datos geográficos de Quito en formato .osm o .shp a tablas de SQL Server.\newline
 2. Conversión correcta de coordenadas a tipos de datos Geography o Geometry.\newline
 3. Creación de índices espaciales para optimizar las consultas de búsqueda de nodos cercanos. \\ \hline
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 
@@ -552,7 +552,7 @@ La implementación se basa principalmente en la creación de la estructura de la
 \end{tabularx}
 \end{table}
 
-El desarrollo del módulo inició a partir del aprovisionamiento de la base de datos en la nube.  Se estableció un servidor en Azure SQL Database \url{(server-ruteo-seguro.database.windows.net)}, se eligió este motor por su manera de procesar datos geoespaciales usando el tipo de dato \url{GEOGRAPHY}. Esta propiedad es esencial para el ruteo, porque posibilita la ejecución de cálculos relacionados con distancias y la búsqueda de intersecciones en función de coordenadas geográficas reales. El plan de servicio seleccionado dentro de la nube de Azure se muestra en la Figura \ref{Configuración_Azure.png}
+El desarrollo del módulo inició a partir del aprovisionamiento de la base de datos en la nube.  Se estableció un servidor en Azure SQL Database (\texttt{server-ruteo-seguro.database.windows.net}), se eligió este motor por su manera de procesar datos geoespaciales usando el tipo de dato \texttt{GEOGRAPHY}. Esta propiedad es esencial para el ruteo, porque posibilita la ejecución de cálculos relacionados con distancias y la búsqueda de intersecciones en función de coordenadas geográficas reales. El plan de servicio seleccionado dentro de la nube de Azure se muestra en la Figura \ref{Configuración_Azure.png}
 
 \begin{figure}[htbp]
     \centering  
@@ -561,7 +561,7 @@ El desarrollo del módulo inició a partir del aprovisionamiento de la base de d
     \label{Configuración_Azure.png}
 \end{figure}    
 
-Con la creación del recurso de base de datos, se procedió a la definición de las tablas \texttt{Nodos}, \texttt{Aristas} e \texttt{Incidentes} con sus respectivos campos y tipos de datos. Se establecieron relaciones entre las tablas para representar la topología de la red vial y se configuraron índices espaciales en los campos geográficos para optimizar las consultas de búsqueda de rutas, el script SQL para la creación de las tablas en la base de datos (\url{db-ruteo-seguro}) se muestra en la Figura \ref{Creación_BDD.png}.
+Con la creación del recurso de base de datos, se procedió a la definición de las tablas \texttt{Nodos}, \texttt{Aristas} e \texttt{Incidentes} con sus respectivos campos y tipos de datos. Se establecieron relaciones entre las tablas para representar la topología de la red vial y se configuraron índices espaciales en los campos geográficos para optimizar las consultas de búsqueda de rutas, el script SQL para la creación de las tablas en la base de datos (\texttt{db-ruteo-seguro}) se muestra en la Figura \ref{Creación_BDD.png}.
 
 \begin{figure}[htbp]
     \centering  
