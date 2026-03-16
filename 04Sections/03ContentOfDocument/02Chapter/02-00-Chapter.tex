@@ -521,7 +521,7 @@ La construcción del módulo se lleva a cabo siguiendo el marco de trabajo Scrum
 La construcción de la base técnica y la infraestructura de datos espaciales son componentes esenciales para permitir las capacidades futuras de cálculo de rutas y visualización de mapas. 
 Esta iteración incluyó la preparación de la base de datos relacional con compatibilidad para categorías de datos geográficos, la adquisición y depuración del mapa sin procesar de Quito, así como el desarrollo de scripts para extraer, transformar e introducir los datos a las tablas finales correspondientes a Nodos y Aristas. Simultáneamente, se organizó el entorno inicial del SDK de Google Maps.
 
-\subsection{Sprint Backlog}
+\subsubsection{Sprint Backlog}
 
 La implementación se basa principalmente en la creación de la estructura de la base de datos, la depuración del mapa sin procesar de Quito, así como el desarrollo de scripts para extraer, transformar e introducir los datos a las tablas finales correspondientes a Nodos y Aristas. Las tareas a cumplir se detallan en la Tabla \ref{tab:sprint1-backlog}.
 
@@ -561,18 +561,152 @@ El desarrollo del módulo inició a partir del aprovisionamiento de la base de d
     \label{Configuración_Azure.png}
 \end{figure}    
 
-Con la creación del recurso de base de datos, se procedió a la definición de las tablas \texttt{Nodos}, \texttt{Aristas} e \texttt{Incidentes} con sus respectivos campos y tipos de datos. Se establecieron relaciones entre las tablas para representar la topología de la red vial y se configuraron índices espaciales en los campos geográficos para optimizar las consultas de búsqueda de rutas, el script SQL para la creación de las tablas en la base de datos (\url{db-ruteo-seguro}) se muestra en la Figura \ref{Creación_BDD.png}.
+Con la creación del recurso de base de datos, se procedió a la definición de las tablas \texttt{Nodos}, \texttt{Aristas} e \texttt{Incidentes} con sus respectivos campos y tipos de datos. Se establecieron relaciones entre las tablas para representar la topología de la red vial y se configuraron índices espaciales en los campos geográficos para optimizar las consultas de búsqueda de rutas.
+\begin{lstlisting}[language=SQL]
+CREATE TABLE dbo.NODOS (
+    id_nodo BIGINT PRIMARY KEY, --Usar IDs nativos de OpenStreetMap
+    ubicacion GEOGRAPHY NOT NULL,
+    es_interseccion BIT NOT NULL DEFAULT 1
+);
+CREATE TABLE dbo.ARISTAS (
+    id_arista VARCHAR(100) NOT NULL,
+    id_nodo_origen BIGINT NOT NULL,
+    id_nodo_destino BIGINT NOT NULL,
+    trayectoria GEOGRAPHY NOT NULL,
+    distancia_metros FLOAT NOT NULL,
+    peso_riesgo FLOAT DEFAULT 1.0,
+    velocidad_base FLOAT DEFAULT 50.0,
+    -- Definimos la Llave Primaria
+    CONSTRAINT PK_Aristas PRIMARY KEY (id_arista),
+    -- Definimos las Llaves Foraneas que apuntan a tus NODOS
+    CONSTRAINT FK_Aristas_NodoOrigen FOREIGN KEY (id_nodo_origen) REFERENCES dbo.NODOS(id_nodo),
+    CONSTRAINT FK_Aristas_NodoDestino FOREIGN KEY (id_nodo_destino) REFERENCES dbo.NODOS(id_nodo)
+);
+CREATE TABLE dbo.INCIDENTES (
+    id_incidente UNIQUEIDENTIFIER PRIMARY KEY,
+    ubicacion GEOGRAPHY NOT NULL,
+    fecha_reporte DATETIME NOT NULL,
+    nivel_gravedad INT NOT NULL,
+    tipo VARCHAR(100) NOT NULL
+);
+-- Indices espaciales para acelerar la busqueda de nodos cercanos
+CREATE SPATIAL INDEX SPATIAL_IX_Nodos_Ubicacion ON dbo.NODOS(ubicacion);
+CREATE SPATIAL INDEX SPATIAL_IX_Aristas_Geometria ON dbo.ARISTAS(trayectoria);
+CREATE SPATIAL INDEX SPATIAL_IX_Incidentes_Ubicacion ON dbo.INCIDENTES(ubicacion);
+\end{lstlisting}
+
+Luego, se procedió a la adquisición de la cartografía sin procesar de Quito, obtenida desde OpenStreetMap, la cual se trazo desde la plataforma BBBike en formato .osm. Este archivo contiene la información geográfica de las calles, intersecciones y otros elementos relevantes para el ruteo. El polígono de descarga se muestra en la Figura \ref{fig:poligono-bbbike}.
 
 \begin{figure}[htbp]
     \centering  
-    \includegraphics[width=0.9\textwidth]{../02Figures/02Chapter/Creación_BDD.png}
-    \caption{Script para la creación de las tablas base de datos}
-    \label{Creación_BDD.png}    
+    \includegraphics[width=0.9\textwidth]{../02Figures/02Chapter/Poligono_BBBike.png}
+    \caption{Polígono de datos geográficos desde BBBike}
+    \label{fig:poligono-bbbike}
 \end{figure}
 
+\subsubsection{ETL de datos geográficos}
+
+Dado el gran volumen de esta información, se desarrolló un proceso ETL (Extracción, Transformación y Carga) estructurado mediante scripts en Node.js (TypeScript) para procesar, limpiar y migrar los datos hacia la base de datos posteriormente creada.
+
+\subsubsection*{\hspace{0.7cm}Extracción y Limpieza de Datos Crudos (\texttt{osm-cleaner.ts})}
+
+El archivo \texttt{.osm} contiene metadatos globales que no son útiles para el ruteo. 
+Para procesarlo sin desbordar la memoria RAM del servidor, se implementó una lectura 
+secuencial.
+
+\begin{itemize}
+\item \textbf{Indexación de Nodos:} 
+Para todos los puntos geográficos (nodos), se almaceno únicamente 
+sus coordenadas de latitud y longitud.
+
+\item \textbf{Filtrado de Vías (Aristas):} 
+Conservación exclusivamente aquellas transitables, 
+autopistas, vías principales, secundarias, calles residenciales, 
+zonas peatonales y ciclovías (\texttt{ALLOWED\_HIGHWAYS}).
+
+\begin{lstlisting}
+const ALLOWED_HIGHWAYS = [
+  // -- Vehículos motorizados --------------------------------------------------
+  'motorway',       // Autopistas de alta velocidad
+  'motorway_link',  // Ramales de autopista
+  'trunk',          // Vías troncales
+  'trunk_link',     // Ramales de vías troncales
+  'primary',        // Avenidas principales
+  'primary_link',   // Ramales de avenidas principales
+  'secondary',      // Vías secundarias
+  'secondary_link', // Ramales de vías secundarias
+  'tertiary',       // Vías terciarias
+  'tertiary_link',  // Ramales de vías terciarias
+  'unclassified',   // Sin clasificar (calles de barrio)
+  'residential',    // Calles residenciales
+  'service',        // Vías de servicio (accesos, parqueaderos)
+  // -- Peatones ---------------------------------------------------------------
+  'living_street',  // Calles de convivencia (prioridad peatonal)
+  'pedestrian',     // Zonas peatonales (parques, plazas)
+  'footway',        // Aceras y caminos peatonales
+  'path',           // Senderos genéricos (peatones/ciclistas)
+  'steps',          // Escaleras
+  // -- Ciclistas --------------------------------------------------------------
+  'cycleway',       // Ciclovías
+];
+\end{lstlisting}
+
+\item \textbf{Reconstrucción Topológica:} 
+Los atributos clave como el sentido de la vía (\texttt{oneway}) 
+y se descartaron los ``nodos huérfanos'' (puntos que no pertenecen a ninguna calle 
+transitable). El resultado se exportó a archivos intermedios optimizados 
+(\texttt{nodos\_limpios.json} y \texttt{aristas\_limpios.json}).
+\end{itemize}
+
+\subsubsection*{\hspace{0.7cm}Transformación Lógica Espacial (\texttt{db-seeder.ts})}
+
+Para poder incorporar los datos limpios en la base de datos, fue necesario realizar un cálculo matemático de las propiedades del grafo. En esta fase se utilizó la fórmula de Haversine (\texttt{calcularDistancia}) para determinar la distancia precisa en metros entre dos nodos que están conectados.
+
+\begin{lstlisting}
+function calcularDistancia(lat1: number, lon1: number, lat2: number, lon2: number): number {
+  const R = 6371e3;
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLon = (lon2 - lon1) * Math.PI / 180;
+  const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+            Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+            Math.sin(dLon/2) * Math.sin(dLon/2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  return R * c;
+}   
+\end{lstlisting}
+
+Además, al examinar la etiqueta de dirección (\texttt{oneway}), el script crea aristas bidireccionales o unidireccionales, repitiendo el segmento para posibilitar el cálculo matemático en las ambas direcciones. Por último, se concatenaron las coordenadas obtenidas en formato (\texttt{LINESTRING(lon lat)}) para que posteriormente puedan convertirse en objetos espaciales dentro de SQL Server.
+
+\subsubsection*{\hspace{0.7cm}Carga Masiva a Azure SQL (\texttt{db-seeder.ts})}
+
+Con el fin de prevenir errores por conexión y falta de memoria se estableció un procedimiento de reintentos (\texttt{executeWithRetry}) que se ocupa de registrar errores por tiempo de espera y que suspende la ejecución gradualmente antes de intentar nuevamente la inserción. Para la transferencia en red, los datos se cargaron al principio en una tabla de temporal (\texttt{ARISTAS\_STAGING}) utilizando operaciones \textit{Bulk Insert} en conjuntos de 50{,}000 registros. Después de que los datos se almacenaron de manera temporal en el servidor, se realizaron consultas iterativas con el fin de moverlos a la tabla principal (\texttt{ARISTAS}). Para convertir el texto en una geometría espacial indexable se utilizó la función \texttt{geography::STGeomFromText} y para cada tramo se asignaron los valores predeterminados del peso de riesgo.
+\begin{lstlisting}
+ geography::STGeomFromText(wkt, 4326),
+\end{lstlisting}
+
+\subsubsection{Configuración Móvil e Integración de Google Maps SDK}
+Consolidada la infraestructura de datos en el backend, el esfuerzo de desarrollo se centró en el Frontend, para lo cual se utiliza Android Studio con Kotlin como lenguaje principal, adoptando el patrón arquitectónico MVVM (Model-View-ViewModel) para separar la lógica de negocio de la interfaz de usuario \cite{arif2020implementation}. El componente \texttt{MapFragment.kt} aplica la interfaz \texttt{OnMapReadyCallback} para asegurar que la vista no se manipule hasta que el motor gráfico esté totalmente renderizado. 
+
+\begin{lstlisting}
+import com.google.android.gms.maps.OnMapReadyCallback
+
+class MapFragment : Fragment(), OnMapReadyCallback 
+\end{lstlisting}
+
+Para garantizar una experiencia de usuario fluida y evitar la pérdida de información durante los cambios de configuración del dispositivo, como la rotación de pantalla, la lógica de posicionamiento de la cámara se delegó al \texttt{MapViewModel.kt}. Este componente almacena las coordenadas centrales por defecto y establece la base estructural que gestionará el estado dinámico de la ruta trazada en etapas posteriores.
 
 
-Luego, se procedió a la adquisición de la cartografía sin procesar de Quito, obtenida desde OpenStreetMap, la cual se limpió y transformó para que se ajustara al modelo de datos definido en la base de datos. Finalmente, se desarrollaron scripts de ETL (Extract, Transform, Load) para migrar los datos geográficos a las tablas Nodos y Aristas, asegurando que cada segmento de calle (arista) estuviera correctamente vinculado a sus respectivos cruces (nodos) y que se crearan índices espaciales para optimizar las consultas de búsqueda.
+\subsubsection{Sprint Review}
+
+Se comprobó que la base de datos en Azure SQL fue aprovisionada correctamente, a través del ETL convirtió con éxito los datos sin procesar de OpenStreetMap en una topología de red vial navegable para Quito. En cuanto a la aplicación móvil se mostró el fragmento de mapa adecuadamente centrado en las coordenadas urbanas. Se confirma que las tareas esenciales de configuración del entorno e infraestructura estaban totalmente en funcionamiento.
+
+\subsubsection{Sprint Retrospective}
+
+La implementación de sistemas de tolerancia a fallos durante la ingesta masiva de datos cartográficos en la nube se destacó como una fortaleza técnica, dado que el volumen de aristas causaba desconexiones y tiempos de espera en el servidor de Azure, se demostró que la estrategia de dividir el proceso en lotes con reintentos sucesivos era esencial para que la migración fuera exitosa. Asi mismo, para el tratamiento de geometrías espaciales requiere una porción significativa de la memoria RAM, y como lección adquirida, se seguirá utilizando la estrategia de segmentación de datos para integraciones futuras. 
+
+
+
+
 
 \subsection{Sprint 2}
 \subsection{Sprint 3}
