@@ -141,6 +141,57 @@ Con el fin de administrar eficazmente esta comunicación y hacer más sencilla l
 \end{figure}
 
 
+\subsection{Búsqueda de Caminos Óptimos: Algoritmo A* (A-Star)}
+
+El algoritmo de Dijkstra ha sido el que más se ha utilizado a lo largo de la historia para resolver el problema del camino más corto en la teoría de grafos. No obstante, al evaluar los nodos de forma exhaustiva para aplicaciones de navegación GPS y cartográficas, se vuelve ineficiente desde el punto de vista computacional. Para resolver este problema, se emplea el Algoritmo A* (A-Star), un algoritmo que fue formalizado en sus inicios por el Instituto de Investigación de Stanford \cite{hart1968formal}. El algoritmo A* es una metodología heurística de búsqueda que mezcla los beneficios del algoritmo voraz y el de costo uniforme de Dijkstra \cite{cormen2022introduction}.
+
+La optimización de A* radica en su función de evaluación, la cual calcula el costo total estimado de un nodo a través de la siguiente Ecuación \ref{C1.AStar}:
+
+\begin{equ}[!ht]
+    \begin{equation}
+        f(n) = g(n) + h(n)
+        \label{C1.AStar}
+    \end{equation}
+    \caption*{Ecuación 1.1. Función de Evaluación del Algoritmo A*}
+\end{equ}
+
+Donde:
+
+\begin{itemize}
+    \item $f(n)$ representa el costo total estimado del camino que pasa por el nodo $n$.
+    \item $g(n)$ es el costo real acumulado desde el nodo de inicio hasta el nodo $n$.
+    \item $h(n)$ es la función heurística; una estimación matemática del costo restante desde el nodo $n$ hasta el nodo de destino.
+\end{itemize}
+
+Para que el algoritmo garantice encontrar el camino óptimo, la función heurística $h(n)$ debe ser admisible; es decir, nunca debe sobreestimar el costo real para alcanzar el objetivo \cite{cormen2022introduction}.
+
+\subsubsection{La Fórmula de Haversine}
+
+Como la Tierra tiene una forma esférica, si se utiliza geometría euclidiana simple para calcular la distancia geométrica entre dos cruces de caminos, surgen márgenes de error importantes. Para modelar de manera exacta es necesario hacer uso de trigonometría esférica \cite{chan2020haversine}. La distancia entre dos puntos en una esfera se puede calcular utilizando la Fórmula de Haversine mostrada en la Ecuación \ref{C1.Haversine}, a partir de sus longitudes y latitudes.
+
+\begin{equ}[!ht]
+    \begin{equation}
+        d = 2r \cdot \arcsin\left( \sqrt{\sin^2\left(\frac{\Delta \phi}{2}\right) + \cos(\phi_1) \cdot \cos(\phi_2) \cdot \sin^2\left(\frac{\Delta \lambda}{2}\right)} \right)
+        \label{C1.Haversine}
+    \end{equation}
+    \caption*{Ecuación 1.2. Fórmula de Haversine}
+\end{equ}
+
+\subsubsection{Ponderación Dinámica de Riesgos}
+
+
+Para lograr el concepto de "Ruteo Seguro" se necesita un cambio significativo, que consiste en una penalización matemática basada en la ocurrencia delictiva, para prevenir que los sistemas de navegación orienten a los usuarios hacia áreas de alto riesgo \cite{galbrun2014safe}. En este modelo, la red vial se ilustra con un grafo en el que cada arista tiene un peso base de longitud. Además, se le suma un factor de ``peso de riesgo'' que proviene de repositorios de incidentes \cite{utamima2017safe}. La inclusión de este peso modifica el cálculo del costo real $g(n)$ al cruzar una arista desde un nodo $i-1$ hasta otro nodo $i$, la misma se define en la Ecuación \ref{C1.PonderacionRiesgo}:
+
+\begin{equ}[!ht]
+    \begin{equation}
+        g(n) = g(n-1) + d(i-1, i) + w(i-1, i)
+        \label{C1.PonderacionRiesgo}
+        \end{equation}
+        \caption*{Ecuación 1.3. Cálculo del Costo Real con Ponderación de Riesgo}
+\end{equ}
+
+Así el algoritmo A* se ve obligado a analizar rutas alternativas que son físicamente más largas, lo hace solo si estas tienen un costo total $f(n)$ inferior; de esta forma se equilibra la eficiencia del viaje con la reducción de la exposición a áreas con alto nivel de riesgo \cite{utamima2017safe}.
+
 \subsection{Herramientas y Tecnologías}
 Con el objetivo de optimizar la productividad, garantizar que el sistema final sea robusto y asegurar su capacidad para escalar, cada uno de los elementos del stack tecnológico ha sido seleccionado con un enfoque estratégico.
 
