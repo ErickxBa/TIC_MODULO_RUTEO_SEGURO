@@ -123,7 +123,9 @@
     \chapter*{\sf\bf\centering\fontsize{14}{20pt}\selectfont CERTIFICACIÓN}
     {
         {\setlength{\parindent}{0pt} 
-        Yo, #1 declaro que el trabajo de integración curricular aquí descrito es de mi autoría; que no ha sido previamente presentado para ningún grado o calificación profesional; y, que he consultado las referencias bibliográficas que se incluyen en este documento. 
+        Yo, #1 declaro que el trabajo de integración curricular aquí descrito es de mi autoría; que no ha sido previamente presentado para ningún grado o calificación profesional; y, que he consultado las referencias bibliográficas que se incluyen en este documento.
+
+        Asimismo, declaro que he utilizado la herramienta de inteligencia artificial Gemini únicamente como apoyo en estructuracion y organizaciòn del contenido, sin atribuirle autoría, y que todo el contenido derivado ha sido revisado, validado y es de mi exclusiva responsabilidad.
         \begin{center}
             \signature{(#1)}{}
         \end{center}    

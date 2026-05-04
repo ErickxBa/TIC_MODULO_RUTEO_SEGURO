@@ -704,13 +704,348 @@ Se comprobó que la base de datos en Azure SQL fue aprovisionada correctamente, 
 
 La implementación de sistemas de tolerancia a fallos durante la ingesta masiva de datos cartográficos en la nube se destacó como una fortaleza técnica, dado que el volumen de aristas causaba desconexiones y tiempos de espera en el servidor de Azure, se demostró que la estrategia de dividir el proceso en lotes con reintentos sucesivos era esencial para que la migración fuera exitosa. Asi mismo, para el tratamiento de geometrías espaciales requiere una porción significativa de la memoria RAM, y como lección adquirida, se seguirá utilizando la estrategia de segmentación de datos para integraciones futuras. 
 
-
-
-
-
 \subsection{Sprint 2}
+
+El desarrollo del motor para calcular rutas y la interfaz de interacción para elegir trayectos constituyó el núcleo de la segunda etapa del proyecto, que fue también la más complicada desde el punto de vista técnico. El objetivo de esta meta era convertir el grafo vial estático, que fue cargado en la iteración anterior, en un sistema dinámico que tuviera la capacidad de gestionar peticiones de navegación en tiempo real. En el que se privilegió el desarrollo del algoritmo A* ponderado por riesgo, que representa el valor distintivo de la tesis. De igual forma, se diseñó la construcción de las interfaces de búsqueda con autocompletado y los procedimientos de validación geográfica para garantizar que el sistema funcione solo dentro del área de cobertura establecida para Quito.
+
+\subsubsection{Sprint Backlog}
+
+En esta iteración, incorporó tareas centradas en la captura de datos de entrada y el procesamiento del ruteo, respectivamente. La Tabla \ref{tab:backlog-sprint2} muestra detalladamente cómo se distribuyen estas actividades.
+
+\begin{table}[ht]
+\centering
+\caption{Backlog del Sprint 2}
+\label{tab:backlog-sprint2}
+\begin{tabular}{|p{3cm}|p{2cm}|p{8cm}|}
+
+\hline
+\textbf{Historia de Usuario} & \textbf{Código} & \textbf{Descripción} \\ \hline
+
+\multirow{3}{3cm}{\textbf{HU-01} \\ Selección de Origen y Destino}
+& T-02 & Interfaz para búsqueda de direcciones con autocompletado (Google Places). \\ \cline{2-3}
+
+& T-03 & Gestión de estado para captura de coordenadas de inicio y fin. \\ \cline{2-3}
+
+& T-04 & Validar que las coordenadas estén dentro de Quito. \\ \hline
+
+\multirow{4}{3cm}{\textbf{HU-02} \\ Cálculo de Ruta Segura}
+& T-05 & Estructuración de controladores para el ruteo. \\ \cline{2-3}
+
+& T-06 & Implementación del algoritmo A* integrando la variable de riesgo. \\ \cline{2-3}
+
+& T-07 & Obtención de grafos (nodos/aristas) y sus pesos. \\ \cline{2-3}
+
+& T-08 & Transformación de la información geográfica y exposición. \\ \hline
+
+\end{tabular}
+\end{table}
+
+En donde el trabajo principal se enfocó en organizar una comunicación efectiva entre la aplicación cliente y los servicios de la nube, incorporando tecnologías sólidas que pueden manejar cargas de procesamiento geoespacial. A su vez se organizó en la estructura con el objetivo de que pudiera explorar la topología vial de la ciudad, que está formada por alrededor de 1.8 millones de nodos y 3.8 millones de aristas, en milisegundos gracias a la aplicación del algoritmo A* modificado. De igual forma, se implementó interactividad reactiva en la capa de presentación móvil de Android mediante los servicios de autocompletado de Google. Esta conexión entre el Frontend y el Backend aseguró que cada elemento del flujo, desde la obtención inicial de las coordenadas hasta la serialización matemática de la ruta segura, se cumpliera.
+
+\subsubsection{Interfaz de Búsqueda y Captura de Coordenadas}
+
+Para cumplir con cada una de las tareas mencionadas se implementó una interfaz de búsqueda reactiva como primer punto facilitando la experiencia del usuario, mediante el servicio de autocompletado de Google Places API, restringiendo los resultados al perímetro urbano para evitar ambigüedades geográficas. 
+
+\begin{lstlisting}
+    implementation("com.google.android.libraries.places:places:3.3.0")
+\end{lstlisting}
+
+Una vez seleccionado un destino, el sistema utiliza el ViewModel para gestionar el estado de las coordenadas de origen y fin de forma persistente, garantizando que la información se conserve ante cambios en el ciclo de vida del dispositivo y permitiendo actualizar dinámicamente los marcadores visuales en el mapa.
+
+\begin{lstlisting}
+  // Coordenadas de origen y destino
+    private val _coordenadaOrigen = MutableStateFlow<LatLng?>(null)
+    val coordenadaOrigen: StateFlow<LatLng?> = _coordenadaOrigen.asStateFlow()
+
+    private val _coordenadaDestino = MutableStateFlow<LatLng?>(null)
+    val coordenadaDestino: StateFlow<LatLng?> = _coordenadaDestino.asStateFlow()
+\end{lstlisting}
+
+Toda esta interactividad de búsqueda se centralizó en el componente \texttt{MapFragment.kt}. Para cumplir con la funcionalidad, se utilizó el objeto \texttt{FindAutocomplete\allowbreak PredictionsRequest}, garantizando la precisión geográfica. Además, se restringió el perímetro de la provincia de Pichincha mediante el método \texttt{setLocation\allowbreak Restriction}, el cual usa las coordenadas límite (RectangularBounds) definidas en el archivo \texttt{Constants.kt}. Los resultados obtenidos se renderizan dinámicamente mediante un adaptador personalizado denominado \texttt{PlacesAdapter.kt} y se visualizan en la Figura \ref{fig:autocompletado}.
+
+\begin{figure}[htbp]
+    \centering  
+    \includegraphics[width=0.5\textwidth]{../02Figures/02Chapter/Autocompletado_Google_Places.png}
+    \caption{Interfaz de búsqueda con autocompletado de Google Places API}
+    \label{fig:autocompletado}
+\end{figure}
+
+\subsubsection{Estructuración del Servicio de Ruteo}
+
+Para el backend, estructurado modularmente con NestJS y TypeScript, el punto de entrada para las peticiones de navegación se construyó en la clase \texttt{ruteo.controller.ts}. Este controlador expone el endpoint \texttt{POST /api/\allowbreak ruteo/\allowbreak calcular}, encargado de interceptar el tráfico proveniente del cliente móvil mediante la librería Retrofit. Por otro lado para asegurar la integridad de la transacción, las coordenadas entrantes son tipadas y validadas mediante el objeto de transferencia \texttt{calcular-ruta.dto.ts}. Como medida de optimización de recursos, antes de invocar la carga computacional del algoritmo, el sistema emplea la clase \texttt{nodo.repository.ts}, respaldada por el TypeORM, para ejecutar consultas espaciales nativas como \texttt{findNodoMasCercano()}. Esto verifica geográficamente que los puntos solicitados logren hacer un ``snap'' o anclaje hacia una calle transitable real dentro de la base de datos de Azure SQL.
+
+\begin{itemize}
+    \item \textbf{ruteo.controller.ts:} Delega la lógica de cálculo al servicio correspondiente.
+\begin{lstlisting}
+@ApiTags('ruteo')
+@Controller('ruteo')
+export class RuteoController {
+    constructor(private readonly ruteoService: RuteoService) {}
+    @Post('calcular')
+    @HttpCode(HttpStatus.OK)
+    @ApiOperation({
+    summary: 'Calcular ruta segura',
+    description: 'Recibe coordenadas GPS de origen y destino. Devuelve la ruta óptima ponderada por nivel de riesgo.',
+    })
+    @ApiBody({ type: CalcularRutaDto })
+\end{lstlisting}
+    \item \textbf{calcular-ruta.dto.ts:} Especifica la estructura de los datos que se esperan recibir en la petición.
+\begin{lstlisting}
+import { IsNumber, IsNotEmpty, Min, Max } from 'class-validator';
+import { ApiProperty } from '@nestjs/swagger';
+
+export class CalcularRutaDto {
+  @ApiProperty({ example: -0.2099, description: 'Latitud del punto de origen (GPS)' })
+  @IsNotEmpty({ message: 'La latitud de origen es obligatoria' })
+  @IsNumber({}, { message: 'origenLat debe ser un número' })
+  @Min(-90)
+  @Max(90)
+  origenLat: number;
+\end{lstlisting}
+    
+    \item \textbf{nodo.repository.ts:} Implementa métodos para interactuar con la base de datos espacial.
+\begin{lstlisting}
+  async findNodoMasCercano(latitud: number, longitud: number): Promise<NodoDomain> {
+    const wkt = `POINT(${longitud} ${latitud})`;
+    const query = `
+      SELECT TOP 1
+        id_nodo,
+        ubicacion.STAsText() AS ubicacion_wkt,
+        es_interseccion
+      FROM dbo.NODOS N WITH(INDEX(SPATIAL_IX_Nodos_Ubicacion))`;
+\end{lstlisting}   
+\end{itemize}
+
+\subsubsection{Implementación del Algoritmo A* Ponderado por Riesgo}
+
+El servicio de aplicación es el lugar donde se concentra el núcleo del sistema, en el que se codificó el algoritmo A* para la búsqueda. La innovación de este componente consiste en cambiar la función de costo real $g(n)$, que se definió matemáticamente como la suma de la distancia de cada segmento multiplicada por su correspondiente peso de riesgo fórmula presentada en la Ecuación \ref{eq:gn}.
+
+\begin{equation}
+g(n) = \sum (distancia \cdot peso\_riesgo)
+\label{eq:gn}
+\end{equation}
+
+
+Este peso parte de un valor base de 1.0 para secciones completamente seguras, aumenta en proporción $(N)$ a la peligrosidad del área.  La solución fue implementada en el servicio  \texttt{motor-algoritmo.service.ts}. 
+
+\begin{lstlisting}
+@Injectable()
+export class MotorAlgoritmoService {
+  private readonly logger = new Logger(MotorAlgoritmoService.name);
+}  
+\end{lstlisting}
+
+Con el fin de lograr un funcionamiento eficaz del algoritmo A*, se creó una estructura de datos similar a una cola de prioridad, ubicada en el archivo \texttt{common/\allowbreak utils/\allowbreak min-heap.ts}, que garantiza tiempos de evaluación logarítmicos $O(log N)$ para determinar el camino más prometedor en cada iteración.
+
+\begin{lstlisting}
+export class MinHeap<T> {
+  private data: T[] = [];
+
+  constructor(private readonly comparar: (a: T, b: T) => number) {}
+
+  get size(): number {
+    return this.data.length;
+  }
+}
+\end{lstlisting}
+
+
+Al mismo tiempo, la función heurística $h(n)$, que orienta la búsqueda, delega el cálculo de distancias en superficies esféricas al módulo \texttt{haversine.ts}. El motor se comunica constantemente con grafo de adyacencia en memoria para consultar dinámicamente los grafos para la expansión de rutas mientras tanto \texttt{arista.repository.ts} utiliza previamente para construir ese subgrafo desde la base de datos (por Bounding Box).
+
+\begin{lstlisting}
+export class GrafoDomain {
+  /** Nodos indexados por id para acceso O(1) */
+  nodos: Map<string, NodoDomain> = new Map();
+
+  /** Aristas agrupadas por nodo origen para recorrido eficiente */
+  aristas: Map<string, AristaDomain[]> = new Map();
+
+  agregarNodo(nodo: NodoDomain): void {
+    this.nodos.set(nodo.id, nodo);
+  }
+    agregarArista(arista: AristaDomain): void {
+      const lista = this.aristas.get(arista.idNodoOrigen) ?? [];
+      lista.push(arista);
+      this.aristas.set(arista.idNodoOrigen, lista);
+    }
+
+  getVecinos(idNodo: string): AristaDomain[] {
+    return this.aristas.get(idNodo) ?? [];
+  }
+}
+\end{lstlisting}
+
+Para el costo $g(n)$ de cada segmento se determina multiplicando su distancia física en metros por el valor numérico guardado en la columna \texttt{peso\_riesgo}, lo que causa que el algoritmo evite proactivamente las áreas catalogadas como peligrosas consiguiendo recuperar adyacencias y analizar ramificaciones en milisegundos, a pesar de la gran cantidad de datos, gracias a la aplicación la cola de prioridad y a los índices espaciales creados, el funcionamiento en consola se puede observar en la Figura \ref{fig:log-algoritmo}.
+
+\begin{figure}[htbp]
+    \centering  
+    \includegraphics[width=1.0\textwidth]{../02Figures/02Chapter/Log_Algoritmo.png}
+    \caption{Salida de consola del algoritmo A*}
+    \label{fig:log-algoritmo}
+\end{figure}
+
+
+\subsubsection{Serialización y Entrega de la Ruta Codificada}
+Cuando el motor llega con éxito al nodo de destino, la clase de utilidad polyline.encoder.ts procesa el recorrido reconstruido. Este guion utiliza el estándar de compresión Google Encoded Polyline para convertir los miles de puntos GPS obtenidos en una sola y liviana cadena de caracteres. Para terminar, el objeto RutaResponseDto.ts se utiliza para serializar la ruta y devolver al cliente móvil la geometría comprimida junto con los indicadores procesados de distancia total recorrida, tiempo estimado y riesgo global.
+
+\begin{lstlisting}
+import { ApiProperty } from '@nestjs/swagger';
+
+/**
+ * Respuesta del endpoint POST /ruteo/calcular.
+ */
+export class RutaResponseDto {
+  @ApiProperty({ example: '_p~iF~ps|U_ulLnnqC_mqNvxq`@', description: 'Polilínea codificada en formato Google Encoded Polyline' })
+  rutaGeometria: string;
+
+  @ApiProperty({ example: '12 min', description: 'Tiempo estimado de viaje' })
+  tiempoEstimado: string;
+
+  @ApiProperty({ example: 'Bajo', enum: ['Bajo', 'Medio', 'Alto'], description: 'Nivel de riesgo de la ruta' })
+  nivelRiesgo: string;
+
+  @ApiProperty({ example: 3400.5, description: 'Distancia total en metros' })
+  distanciaMetros: number;
+}
+
+\end{lstlisting}
+
+\subsubsection{Sprint Review}
+
+El sprint refleja el motor de cálculo de rutas funcionando en un ambiente integrado en el cual el algoritmo A* modificado es eficaz, mostrando que si se presenta un par de rutas de distancia parecida, el sistema elimina de manera proactiva la que pasa por zonas con una elevada tasa de criminalidad (de mayor peso\_riesgo), priorizando así la integridad del usuario. En términos de arquitectura, se comprobó la efectiva comunicación bidireccional entre el cliente Android y el backend NestJS. Esto se evidenció al validar las coordenadas de manera precisa a través del autocompletado de Google Places, su validación en el servidor y la posterior entrega del camino codificado. Al verificar que las respuestas del servidor se produjeron en milisegundos y se representaron de manera adecuada en la consola; alcanzando asi el objetivo central de esta sección.
+
+\subsubsection{Sprint Retrospective}
+
+La mayor dificultad técnica de la iteración consistió en implementar matemáticamente el algoritmo A* y en integrarlo adecuadamente con la base de datos espacial. La conversión de la ecuación transversal que pondera el riesgo de las vías de forma dinámica, requirió varias etapas de pruebas de reestructuración del código para garantizar que el motor evaluara adecuadamente los caminos y tomara decisiones de desvío precisas. Por otro lado, la interconexión entre la capa de controladores de NestJS y Azure SQL constituyó un desafío importante en términos arquitectónicos ya que para que el servicio del algoritmo consultara los repositorios se hizo uso de consultas geoespaciales complejas y se tuvieron que analizar las aristas adyacentes durante la ejecución. En donde se destaca como un logro es en la separación estricta de responsabilidades para superar la complejidad técnica y asegurar un tiempo de respuesta ideal en el servidor.
+
 \subsection{Sprint 3}
+La integración sistémica y la visualización avanzada de datos geográficos, se definió como objetivo principal en este sprint, así mismo, la "Habilitación del Flujo Integral y Visualización de Trayectorias", buscaba cerrar la brecha entre el procesamiento algorítmico del motor y la experiencia táctil del usuario, transformando la respuesta codificada del API en un trazo visual interactivo sobre el mapa de Google Maps.
+En donde el equipo priorizó la estabilidad de la conexión y la optimización del renderizado de polilíneas, asegurando que la aplicación no solo entregue una ruta segura, sino que lo haga bajo estándares de usabilidad que incluyen el autoencuadre de la cámara y el uso de simbología personalizada para los puntos de origen y destino.
+\subsubsection{Sprint Backlog}
+
+Los desafíos de integración mediante el consumo de servicios REST, el manejo de estados de red y la implementación de lógica cartográfica en el frontend conformó  tareas técnicas derivadas de la épica E-03 Visualización y Navegación segura, completando el ciclo de vida de la solicitud de ruta. La Tabla \ref{tab:backlog-sprint3} presenta el desglose de estas actividades.
+
+\begin{table}[ht]
+\centering
+\caption{Backlog del Sprint 3}
+\label{tab:backlog-sprint3}
+\begin{tabular}{|p{3cm}|p{2cm}|p{8cm}|}
+
+\hline
+\textbf{Historia de Usuario} & \textbf{Código} & \textbf{Descripción} \\ \hline
+
+\multirow{3}{3cm}{\textbf{HU-03} \\ Visualización de Trayecto}
+& T-09 & Configuración para consumir el API de ruteo. \\ \cline{2-3}
+
+& T-10 & Deducción de la geometría de la ruta y trazado de Polyline en el mapa.\\ \cline{2-3}
+
+& T-11 & Implementación de marcadores personalizados para Inicio y Fin. \\ \cline{2-3}
+
+& T-12 & Encuadre automático de toda la ruta en pantalla. \\ \hline
+
+\end{tabular}
+\end{table}
+
+\subsubsection{Consumo del API de Ruteo y Manejo de Respuestas}
+El primer reto fue establecer una comunicación robusta con el servidor NestJS. Para ello, se configuró el cliente Retrofit en la clase \texttt{RetrofitClient.kt}, estableciendo la URL del servidor y timeouts necesarios para procesar las consultas espaciales. 
+\begin{lstlisting}
+  object RetrofitClient {
+    private val baseUrl: String by lazy {
+        val configuredUrl = BuildConfig.BASE_URL.trim()
+        require(configuredUrl.isNotEmpty()) {
+            "BASE_URL no está configurada. Declara BASE_URL en frontend/local.properties"
+        }
+        if (configuredUrl.endsWith('/')) configuredUrl else "$configuredUrl/"
+    }
+
+\end{lstlisting}
+
+
+La interfaz de comunicación se definió en \texttt{RuteoApiService.kt}, empleando el método \texttt{POST} para enviar los objetos de tipo \texttt{calcular-ruta.dto}. El flujo se orquestó desde el \texttt{MapViewModel.kt} haciendo uso de corrutinas de Kotlin (\texttt{viewModelScope}), lo que permitió realizar las peticiones de ruteo de forma asíncrona para no bloquear el hilo principal de la interfaz de usuario, gestionando además los estados de carga y error mediante flujos de datos reactivos.
+
+\begin{lstlisting}
+interface RuteoApiService {
+    // Endpoint POST /api/ruteo/calcular
+    @POST("api/ruteo/calcular")
+    suspend fun calcularRutaSegura(
+        @Body request: RuteoRequest
+    ): Response<RuteoResponse>
+
+}
+\end{lstlisting}
+
+\subsubsection{Visualización de Trayectoria}
+El sistema procesa la geometría comprimida es decir, \texttt{Google Encoded Polyline}. Para lo cual, se desarrolló una lógica de decodificación en la clase \texttt{GeoUtils.kt}, la cual transforma de forma eficiente la cadena de texto en una lista de objetos LatLng representables en el mapa. Estos puntos se renderizan en el \texttt{MapFragment.kt} utilizando la clase \texttt{PolylineOptions} \cite{googlemaps2024}, en la cual se asignan las diferentes propiedades a la polyline, la Tabla \ref{tab:polyline} hace referencia a su configuración.
+\begin{table}[H]
+\caption{Configuración de una polilínea en Google Maps}
+\label{tab:polyline}
+\centering
+\begin{tabular}{|p{4.5cm}|p{10.5cm}|}
+\hline
+\textbf{Elemento} & \textbf{Descripción} \\
+\hline
+\texttt{googleMap.addPolyline()} & Añade una polilínea al mapa y devuelve un objeto \texttt{Polyline}.\\
+\hline
+\texttt{PolylineOptions()} & Define las propiedades visuales y geométricas de la polilínea antes de su renderización en el mapa. \\
+\hline
+\texttt{.addAll(segment)} & Determina el trazado de la ruta incorporando el  conjunto de coordenadas geográficas (\texttt{LatLng}). \\
+\hline
+\texttt{.width(16f)} & Define el grosor de la línea. \\
+\hline
+\texttt{.color(...toColorInt())} & Establece el color de la polilínea. \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Marcadores Personalizados}
+
+En lugar de utilizar los pines genéricos proporcionados por maps, se integraron recursos vectoriales (\texttt{ic\_marker\_start.xml} e \texttt{ic\_marker\_destination.xml}) para señalar los extremos de la ruta, estos marcadores se colocan una vez que las coordenadas de origen y destino son validadas y se actualizan cada vez que el usuario realiza una nueva búsqueda, cada uno de los marcadores se visualizan en las Figuras \ref{fig:marcador-inicio} y \ref{fig:marcador-destino}.
+\begin{figure}[htbp]
+    \centering  
+    \includegraphics[width=0.3\textwidth]{../02Figures/02Chapter/MarcadorInicio.png}
+    \caption{Marcador personalizado para el punto de inicio}
+    \label{fig:marcador-inicio}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering  
+    \includegraphics[width=0.3\textwidth]{../02Figures/02Chapter/MarcadorDestino.png}
+    \caption{Marcador personalizado para el punto de destino}
+    \label{fig:marcador-destino}
+\end{figure}
+
+\subsubsection{Autoencuadre de la Cámara}
+En el momento que se obtiene la trayectoria, el sistema utiliza la clase \texttt{LatLngBounds.Builder} para calcular un contenedor que incluya todos los nodos del recorrido, aplicando un margen de relleno definido en \texttt{Constants.kt}. De esta forma, el mapa se ajusta automáticamente para mostrar el origen y el destino de forma centrada, sin intervención manual.
+
+\begin{lstlisting}
+      val PICHINCHA_BOUNDS: LatLngBounds = LatLngBounds(
+        LatLng(-0.672, -78.875), // SW - esquina inferior izquierda
+        LatLng( 0.288, -77.616)  // NE - esquina superior derecha
+    )
+\end{lstlisting}
+
+
+Asimismo, se integró el mecanismo de reinicio de flujo mediante el botón \texttt{Cambiar destino}, garantizando la limpieza de polilíneas y marcadores previos. Esto permite al usuario iniciar una nueva búsqueda de forma inmediata y sin residuos visuales de trayectorias anteriores.
+
+\subsubsection{Sprint Review}
+El flujo completo del sistema es decir seleccionar un destino mediante el buscador y la comunicación exitosa con el backend permitio que la ruta segura sea trazada sobre el mapa. Para la velocidad de respuesta desde que el usuario confirma el destino hasta que aparece la polilínea, confirma que la compresión de datos y la gestión cumple con los estándares de rendimiento. 
+
+La funcionalidad de autoencuadre y el dibujo de la polilinea se destaca como una mejora sustancial a nivel de la aplicación ya que permitio comprobar la capacidad del aplicativo.
+Como resultado de las diferentes funcionalidades, se muestra en la Figura \ref{fig:ruta-trazada} la ruta trazada haciendo prueba desde un punto de origen hasta un destino dentro de los límites definidos.
+
+\begin{figure}[htbp]
+    \centering  
+    \includegraphics[width=0.5\textwidth]{../02Figures/02Chapter/ResultadoRutaTrazada.jpeg}
+    \caption{Visualización de la ruta segura trazada en el mapa}
+    \label{fig:ruta-trazada}   
+\end{figure}
+
+\subsubsection{Sprint Retrospective}
+El uso de \texttt{StateFlow} y \texttt{Corrutinas} en el cliente móvil redujó exitosamente la carga del servidor.  Aun asi se detectaron fallos en la estabilidad como la ausencia de un manejo robusto de excepciones de red provocaba que la aplicación se congelara o sufriera cierres inesperados al perder conexión. Como plan de acción, se priorizó la implementación alertas visuales  para el usuario, así como la refactorización de la limpieza de la memoria en la vista del mapa esto como punto esencial delego la decodificación geométrica de la polilínea al dispositivo móvil lo que alivio  la carga computacional del servidor.
+
 \subsection{Sprint 4}
+
+
 \subsection{Sprint 5}
 
 
