@@ -1044,8 +1044,83 @@ Como resultado de las diferentes funcionalidades, se muestra en la Figura \ref{f
 El uso de \texttt{StateFlow} y \texttt{Corrutinas} en el cliente móvil redujó exitosamente la carga del servidor.  Aun asi se detectaron fallos en la estabilidad como la ausencia de un manejo robusto de excepciones de red provocaba que la aplicación se congelara o sufriera cierres inesperados al perder conexión. Como plan de acción, se priorizó la implementación alertas visuales  para el usuario, así como la refactorización de la limpieza de la memoria en la vista del mapa esto como punto esencial delego la decodificación geométrica de la polilínea al dispositivo móvil lo que alivio  la carga computacional del servidor.
 
 \subsection{Sprint 4}
+Para esta paso del  proyecto el propósito fue dotar al Módulo de Ruteo Seguro de la capacidad analítica para reaccionar y adaptarse ante eventos e incidentes en tiempo real. Como objetivo central  del sprint  se estableció habilitar un flujo automatizado para el registro de incidentes externos, la penalización espacial del riesgo en las vías adyacentes y la posterior limpieza de los eventos expirados.
 
+\subsubsection{Sprint Backlog}
+El equipo determinó que delegar el cálculo de intersecciones de millones de geometrías a la capa de aplicación (NestJS) generaría un cuello de botella crítico en el consumo de memoria. Por tanto, para corregirlo, se diseñó una capa de ingesta ligera basada en Webhooks en el servidor y se trasladó la carga computacional pesada directamente al motor de Azure SQL Database mediante el uso de Procedimientos Almacenados (Stored Procedures) transaccionales. La Tabla \ref{tab:backlog-sprint4} detalla las tareas comprometidas.
 
+\begin{table}[ht]
+\centering
+\caption{Backlog del Sprint 4}
+\label{tab:backlog-sprint4}
+\begin{tabular}{|p{3.5cm}|p{2.5cm}|p{7.5cm}|}
+\hline
+\textbf{Historia de Usuario} & \textbf{Código} & \textbf{Descripción} \\ \hline
+\multirow{3}{3cm}{\textbf{HU-04} \\ Gonderación de Riesgo}
+& T-13 & Creación de Stored Procedure para interceptar nuevos reportes. \\ \cline{2-3}
+& T-14 & Vinculación de incidente con la arista más cercana.  \\ \cline{2-3}
+& T-15 & Automatización de la actualización del campo riesgo. \\ \hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Webhook para Registro de Incidentes}
+Para el componente actual funcione como puente con los sistemas externos, el endpoint \texttt{POST /api/webhook/incidente}, el cual es el Webhook actúa recibiendo un Objeto de Transferencia de Datos (DTO) validado que contenga las coordenadas, el nivel de gravedad y el tipo de delito.
+
+\begin{lstlisting}
+@Controller('webhook')
+export class WebhookController {
+  constructor(private readonly webhookService: WebhookService) {}
+
+  @Post('incidente')
+  @HttpCode(HttpStatus.OK)
+  async recibirIncidente(@Body() dto: CreateIncidentWebhookDto) {
+    return await this.webhookService.registrarYPenalizar(dto);
+  }
+}
+\end{lstlisting}
+
+\subsubsection{Penalización del Grafo Vial}
+Una vez validada la estructura, el servicio invoca el procedimiento almacenado \texttt{dbo.SP\allowbreak\_Registrar\allowbreak\_Y\allowbreak\_Penalizar\allowbreak\_Incidente}. Para asegurar la atomicidad de la operación, la lógica se encapsuló dentro de un bloque \texttt{TRY...CATCH} con control explícito de transacciones (\texttt{BEGIN\allowbreak\ TRANSACTION\allowbreak\ /\allowbreak\ COMMIT}). A nivel espacial, el script transforma las coordenadas de latitud y longitud en un objeto nativo \texttt{geography::Point\allowbreak(lat,\allowbreak lon,\allowbreak 4326)}. Posteriormente, genera un polígono utilizando la función \texttt{.STBuffer\allowbreak(300)}.
+
+\begin{lstlisting}
+DECLARE @punto_incidente GEOGRAPHY = geography::Point(@latitud, @longitud, 4326);
+INSERT INTO dbo.INCIDENTES (id_incidente, ubicacion, fecha_reporte, nivel_gravedad, tipo)
+VALUES (@id_incidente, @punto_incidente, GETDATE(), @nivel_gravedad, @tipo);
+DECLARE @area_busqueda GEOGRAPHY = @punto_incidente.STBuffer(300);
+\end{lstlisting}
+
+La penalización del grafo se ejecuta aplicando la función \texttt{.STIntersects()} para identificar qué vías cruzan el polígono de peligro, incrementando el campo \texttt{peso\_riesgo} de la tabla \texttt{ARISTAS} en una proporción de \texttt{nivel\_gravedad * 1000}. Para garantizar tiempos de respuesta en milisegundos sobre los millones de registros, se forzó la optimización de la ejecución inyectando la directiva \texttt{WITH(INDEX(\allowbreak SPATIAL\_IX\_Aristas\_Geometria))}.
+\begin{lstlisting}
+SET A.peso_riesgo = A.peso_riesgo + (@nivel_gravedad * 1000)
+FROM dbo.ARISTAS A WITH(INDEX(SPATIAL_IX_Aristas_Geometria))
+WHERE A.trayectoria.STIntersects(@area_busqueda) = 1;
+\end{lstlisting}
+
+\subsubsection{Limpieza de Incidentes Expirados}
+
+Para prevenir que la red vial quede penalizada de forma permanente por reportes obsoletos, se construyó el servicio \texttt{IncidenteCleanupService}, utilizando una tarea programada esta orquesta el procedimiento \texttt{dbo.SP\_Limpiar\_Incidentes\_Expirados}, cuyo objetivo es identificar eventos con más de dos horas de antigüedad (\texttt{@horas\_caducidad = 2}).
+\begin{lstlisting}
+UPDATE a
+SET a.peso_riesgo = 
+CASE 
+WHEN a.peso_riesgo - (i.nivel_gravedad * 1000) < 1.0 THEN 1.0 
+ELSE a.peso_riesgo - (i.nivel_gravedad * 1000) 
+END
+FROM dbo.ARISTAS a WITH(INDEX(SPATIAL_IX_Aristas_Geometria), ROWLOCK)
+\end{lstlisting}
+La reversión del riesgo se logró mediante una actualización condicional (CASE WHEN), la cual resta el factor de gravedad previamente sumado, asegurando matemáticamente que el valor de la vía jamás descienda del peso base de seguridad (1.0). Finalmente, los registros de la tabla INCIDENTES son purgado, esta actualización masiva empleó un bloqueo exclusivo a nivel de fila (ROW-LOCK), lo cual previene el bloqueo de la tabla completa y permite que el motor A* siga calculando rutas en paralelo. La salida se muestra en la Figura \ref{fig:log-limpieza}.
+
+\begin{figure}[htbp]
+    \centering  
+    \includegraphics[width=1.0\textwidth]{../02Figures/02Chapter/Log_Limpieza_Incidentes.png}
+    \caption{Salida de consola del servicio de limpieza de incidentes expirados}
+    \label{fig:log-limpieza}
+\end{figure}
+
+\subsubsection{Sprint Review}
+La actualización de riesgo en tiempo real se demostró exitosamente, al registrar un incidente simulado a través del webhook, se observó la penalización inmediata en las vías adyacentes y la posterior reversión automática después del período de expiración. La integración entre el backend y la base de datos espacial confirmo que los procedimientos almacenados pueden manejar múltiples reportes simultáneos sin degradar el rendimiento del servicio de ruteo.
+\subsubsection{Sprint Retrospective}
+Con la penalización espacial en tiempo real se permitió que el módulo de ruteo se adaptara dinámicamente a las condiciones cambiantes de seguridad en la ciudad. Sin embargo, la complejidad en el manejo de transacciones espaciales incrementó el tiempo de depuración. En donde la implementación de transacciones salvaguardó la integridad del grafo vial ante errores de ejecución. Asimismo, la automatización de la limpieza de incidentes expirados se identificó como un componente esencial para mantener la relevancia de los datos de riesgo, evitando que las rutas queden penalizadas de forma indefinida por eventos pasados. 
 \subsection{Sprint 5}
 
 
