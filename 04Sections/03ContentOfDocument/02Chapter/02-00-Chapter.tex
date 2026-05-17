@@ -1,4 +1,4 @@
-El Módulo de Ruteo Seguro busca la optimización de rutas variables haciendo uso de variables de inseguridad ciudadana, por lo cual se optó por una metodología de investigación aplicada organizada según el marco de trabajo Scrum. En esta sección describe el proceso de desarrollo organizado en fases iterativas, desde la exploración y planificación hasta la implementación y despliegue, de manera que se asegura la entrega incremental de valor al usuario final.
+El Módulo de Ruteo Seguro busca la optimización de rutas variables haciendo uso de variables de inseguridad ciudadana, por lo cual se optó por una metodología de investigación aplicada organizada según el marco de trabajo Scrum. En esta sección describe el proceso de desarrollo organizado en fases iterativas, desde la exploración, planificación e implementación, de manera que se asegura la entrega incremental de valor al usuario final.
 
 \section{Instauración del marco de trabajo Scrum}
 En esta fase se realiza la identificación y caracterización de los actores relevantes que participan en el sistema, tanto directa como indirectamente, asegurando que las funcionalidades de navegación y seguridad preventiva respondan a necesidades reales.
@@ -102,10 +102,9 @@ En la Tabla \ref{tab:herramientas-tecnologias} se explican, a continuación, de 
 \textbf{Base de Datos} 
 & SQL Server 
 & Este es el motor de base de datos relacional se eligió por su sólido soporte de \textit{datos espaciales}, esenciales para el algoritmo de ruteo. \\ \hline
-
-\textbf{Infraestructura} 
-& Azure App Service 
-& Servicio PaaS para alojar y escalar \cite{al2017elasticity}.\\ \hline
+\textbf{Servicios en la Nube}
+& Microsoft Azure
+& Para el despliegue de la base de datos, se optó por Azure debido a su compatibilidad con SQL Server. \\ \hline
 
 \end{tabular}
 \end{table}
@@ -1103,7 +1102,8 @@ Para prevenir que la red vial quede penalizada de forma permanente por reportes 
 UPDATE a
 SET a.peso_riesgo = 
 CASE 
-WHEN a.peso_riesgo - (i.nivel_gravedad * 1000) < 1.0 THEN 1.0 
+WHEN a.peso_riesgo - (i.nivel_gravedad
+* 1000) < 1.0 THEN 1.0 
 ELSE a.peso_riesgo - (i.nivel_gravedad * 1000) 
 END
 FROM dbo.ARISTAS a WITH(INDEX(SPATIAL_IX_Aristas_Geometria), ROWLOCK)
@@ -1121,9 +1121,104 @@ La reversión del riesgo se logró mediante una actualización condicional (CASE
 La actualización de riesgo en tiempo real se demostró exitosamente, al registrar un incidente simulado a través del webhook, se observó la penalización inmediata en las vías adyacentes y la posterior reversión automática después del período de expiración. La integración entre el backend y la base de datos espacial confirmo que los procedimientos almacenados pueden manejar múltiples reportes simultáneos sin degradar el rendimiento del servicio de ruteo.
 \subsubsection{Sprint Retrospective}
 Con la penalización espacial en tiempo real se permitió que el módulo de ruteo se adaptara dinámicamente a las condiciones cambiantes de seguridad en la ciudad. Sin embargo, la complejidad en el manejo de transacciones espaciales incrementó el tiempo de depuración. En donde la implementación de transacciones salvaguardó la integridad del grafo vial ante errores de ejecución. Asimismo, la automatización de la limpieza de incidentes expirados se identificó como un componente esencial para mantener la relevancia de los datos de riesgo, evitando que las rutas queden penalizadas de forma indefinida por eventos pasados. 
+
 \subsection{Sprint 5}
+El propósito principal de esta sección no solo fue dar funciones de rastreo en segundo plano a la aplicación sino también de permitir la actualización visual en tiempo real del progreso del viaje y estableciendo un mecanismo  capaz de detectar si el usuario abandona la ruta segura sugerida, brindando un recálculo automático sin interrumpir la experiencia visual. 
+
+Dado que Android fuerza a cerrar aplicaciones que consumen recursos en segundo plano,  se orientó a gestionar adecuadamente los servicios de ubicación y a mitigar las imprecisiones del GPS para la traza de la ruta.
+Asi pues este mismo identifica que el usuario nunca pierda la guía de la ruta segura y permite que el mapa muestre fluidamente el progreso recorrido.
+\subsubsection{Sprint Backlog}
+La Tabla \ref{tab:backlog-sprint-5} fundamenta la estructuración de las actividades planificadas comenzando desde tareas que están orientadas a las actividades en segundo plano como la interactividad del mapa.
+
+\begin{table}[H]
+\centering
+\caption{Backlog del Sprint 5}
+\label{tab:backlog-sprint-5}
+\begin{tabular}{|p{3cm}|p{2cm}|p{8cm}|}
+\hline
+\multirow{4}{3cm}{\textbf{HU-05} \\ Recálculo de la vía por desvío}
+& T-16 & Implementación de seguimiento GPS en segundo plano mediante un \textit{Foreground Service}. \\ \cline{2-3}
+
+& T-17 & Detección de desvíos mediante matemática geoespacial. \\ \cline{2-3}
+
+& T-18 & Recálculo dinámico de rutas y actualización de estados en la UI. \\ \cline{2-3}
+
+& T-19 & Optimización de la interfaz para transiciones suaves y eliminación de parpadeos. \\ \hline
+
+\end{tabular}
+\end{table}    
+
+\subsubsection{Seguimiento GPS Robusto en Segundo Plano}
+Para garantizar el seguimiento continuo del usuario, se usa \texttt{TrackingService.kt} el cual es un servicio en primer plano, este se utiliza debido a que previene que el sistema operativo destruya el proceso cuando la aplicación se minimiza. 
+\begin{lstlisting}
+  class TrackingService : Service() {
+
+    private lateinit var fusedLocationClient: FusedLocationProviderClient
+    private val CHANNEL_ID = "TrackingServiceChannel"
+
+    // Callback que se dispara cada vez que el GPS detecta movimiento
+    private val locationCallback = object : LocationCallback() {
+        override fun onLocationResult(locationResult: LocationResult) {
+            super.onLocationResult(locationResult)
+            locationResult.lastLocation?.let { location ->
+                Log.d("TrackingService", "Ubicación actualizada: ${location.latitude}, ${location.longitude}")
+                // Enviamos la ubicación al Singleton para que la UI reaccione
+                LocationTracker.updateLocation(location)
+            }
+        }
+    }
+\end{lstlisting}
+
+Paralelamente, se construyó el componente \texttt{LocationTracker.kt}, el cual opera como una instancia única encargada de encapsular el proveedor de ubicación fusionada (\texttt{FusedLocationProviderClient}) de Google Play Services. Este componente emite de forma continua y reactiva las coordenadas GPS a través de flujos asíncronos, permitiendo que el MapViewModel procese la información independientemente del estado de la vista.
+
+\begin{lstlisting}
+  object LocationTracker {
+    private val _currentLocation = MutableStateFlow<Location?>(null)
+    val currentLocation: StateFlow<Location?> = _currentLocation.asStateFlow()
+
+    fun updateLocation(location: Location) {
+        _currentLocation.value = location
+    }
+}
+\end{lstlisting}
 
 
+\subsubsection{Detección de Desvíos}
+Con la libreria Google Maps Utility Library se introdujo la lógica para la navegacion áutonoma. Se empleó la función matemática \texttt{PolyUtil.isLocationOnPath} para evaluar constantemente si la coordenada actual del GPS intersectaba con la geometría de la ruta decodificada, aplicando una tolerancia de desvío estricta (entre 50 y 100 metros).
+
+Para dotar al algoritmo de resiliencia frente a los "saltos" de antena satelital, se introdujeron lógicas de control críticas:
+\begin{itemize}
+  \item \textbf{Filtro de Precisión (Accuracy Filter):} Se configuró el sistema para ignorar silenciosamente las lecturas de GPS cuya dispersión de error fuera muy alta, previniendo falsos positivos de desvío.
+  \item \textbf{Periodo de Gracia Inicial}: Se programó un bloqueador (Arming logic) que retrasa el monitoreo estricto durante los primeros segundos del viaje, permitiendo que el hardware estabilice su precisión inicial.
+\end{itemize}
+
+\subsubsection{Renderizado Dinámico y Transición Suave de UI}
+El marcador de origen se reemplazó por un recurso dinámico de navegación(\texttt{ic\_nav\_}
+\texttt{user.xml}) que rota y se desplaza según los datos del GPS. Esta misma se muestra en la Figura \ref{fig:marcador-usuario}.
+
+\begin{figure}[htbp]
+    \centering  
+    \includegraphics[width=0.3\textwidth]{../02Figures/02Chapter/IconoRecorrido.png}
+    \caption{Marcador dinámico para la posición del usuario}
+    \label{fig:marcador-usuario}    
+\end{figure}
+
+Al momento de detectar un desvío válido, el MapViewModel cambia al estado de Recalculating, en la cual solicita una nueva ruta segura al backend de forma transparente. Para el manejo de la transición visual no solo implica eliminar y volver a añadir la polilínea \texttt{map.clear()},  ya que, genera un parpadeo molesto. Para solucionar esto, se implementó una actualización de ``transición suave'' mediante el método \texttt{setPoints} sobre la instancia existente de la polilínea, logrando que el cambio de trayectoria sea instantáneo y fluido para el usuario. 
+
+\subsubsection{Sprint Review}
+Para hacer el funcionamiento del modulo se simulo el desplazamiento de la ubicación para comprobar el comportamiento del motor. Se demostró la tolerancia de 100 metros respecto a la polilínea, dando como resultado que la interfaz indicaba el estado de recálculo y dibujaba una nueva trayectoria segura proveniente del servidor. Asimismo, se verificó el ciclo de vida de los servicios: al presionar el botón ``Cambiar destino'', la polilínea se destruyó en memoria, el recurso visual volvió a su estado inicial, y servicio de GPS continuo se detuvo, evitando fugas de memoria. Finalmente, en la Figura \ref{fig:recorrido-dinamico} se muestra la ruta segura en el mapa, evidenciando la capacidad de adaptación del sistema ante cambios en la ubicación del usuario.
+
+
+\begin{figure}[H]
+    \centering  
+    \includegraphics[width=0.4\textwidth]{../02Figures/02Chapter/ResultadoFinal.png}
+    \caption{Resultado Final}
+    \label{fig:recorrido-dinamico}
+\end{figure}
+
+
+\subsubsection{Sprint Retrospective}
+El principal obstáculo fue la imprecisión del GPS en zonas de sombra estructural de la ciudad, lo que inicialmente disparaba recálculos innecesarios. dando como resultado que la implementación del filtro de precisión y el periodo de gracia logro estabilizar el comportamiento del software considerado este como el acierto más crítico del sprint, ya que estabilizó el consumo de red y mejoró drásticamente la experiencia del usuario.
 
 %\section{SECTION 1}
 %\lipsum[1-3]
