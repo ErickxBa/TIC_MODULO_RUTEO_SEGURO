@@ -9,8 +9,11 @@
 {
 \renewcommand{\labelitemi}{$\blacksquare$}
 \begin{itemize}
-  \item \textbf{ANEXO \ref{anexo:datos}.} Conjunto de Datos Extensos
-  \item \textbf{ANEXO \ref{anexo:entrevista}.} Formato de Entrevista
-  \item \textbf{ANEXO \ref{anexo:enlaces}.} Enlaces
+  \phantomsection
+  \refstepcounter{chapter}\label{anexo:casos-de-prueba}
+  \item \textbf{ANEXO \thechapter.} \href{https://github.com/ErickxBa/TIC_MODULO_RUTEO_SEGURO/tree/main/Anexos/CasosDePrueba}{Casos de prueba funcionales}
+  \phantomsection
+  \refstepcounter{chapter}\label{anexo:resultados-pruebas-funcionales}
+  \item \textbf{ANEXO \thechapter.} \href{https://github.com/ErickxBa/TIC_MODULO_RUTEO_SEGURO/tree/main/Anexos/ResultadosPruebasFuncionales}{Resultados de pruebas funcionales}
 \end{itemize}
 }

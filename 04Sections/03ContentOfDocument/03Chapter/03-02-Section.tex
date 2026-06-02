@@ -1,2 +1,16 @@
 %Conclusiones 
-Presenta lo novedoso del trabajo de integración curricular, así como evaluación del cumplimiento o no de lo propuesto en los objetivos. En el caso en que no se cumpla uno o varios objetivos, y no se logren los resultados esperados, se propone una posible respuesta que explique por qué sucedió esto o las falencias de la planteado.
+La culminación del desarrollo del Módulo de Ruteo Seguro para el aplicativo Alertify permite establecer las siguientes conclusiones, fundamentadas en el cumplimiento riguroso de los objetivos planteados al inicio del proyecto:
+
+\begin{itemize}
+
+    \item \textbf{Ingeniería de Requisitos y Planificación Ágil:} Se determinaron exhaustivamente los requerimientos funcionales y no funcionales necesarios para el cálculo de rutas. La formalización de este proceso mediante la elaboración de Historias de Usuario permitió establecer un \textit{backlog} claro e iterativo. Esta planificación, guiada por metodologías ágiles, garantizó que el esfuerzo de desarrollo se mantuviera alineado con la necesidad central del sistema: priorizar la seguridad del peatón.
+
+    \item \textbf{Modelado Espacial y Ponderación de Riesgos:} Se construyó de manera exitosa un esquema de base de datos en SQL Server con alta capacidad espacial, logrando integrar la variable de peligrosidad directamente en la topología de la red vial. El uso de tipos de datos geométricos y geográficos permitió que el algoritmo de ruteo evaluara el costo de las aristas no solo por su distancia física, sino penalizando matemáticamente las zonas con índices delictivos.
+
+    \item \textbf{Arquitectura de Servicios y Despliegue en la Nube:} La API del Servicio de Ruteo, desarrollada bajo el \textit{framework} NestJS, demostró una alta capacidad para recibir solicitudes y entregar rutas seguras en tiempo real. El despliegue de esta arquitectura en Azure App Service dotó al sistema de la escalabilidad y disponibilidad necesarias, garantizando además una interoperabilidad fluida, segura y asíncrona con los módulos adyacentes de Reportes y Autenticación.
+
+    \item \textbf{Experiencia de Usuario (UX) e Interfaz Nativa:} El desarrollo de la interfaz de usuario en Kotlin cumplió a cabalidad con el objetivo de permitir a los ciudadanos solicitar y visualizar las rutas propuestas de manera altamente intuitiva. La integración nativa de mapas facilitó la toma de decisiones informadas por parte del usuario antes de iniciar su desplazamiento urbano, minimizando la carga cognitiva a través de un diseño limpio y enfocado en la usabilidad.
+
+    \item \textbf{Validación y Calidad del Software:} La ejecución de las pruebas funcionales comprobó la precisión matemática del algoritmo en la generación de rutas de bajo riesgo, verificando que el sistema evade proactivamente zonas reportadas como peligrosas. Asimismo, las pruebas de usabilidad (evaluadas mediante la Escala SUS) confirmaron empíricamente la aceptación de la plataforma, demostrando que la solución tecnológica cumple con los estándares de calidad exigidos por la disciplina de Interacción Humano--Computadora.
+
+\end{itemize}

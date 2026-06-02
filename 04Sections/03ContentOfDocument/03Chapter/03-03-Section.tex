@@ -1,2 +1,14 @@
 %Recomendaciones
-Indicar las recomendaciones formuladas a partir del desarrollo de este trabajo de integración curricular.
+A partir de las lecciones aprendidas durante la construcción de la arquitectura, la integración del \textit{stack} tecnológico (Kotlin, Nest.js, SQL Server y Azure) y los resultados arrojados por las pruebas, se sugieren las siguientes líneas de acción para trabajos futuros o nuevas versiones del aplicativo:
+
+\begin{itemize}
+
+\item \textbf{Implementación de Ruteo Dinámico Temporal:} Se sugiere enriquecer el algoritmo de cálculo de rutas seguras incorporando la variable del tiempo (horarios diurnos frente a nocturnos). Una calle puede ser segura al mediodía, pero de alto riesgo en la madrugada. Aplicar modelos de \textit{Machine Learning} que ajusten los pesos espaciales de SQL Server de forma predictiva y horaria otorgaría mayor exactitud a la prevención de delitos.
+
+\item \textbf{Navegación Asistida por Voz (Turn-by-Turn):} A nivel del \textit{frontend} en Kotlin, se recomienda integrar un servicio de navegación guiada por voz e interacciones hápticas (vibraciones del dispositivo). Esto evitará que el usuario deba mirar constantemente la pantalla de su \textit{smartphone} mientras camina por la ciudad, lo cual, irónicamente, podría exponerlo a hurtos o accidentes viales.
+
+\item \textbf{Optimización de Consultas mediante Caché Espacial:} A medida que la base de usuarios crezca, el cálculo de rutas concurrentes sobre la base de datos SQL Server podría generar latencia en Azure App Service. Se recomienda implementar una capa de caché en el \textit{backend} de Nest.js (utilizando tecnologías en memoria como Redis) para almacenar las geometrías de las rutas más solicitadas y los polígonos de zonas de riesgo estáticas, aliviando la carga de procesamiento del motor relacional.
+
+\item \textbf{Evaluación de Migración a Bases de Datos de Grafos:} Aunque SQL Server procesó eficientemente las funciones espaciales a nivel de la ciudad de Quito, si el proyecto se escala a nivel nacional (millones de nodos y aristas), se sugiere investigar la migración de la topología de la red vial a un Sistema Gestor de Base de Datos Orientado a Grafos nativo (como Neo4j). Esto podría reducir la complejidad computacional en la búsqueda de caminos mínimos y mejorar el tiempo de respuesta del algoritmo.
+
+\end{itemize}
