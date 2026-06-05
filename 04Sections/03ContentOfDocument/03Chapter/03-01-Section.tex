@@ -140,9 +140,7 @@ Al superar el umbral de los 68 puntos certifica que las decisiones de diseño ap
 Tras la culminación de las tareas de navegación y ruteo, se aplicó el cuestionario SUS y se realizo el análisis de los resultados de las tareas específicas. Los valores crudos se obtuvo mediante la escala de Likert y se recopilo cuidadosamente para su posterior tratamiento matemático.
 
 \subsubsection{Resultados Tareas Específicas}
-La evaluación de la usabilidad se llevó a cabo con una muestra de 10 usuarios (jóvenes y adultos de la ciudad de Quito). La ejecución de las pruebas se realizó en un entorno controlado, utilizando un dispositivo móvil Android para interactuar con el frontend desarrollado nativamente en Kotlin. Durante las pruebas, el aplicativo consumió los servicios del backend construido en Nest.js (ejecutado en un entorno de red local), el cual interactuó de manera remota con la base de datos SQL Server alojada en Azure para la resolución de las topologías espaciales de la red vial.
-
-Para medir la efectividad y eficiencia del diseño de interacción, los datos recolectados durante la ejecución de las tres tareas críticas (Generación de ruta, Interacción espacial y Limpieza de ruta) se consolidaron para obtener métricas centrales de tendencia. En la Tabla \ref{tab:pruebas_usabilidad} se exponen los resultados promediados de la muestra evaluada.
+La muestra que se utilizo de 10 usuarios, conformada por estudiantes y residentes de la ciudad de Quito. El entorno de pruebas se definió con una arquitectura híbrida de desarrollo en el cual los participantes interactuaron con el aplicativo nativo en Kotlin, el cual  se consumió el servicio de ruteo alojado en un entorno local (Nest.js), mientras que el procesamiento de las topologías espaciales y la ponderación de la red vial se ejecutó en una instancia remota de SQL Server alojada en Microsoft Azure. Los datos recolectados durante la ejecución de las tres tareas críticas (Generación de Ruta, Interacción Espacial y Limpieza del Entorno) se consolidaron en la Tabla \ref{tab:pruebas_usabilidad} para obtener las métricas centrales de tendencia.
 \begin{table}[H]
 \centering
 \caption{Resultados de las pruebas de usabilidad por tarea}
@@ -177,10 +175,9 @@ Tarea 3: Limpieza del Entorno &
 
 \subsubsection{Análisis de Métricas de Interacción}
 
-La Tasa de Éxito del 100\% en la Generación de Ruta demuestra que el diseño de los formularios de entrada en el aplicativo móvil es altamente intuitivo. A nivel de ingeniería, el Tiempo Promedio de 58.5 segundos (desde la selección de los puntos hasta la renderización de la ruta) resulta sobresaliente. Este tiempo incluye la latencia de red hacia Azure App Service y el procesamiento geoespacial del algoritmo de ruteo en Nest.js, lo que confirma que el uso de índices espaciales (GEOGRAPHY) en SQL Server optimiza drásticamente el cálculo de grafos en tiempo real, evitando cuellos de botella y frustración en el usuario.
-
-
-En la Tabla \ref{tab:sus_respuestas} se expone la matriz de recolección de datos primarios, donde las columnas P1 a P10 representan los ítems estandarizados del cuestionario de usabilidad.
+La aplicación alcanza un 100\% en la Tasa de éxito para la sección de la generación de rutas seguras por que brinda un diseño intuitivo de los componentes visuales para la selección de origen y destino, aunque el tiempo promedio de ejecución de 56.4 segundos revela una limitación relacionada con la arquitectura, ya que el servidor local basado en Nest.js debe realizar múltiples consultas secuenciales hacia Azure para obtener y procesar los grafos espaciales penalizados por riesgo, generando una latencia perceptible que redujo la satisfacción de los usuarios a un promedio de 3.5 sobre 5. Una vez obtenida la información geoespacial desde el backend, la interacción con el mapa demostró un comportamiento fluido y eficiente, registrando cero errores en las tareas de zoom y desplazamiento, así como un alto nivel de satisfacción (4.8), lo que confirma que el desarrollo en Kotlin  maneja de correctamente la renderización espacial sin afectar el rendimiento del dispositivo. 
+\subsubsection{Resultados SUS}  
+Tras la finalización del flujo de tareas, en la Tabla \ref{tab:sus_respuestas}, se aplicó las respectivas encuestas SUS a cada uno de los 10 participantes, en el cual se obtuvo un conjunto de respuestas que reflejan la percepción de la usabilidad del Módulo de Ruteo Seguro. 
 
 \begin{table}[H]
 \centering
@@ -216,13 +213,11 @@ Usuario 10 & 4 & 2 & 4 & 2 & 5 & 2 & 5 & 3 & 4 & 2 \\
 \end{table}
 
 \subsubsection{Tratamiento Matemático y Puntuación Final}
-Aplicando la normalizacion en la matriz de datos, se procedió a calcular la puntuación final de cada participante. Este proceso garantiza la mitigación del sesgo direccional de las preguntas, transformando las percepciones individuales en una métrica interpretable.
+Se procedió a calcular la puntuación final de cada participante. Este proceso garantiza la mitigación inclinación de de las preguntas, en donde se transforma en una métrica en conjunto e interpretable. Para ilustrar de manera transparente la transformación matemática, se detalla el procesamiento analítico del vector de respuestas correspondiente al Usuario 03. Durante la prueba del Módulo de Ruteo Seguro, este usuario evaluó la experiencia de interacción (generación de ruta en el dispositivo móvil y respuesta del servidor) emitiendo las siguientes calificaciones en la escala de Likert (1 a 5):
 
-Para ilustrar de manera transparente la transformación matemática descrita, a continuación se detalla el procesamiento analítico del vector de respuestas correspondiente al Usuario 01.
-Durante la prueba del Módulo de Ruteo Seguro, este usuario evaluó la experiencia de interacción (generación de ruta en el dispositivo móvil y respuesta del servidor en Azure) emitiendo las siguientes calificaciones en la escala de Likert (1 a 5):
 \begin{itemize}
-    \item Ítems Impares: $P_1=4$, $P_3=4$, $P_5=4$, $P_7=5$, $P_9=4$.
-    \item Ítems Pares: $P_2=2$, $P_4=2$, $P_6=2$, $P_8=1$, $P_{10}=2$.
+    \item Ítems Impares: $P_1=4$, $P_3=4$, $P_5=3$, $P_7=4$, $P_9=4$.
+    \item Ítems Pares: $P_2=2$, $P_4=2$, $P_6=3$, $P_8=4$, $P_{10}=1$.
 \end{itemize}
 
 El tratamiento matemático se ejecuta en tres fases secuenciales para mitigar el sesgo direccional de las preguntas:
@@ -230,20 +225,20 @@ El tratamiento matemático se ejecuta en tres fases secuenciales para mitigar el
 Se resta la unidad al valor de cada respuesta para proyectar la contribución del usuario en una subescala de 0 a 4 puntos.
 
 \begin{equation}
-P_{i}= (4-1) + (4-1) + (4-1) + (5-1) + (4-1)
+P_{i}= (4-1) + (4-1) + (3-1) + (4-1) + (4-1)
 \end{equation}
 \begin{equation}
-P_{i}= 3 + 3 + 3 + 4 + 3 = 16
+P_{i}= 3 + 3 + 2 + 3 + 3 = 14
 \end{equation}
 
 \subsubsection{Paso 2: Normalización de Ítems Pares} 
 Para invertir la puntuación de las afirmaciones negativas y homogeneizarlas en la misma subescala (0 a 4), se resta el valor emitido por el usuario a la constante 5.
 
 \begin{equation}
-P_{j}= (5-2) + (5-2) + (5-2) + (5-1) + (5-2)
+P_{j}= (5-2) + (5-2) + (5-3) + (5-4) + (5-1)
 \end{equation}
 \begin{equation}
-P_{j}= 3 + 3 + 3 + 4 + 3 = 16
+P_{j}= 3 + 3 + 2 + 1 + 4 = 13
 \end{equation}
 
 \subsubsection{Paso 3: Puntaje SUS}
@@ -251,8 +246,8 @@ Finalmente, se consolidan ambas sumatorias parciales y se aplica el factor de es
 \begin{equation}
 \text{SUS} = (P_{i} + P_{j}) \times 2.5
 \end{equation}
-\begin{equation}\text{SUS} = (16 + 16) \times 2.5\end{equation}
-\begin{equation}\text{SUS} = 32 \times 2.5 = 80.0\end{equation}
+\begin{equation}\text{SUS} = (14 + 13) \times 2.5\end{equation}
+\begin{equation}\text{SUS} = 27 \times 2.5 = 67.5\end{equation}
 
 Este resultado refleja que el usuario percibió el Módulo de Ruteo Seguro como una herramienta altamente intuitiva y coherente. Técnicamente, este puntaje sugiere que la comunicación asíncrona entre el frontend desarrollado en Kotlin y la API servida en Nest.js operó con la fluidez necesaria para no generar fricción cognitiva ni frustración durante la tarea de búsqueda de rutas. El mismo proceso se replicó para los 10 participantes y resultados se los exponen en la Tabla \ref{tab:resultados_sus}.
 \begin{table}[H]
@@ -261,29 +256,27 @@ Este resultado refleja que el usuario percibió el Módulo de Ruteo Seguro como 
 \label{tab:resultados_sus}
 \begin{tabular}{|l|c|l|}
 \hline
-\textbf{Participante} & \textbf{Puntuación Normalizada (0--100)} & \textbf{Nivel de Aceptabilidad)} \\ \hline
+\textbf{Participante} & \textbf{Puntuación Normalizada (0--100)} & \textbf{Nivel de Aceptabilidad} \\ \hline
 
-Usuario 01 & 80.0 & Aceptable (Excelente) \\ \hline
-Usuario 02 & 97.5 & Aceptable (Excelente) \\ \hline
-Usuario 03 & 75.0 & Aceptable (Buena) \\ \hline
-Usuario 04 & 85.0 & Aceptable (Excelente) \\ \hline
-Usuario 05 & 90.0 & Aceptable (Excelente) \\ \hline
-Usuario 06 & 70.0 & Aceptable (Buena) \\ \hline
-Usuario 07 & 97.5 & Aceptable (Excelente) \\ \hline
-Usuario 08 & 77.5 & Aceptable (Buena) \\ \hline
-Usuario 09 & 92.5 & Aceptable (Excelente) \\ \hline
-Usuario 10 & 80.0 & Aceptable (Excelente) \\ \hline
+Usuario 01 & 75.0 & Buena \\ \hline
+Usuario 02 & 82.5 & Excelente \\ \hline
+Usuario 03 & 67.5 & Marginal \\ \hline
+Usuario 04 & 77.5 & Buena \\ \hline
+Usuario 05 & 85.0 & Excelente \\ \hline
+Usuario 06 & 72.5 & Buena \\ \hline
+Usuario 07 & 70.0 & Buena \\ \hline
+Usuario 08 & 80.0 & Excelente \\ \hline
+Usuario 09 & 75.0 & Buena \\ \hline
+Usuario 10 & 77.5 & Buena \\ \hline
 
 \end{tabular}
 \end{table}
 
-\subsubsection{Análisis e Interpretación de Resultados de Usabilidad}
+\subsubsection{Interpretación de Resultados de Usabilidad}
 
-El promedio global obtenido en el análisis paramétrico de la herramienta SUS fue de 84.5 puntos, con una desviación relativamente baja, lo que indica un consenso generalizado en la muestra poblacional. Este valor posiciona al Módulo de Ruteo Seguro en el cuartil superior de la escala de usabilidad, categorizándose empíricamente como "Excelente".
+El análisis cuantitativo del instrumento SUS arrojó un promedio global de 76.25 puntos, tal y como se evidencia en la Figura \ref{fig:resultados_sus}, este valor supera el umbral mínimo (68 puntos) y en donde se ubica al Módulo de Ruteo Seguro en una categoría de usabilidad "Buena". A diferencia de interfaces con tiempos de respuesta instantáneos que suelen alcanzar puntajes superiores a 85, el promedio de 76.25 refleja un castigo explícito en las preguntas pares del cuestionario (especialmente en los ítems referentes a si el sistema es "engorroso"). Esto sucede debido a a la espera de aproximadamente un minuto durante el cálculo de la ruta en la cual se genera cierta fricción en la experiencia del usuario (reflejado en el Usuario 03, con 67.5 puntos).
 
-Desde una perspectiva técnica, el alto índice de satisfacción (reflejado en preguntas como la P3 y P9) confirma que la integración de la arquitectura tecnológica fue transparente para el ciudadano. La robustez del motor alojado en Azure App Service permitió que las peticiones generadas desde la interfaz nativa en Kotlin se resolvieran con una latencia imperceptible, mientras que las consultas espaciales en la base de datos SQL Server entregaron los polígonos de rutas seguras de forma expedita.
-
-Asimismo, los puntajes bajos consistentes en las preguntas pares (ítems de tono negativo, como la P2 y P8) evidencian que el diseño implementado en el dispositivo móvil carece de fricciones significativas; los usuarios no percibieron la herramienta como engorrosa ni requirieron de un periodo de aprendizaje prolongado para trazar y comprender sus rutas urbanas libres de riesgo. El ánalisis se muestra en la Figura \ref{fig:resultados_sus}.
+No obstante, la solidez general del puntaje confirma que la disposición visual de los mapas, la ausencia de errores en la renderización y la claridad de la información abstraen adecuadamente la complejidad tecnológica. Los usuarios reconocieron el valor de obtener una ruta exenta de zonas criminales, demostrando que están dispuestos a tolerar una ventana de procesamiento mayor justificada por la promesa de seguridad ciudadana. La solución es operativamente viable y establece una base robusta para la optimización de latencia en futuras iteraciones.
 
 \begin{figure}[H]
 \centering
