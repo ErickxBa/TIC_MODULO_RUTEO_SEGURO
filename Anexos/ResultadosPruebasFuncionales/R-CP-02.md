@@ -1,23 +1,27 @@
-# Resultado de Caso de Prueba: CP-02
+# CP-02: Generación algorítmica de la ruta segura
 
-## 📊 Información General
-| Campo | Detalle |
+## 1. Definición del Caso de Prueba
+
+| Campo | Descripción |
 | :--- | :--- |
-| **Identificador** | CP-02 |
+| **ID** | CP-02 |
 | **Historia de Usuario** | HU-02 |
-| **Componente** | Backend (Nest.js) / Azure SQL Server |
-| **Estado Final** | 🟢 CUMPLE (Exitoso) |
+| **Nombre** | Generación algorítmica de la ruta segura |
+| **Cumple (Sí/No)** | Sí |
+| **Descripción de la Prueba** | Comprobar que el backend procesa las coordenadas y devuelve un trazado que evite internamente los nodos de la red vial con reportes de riesgo, priorizando la seguridad del usuario. |
+| **Precondiciones** | Backend local (Nest.js) activo; BDD (SQL Server en Azure) accesible con datos de la red vial y zonas de riesgo cargadas. |
+| **Datos de Prueba** | Punto de destino. |
+| **Resultados Esperados** | El backend calcula y devuelve un objeto GeoJSON con el trazado de la ruta segura, evadiendo proactivamente las zonas de riesgo registradas en la base de datos. |
+| **Resultados Obtenidos** | El algoritmo en Nest.js procesó la solicitud y devolvió el GeoJSON de la ruta segura en 1 minuto aproximadamente, incluyendo la latencia de red. |
 
-## 🎯 Objetivo y Escenario
-Comprobar el procesamiento en el servidor para calcular y devolver un trazado vial óptimo en formato GeoJSON, evadiendo proactivamente los nodos con reportes de riesgo asignados.
+---
 
-* **Datos de Entrada:** Coordenadas del punto de destino.
-* **Precondiciones:** Backend local en Nest.js activo y Base de Datos en Azure accesible con la red vial y zonas de riesgo previamente cargadas.
+## 2. Evidencia de Ejecución
 
-## 📝 Evaluación de Resultados
+**Paso 1:** Seleccionar punto de destino válido.
 
-### Resultado Esperado
-El backend debe calcular y retornar un objeto estructurado en formato GeoJSON con la trayectoria segura de la ruta, discriminando los sectores peligrosos de la base de datos.
+![Paso 1 - R-CP-02](Imagenes_Pruebas_Funcionales/R-CP-02/paso-1.jpg)
 
-### Resultado Obtenido
-El algoritmo implementado en Nest.js procesó exitosamente la solicitud de ruteo. Retornó el objeto GeoJSON con la ruta segura en un tiempo aproximado de 1 minuto, rango que incluye los tiempos de latencia con la base de datos Azure SQL.
+**Paso 2:** Presionar el botón "Calcular Ruta".
+
+![Paso 2 - R-CP-02](Imagenes_Pruebas_Funcionales/R-CP-02/paso-2.png)

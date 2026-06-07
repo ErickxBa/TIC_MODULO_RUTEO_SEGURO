@@ -1,23 +1,27 @@
-# Resultado de Caso de Prueba: CP-01
+# CP-01: Ingreso y validación de coordenadas
 
-## 📊 Información General
-| Campo | Detalle |
+## 1. Definición del Caso de Prueba
+
+| Campo | Descripción |
 | :--- | :--- |
-| **Identificador** | CP-01 |
+| **ID** | CP-01 |
 | **Historia de Usuario** | HU-01 |
-| **Componente** | Interfaz Android (Kotlin) / Mapa |
-| **Estado Final** | 🟢 CUMPLE (Exitoso) |
+| **Nombre** | Ingreso y validación de coordenadas |
+| **Cumple (Sí/No)** | Sí |
+| **Descripción de la Prueba** | Verificar que el usuario pueda seleccionar punto de destino y que el sistema valide que se encuentren dentro del área de cobertura (Quito). |
+| **Precondiciones** | Aplicación Android ejecutándose; acceso a internet y servicios de ubicación habilitados. |
+| **Datos de Prueba** | Punto de destino: EPN (-0.2106, -78.4889) |
+| **Resultados Esperados** | Los campos de texto de la interfaz se actualizan automáticamente con las direcciones/coordenadas seleccionadas y se muestran marcadores visuales en el mapa. |
+| **Resultados Obtenidos** | Los puntos se registraron en la interfaz de Kotlin sin retraso y los marcadores se fijaron correctamente en las ubicaciones especificadas. |
 
-## 🎯 Objetivo y Escenario
-Validar el ingreso automático de coordenadas y la colocación de marcadores visuales al interactuar con el mapa interactivo dentro del área de cobertura establecida (Quito).
+---
 
-* **Datos de Entrada:** Punto de destino: EPN (-0.2106, -78.4889)
-* **Precondiciones:** Aplicación Android en ejecución, conexión activa a internet y servicios de localización habilitados.
+## 2. Evidencia de Ejecución
 
-## 📝 Evaluación de Resultados
+**Paso 1:** Abrir la pantalla de Ruteo.
 
-### Resultado Esperado
-Los campos de texto de la interfaz deben actualizarse de forma automática con las direcciones o coordenadas seleccionadas, desplegando los marcadores visuales correspondientes sobre el mapa.
+![Paso 1 - R-CP-01](Imagenes_Pruebas_Funcionales/R-CP-01/paso-1.jpg)
 
-### Resultado Obtenido
-Los puntos se registraron en la interfaz de Kotlin de manera inmediata y sin retrasos. Los marcadores visuales se fijaron y renderizaron correctamente en las coordenadas geográficas especificadas.
+**Paso 2:** Definir el destino.
+
+![Paso 2 - R-CP-01](Imagenes_Pruebas_Funcionales/R-CP-01/paso-2.jpg)
