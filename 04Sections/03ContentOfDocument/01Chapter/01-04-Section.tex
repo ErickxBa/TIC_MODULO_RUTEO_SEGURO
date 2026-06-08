@@ -249,8 +249,16 @@ Bitbucket es una plataforma creada para manejar y almacenar repositorios de cód
 
 \subsubsection*{\hspace{0.7cm}Gitlab}
 GitLab se enfoca en la administración completa de repositorios de software, proporcionando un entorno centralizado para la colaboración grupal y el control de versiones. Más allá del simple almacenamiento de código, GitLab facilita la administración de proyectos mediante características que apoyan el flujo de trabajo de desarrollo, desde la gestión de usuarios y permisos hasta la revisión de código, consolidándose como una herramienta vital para mantener la coherencia y seguridad en el desarrollo colaborativo \cite{hethey2013gitlab}.
-%%%CORREGIR HERRAMIENTAS DE PRUEBAS MOVIL/PRUEBAS DESARROLLO
+
 \subsubsection{Herramientas de Pruebas y Validación}
 La etapa de validación y garantía de calidad es crítica en el ciclo de vida del desarrollo de software. Dada la complejidad de la arquitectura distribuida implementada que integra un cliente móvil, un motor algorítmico ejecutado localmente y persistencia de datos espaciales en la nube, se determinó que una evaluación exclusiva del código interno resultaba insuficiente para medir el impacto real y la eficacia del sistema. De este modo, la estrategia metodológica dividió un enfoque empírico de pruebas funcionales para certificar la precisión matemática y latencia de la arquitectura, en dos ejes fundamentales, y una evaluación psicométrica para garantizar que la solución tecnológica sea intuitiva y satisfactoria para el ciudadano en su movilidad diaria.
 \subsubsection*{\hspace{0.7cm}Herramientas Caja Negra}
+Teóricamente, la validación del sistema se basó en la técnica de Pruebas Funcionales de Caja Negra, esta técnica se interesa sólo por los requisitos funcionales del software, lo que permite al evaluador obtener grupos de condiciones de entrada que pongan a prueba todas las funciones sin necesidad de conocer la lógica interna o el código principal  \cite{pressman2005software}, contrariamente a las pruebas de caja blanca, la caja negra examina el sistema como si fuera un componente opaco, evaluando únicamente la correspondencia estricta entre las entradas ofrecidas y las salidas resultantes \cite{sommerville2011software}.
+El objetivo principal de este enfoque es detectar errores relacionados con funciones incorrectas en la interfaz, fallos en el acceso a bases de datos externas, y cuellos de botella en el rendimiento y comunicación entre componentes \cite{myers2006art}. A continuación, se detalla los instrumentos de fase de pruebas:
 
+\begin{itemize}
+    \item \textbf{Dispositivo Android / Emulador:} Medio de interacción y pruebas de interfaz gráfica.
+    \item \textbf{SQL Server Management Studio:} Instancia de base de datos alojada en servidor.
+    \item \textbf{Terminal de Consola (IDE):} Trazabilidad de los errores y la medición de la latencia durante el cálculo.
+    \item \textbf{Cronómetro de Precisión:} Registro del tiempo exacto por tarea.
+\end{itemize}

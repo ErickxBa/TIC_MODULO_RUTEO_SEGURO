@@ -4,7 +4,7 @@ Para el capítulo se expone los resultados obtenidos tras la culminación de la 
 \section{Pruebas Funcionales}
 Para lograr este propósito, se detalla la ejecución de un plan de pruebas riguroso, la evaluación del sistema contempla dos enfoques principales; por un lado, la ejecución de pruebas funcionales orientadas a certificar la usabilidad, la navegación y la correcta validación de datos en la interfaz del cliente móvil; y por otro, la realización de pruebas de integración. Estas últimas están destinadas a comprobar el algoritmo matemático A* y  la resiliencia del sistema ante actualizaciones dinámicas de riesgo en tiempo real.
 
-Dado que las pruebas realizadas tienen una extensión considerable, se presenta en la estructura respectiva de la prueba funcional (CP-04), en la cual se valida el funcionamiento de los procedimientos almacenados para el cambio del campo \texttt{peso\_riesgo} en la base de datos y a su vez el algoritmo toma en cuenta que la ruta sea la más segura. Para las demás pruebas funcionales seguirán el mismo formato que la Tabla \ref{tab:prueba04}. Tanto las pruebas como los resultados se encuentran en los Anexos \ref{anexo:casos-de-prueba} y \ref{anexo:resultados-pruebas-funcionales} respectivamente.
+Dado que las pruebas realizadas tienen una extensión considerable, se presenta en la estructura respectiva de la prueba funcional (CP-04), en la cual se valida el funcionamiento de los procedimientos almacenados para el cambio del campo \texttt{peso\_riesgo} en la base de datos y a su vez el algoritmo toma en cuenta que la ruta sea la más segura. Para las demás pruebas funcionales seguirán el mismo formato que la Tabla \ref{tab:prueba04}, estas mismas seencuentran en el Anexo \ref{anexo:casos-de-prueba}.
 % ===================== CP-04 =====================
 \begin{longtable}{|p{4cm}|p{10cm}|}
 \caption{Prueba Funcional CP-04}\label{tab:prueba04}\\
@@ -30,8 +30,7 @@ La base de datos (SQL Server) tiene dos caminos posibles entre el Punto A y el P
 2. Analizar el objeto GeoJSON de respuesta. \\ \hline
 
 \textbf{Datos de Prueba} &
-Origen: Punto A. \newline
-Destino: Punto B. \newline
+Destino \newline
 Pesos de prueba simulados en la base de datos. \\ \hline
 
 \textbf{Resultados Esperados} &
@@ -41,6 +40,23 @@ El algoritmo de ruteo discrimina el Camino 1 debido a su alta ponderación de ri
 El servicio en Nest.js calculó la ruta penalizando correctamente las zonas de riesgo. El GeoJSON devuelto correspondió al Camino 2. \\ \hline
 
 \end{longtable}
+
+\section{Resultados Pruebas Funcionales}
+Los resultados de las pruebas funcionales se consolidan en el Anexo \ref{anexo:resultados-pruebas-funcionales}, donde se evidencia que el Módulo de Ruteo Seguro cumple con los requerimientos establecidos en las Historias de Usuario. En particular, la prueba CP-04 confirmó que el algoritmo de ruteo implementado en Nest.js asigna correctamente los pesos de riesgo a los nodos y aristas, priorizando rutas seguras incluso si implican un mayor tiempo de viaje. Este resultado valida la eficacia del enfoque de penalización basado en datos geoespaciales y demuestra que el sistema puede adaptarse dinámicamente a cambios en el entorno urbano para proteger a los usuarios finales, este resultado se muestra en la Figura \ref{fig:prueba04_resultado} y la misma ruta ya con los pesos de riesgo aplicados en la Figura \ref{fig:prueba04_resultado_ruta}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{../02Figures/03Chapter/Prueba04.png}
+\caption{Resultado de la Prueba CP-04}
+\label{fig:prueba04_resultado}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{../02Figures/03Chapter/Prueba04_ruta.png}
+\caption{Ruta sin riesgo y Ruta con riesgo penalizado}
+\label{fig:prueba04_resultado_ruta}
+\end{figure}
 
 \section{Pruebas de Usabilidad}
 En este apartado se especifican las pruebas de usabilidad que tienen como objetivo evaluar la tasa de éxito, el número de errores y la satisfacción respectiva cuando los usuarios interactúan con la aplicación, detectando oportunidades de mejora en la interfaz gráfica y en la experiencia del usuario y asegura que el producto final no solo sea funcionalmente correcto, sino también intuitivo y agradable de usar.
